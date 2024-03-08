@@ -25,8 +25,8 @@
         <?php echo $titel_short; ?>
     </title>
     <link rel="stylesheet" href="css/style.min.css">
-    <link rel="stylesheet" href="../js-scripts/lazyloading.css">
-    <script src="../js-scripts/getURLData.js"></script>
+    <link rel="stylesheet" href="./js-scripts/lazyloading.css">
+    <script src="./js-scripts/getURLData.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
