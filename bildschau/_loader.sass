@@ -1,0 +1,61 @@
+
+
+.loader
+    position: relative
+    width: 7rem
+    height: 7rem   
+    animation: spin 2.5s infinite
+    transform-origin: 0% 10%
+    
+    .circle1, .circle2, .circle3, .circle4, .circle5, .circle6
+        position: absolute
+        border-radius: 50%
+        background-color: $loaderColor
+        width: 2rem
+        height: 2rem
+        display: flex
+        align-items: center
+        justify-content: center
+
+    .circle1
+        top: 0%
+        left: 100%
+        width: 1.5rem + 0.5rem
+        height: 1.5rem + 0.5rem
+    
+    .circle2
+        left: 50%
+        top: 86.60254037844388%
+        width: 1.8rem + 0.5rem
+        height: 1.8rem + 0.5rem
+    
+    .circle3
+        left: -50%
+        top: 86.60254037844388%
+        width: 2rem + 0.5rem
+        height: 2rem + 0.5rem
+
+    
+    .circle4
+        left: -100%
+        top: 0%
+        width: 2.3rem + 0.5rem
+        height: 2.3rem + 0.5rem
+    
+    .circle5
+        left: -50%
+        top: -86.60254037844388%
+        width: 2.5rem + 0.5rem
+        height: 2.5rem + 0.5rem
+    
+    .circle6
+        left: 50%
+        top: -86.60254037844388%
+        width: 2.8rem + 0.5rem
+        height: 2.8rem + 0.5rem
+
+@keyframes spin
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(360deg)
