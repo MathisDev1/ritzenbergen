@@ -722,7 +722,7 @@
 /*Foto Entdecken hier! */
   .cid-u6k7q0xK8d {
     overflow: hidden;
-    background-image: url("images/photo-1508348837373-76b3f1a97451.jpeg");
+    background-image: url("/assets/images/photo-1508348837373-76b3f1a97451.jpeg");
   }
 
 
@@ -1028,7 +1028,7 @@
   .cid-u6k7q0zosO {
     padding-top: 5rem;
     padding-bottom: 5rem;
-    background-image: url("assets/images/photo-1528826542659-27db5adea13c.jpeg")
+    background-image: url("../images/photo-1528826542659-27db5adea13c.jpeg")
 }
 
 .cid-u6k7q0zosO .mbr-fallback-image.disabled {
