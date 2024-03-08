@@ -7,10 +7,10 @@
     error_reporting(-1);
 
     // mysql verbinden
-    include("../mysqlverbinden.php");
+    include("./mysqlverbinden.php");
 
     // Funktion rowforeach einbinden
-    include("../phpscripts/rowforeach.php");
+    include("./phpscripts/rowforeach.php");
 
     // Kurzen Titel setzen
     $titel_short = "Fotos";
