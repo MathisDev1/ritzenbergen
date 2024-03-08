@@ -144,7 +144,7 @@
         >
           <div class="embla__viewport">
             <div class="embla__container">
-              <div
+              <!-- <div
                 class="embla__slide slider-image item"
                 style="margin-left: 1rem; margin-right: 1rem;"
               >
@@ -158,8 +158,34 @@
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
+              </div> -->
+              <?php
+              $jahre=[];
+              $blacklist=[".",".."];
+              foreach(scandir("bilder/erntefest") as $value){
+                if(!is_dir("bilder/erntefest/".$value)) continue;
+                if(in_array($value,$blacklist)) continue;
+                $jahre[]=$value;
+              }
+              foreach ($jahre as $key => $value) {
+                echo "<div
+                class=\"embla__slide slider-image item\"
+                style=\"margin-left: 1rem; margin-right: 1rem;\"
+              >
+                <div class=\"slide-content\">
+                  <div class=\"item-img\">
+                    <div class=\"item-wrapper\">
+                      <img
+                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=lime\"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>";
+              }
+              ?>
+              <!-- <div
                 class="embla__slide slider-image item"
                 style="margin-left: 1rem; margin-right: 1rem;"
               >
@@ -293,7 +319,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
           <button class="embla__button embla__button--prev">

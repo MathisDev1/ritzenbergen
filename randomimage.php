@@ -9,6 +9,7 @@ error_reporting(-1);
  *      tn: Thumbnail: Soll eine Beschriftung rauf?
  *      text: Welcher Text soll auf das Thumbnail?
  *      color: Welche Farbe soll der Text haben?
+ *      whitelist: Pfad zur Whitelist-Datei
  */
 include("colorstringconvert.php");
 if (!isset($_GET["path"]))
