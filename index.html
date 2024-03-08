@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
-  <link rel="stylesheet" href="assets/animatecss/animate.css">f
+  <link rel="stylesheet" href="assets/animatecss/animate.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="manifest" href="./manifest.json">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -696,13 +696,11 @@
             <div class="row-links">
                 <ul class="header-menu">
                 <li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="#" class="text-white">Über</a>
+                    <button class="text-white btn-ueber">Über</button>
                   </li><li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="#" class="text-white">Kontakt</a>
+                    <button class="text-white btn-kontakt">Kontakt</button>
                   </li><li class="header-menu-item mbr-fonts-style display-5">
                     <a href="#" class="text-white">Impressum</a>
-                  </li><li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="#" class="text-white">Datenschutz</a>
                   </li></ul>
               </div>
             <div class="col-12 mt-4">
@@ -713,6 +711,76 @@
         </div>
     </div>
 </section>
+
+
+
+<div class="modalUeber">
+<div id="modalUeber" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeUeberModal()">×</span>
+    <h1>Über</h1>
+    <p>
+      Ritzenbergen ist ein kleines Dorf der Gemeinde Blender und liegt dicht an der Weser.
+      <br>
+      <br>
+      Bei dieser Seite handelt es sich um eine Private Homepage der Dorfgemeinschaft Amedorf & Ritzenbergen. 
+      Sie wird für keinerlei Gewerbliche oder Verkäufliche Zwecke genutzt. Daher wird kein Impressum benötigt. <br><br>
+      © Front-End und Web Design: Mathis Kuhlenkamp <br>
+      © Back-End und Datenbanken: Tom Kuhlenkamp, Jonas Kuhlenkamp
+    </p><br><br>
+    
+  </div>
+</div>
+<script>
+  const modalUeber = document.getElementById("modalUeber");
+  const openButtonUeber = document.querySelector(".btn-ueber");
+  const closeButtonUeber = document.querySelector(".close-button");
+
+  function openUeberModal() {
+    modalUeber.style.display = "block";
+  }
+
+  function closeUeberModal() {
+    modalUeber.style.display = "none";
+  }
+
+  openButtonUeber.addEventListener("click", openUeberModal);
+
+  closeButtonUeber.addEventListener("click", closeUeberModal);
+</script>
+</div>
+<div class="modalKontakt">
+
+  <div id="modalKontaktFormular" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeKontaktFormularModal()">×</span>
+      <h1>Kontakt</h1>
+      <p>
+        Tom Kuhlenkamp <br>
+        tom@ritzenbergen.de
+      </p><br><br>
+      
+    </div>
+  </div>
+
+  <script>
+    const modalKontaktFormular = document.getElementById("modalKontaktFormular");
+    const openButtonKontaktFormular = document.querySelector(".btn-kontakt");
+    const closeButtonKontaktFormular = document.querySelector(".close-button");
+
+    function openKontaktFormularModal() {
+      modalKontaktFormular.style.display = "block";
+    }
+
+    function closeKontaktFormularModal() {
+      modalKontaktFormular.style.display = "none";
+    }
+
+    openButtonKontaktFormular.addEventListener("click", openKontaktFormularModal);
+
+    closeButtonKontaktFormular.addEventListener("click", closeKontaktFormularModal);
+  </script>
+</div>
 
 <script src="assets/parallax/jarallax.js"></script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
