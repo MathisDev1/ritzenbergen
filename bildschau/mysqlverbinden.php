@@ -1,1 +1,0 @@
-<?php $db_id = mysqli_connect('host','user','password'); ?>
