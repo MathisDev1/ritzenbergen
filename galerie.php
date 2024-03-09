@@ -176,14 +176,13 @@
                   <div class=\"item-img\">
                     <div class=\"item-wrapper\">
                       <img
-                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=lime\"
-                       
-                      />
+                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
                     </div>
                   </div>
                 </div>
               </div>";
               }
+
               ?>
               <!-- <div
                 class="embla__slide slider-image item"
@@ -344,6 +343,237 @@
   </div>
 </section>
 <!--Fotogalerie Erntefest Ende-->
+
+
+
+
+
+
+
+<!--Fotogalerie Osterfeuer-->
+<br><br><br><br><br>
+<section
+  class="slider4 mbr-embla cid-u6k7q0yLdW"
+  id="erntefest"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+        <strong>Osterfeuer</strong>
+      </h4>
+
+      <div class="col-12"><br>
+        <div
+          class="embla position-relative"
+          data-skip-snaps="true"
+          data-align="center"
+          data-contain-scroll="trimSnaps"
+          data-loop="true"
+          data-auto-play="true"
+          data-auto-play-interval="2"
+          data-draggable="true"
+        >
+          <div class="embla__viewport">
+            <div class="embla__container">
+              <!-- <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2002.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+              <?php
+              $jahre=[];
+              $blacklist=[".",".."];
+              foreach(scandir("bilder/erntefest") as $value){
+                if(!is_dir("bilder/erntefest/".$value)) continue;
+                if(in_array($value,$blacklist)) continue;
+                $jahre[]=$value;
+              }
+              foreach ($jahre as $key => $value) {
+                echo "<div
+                class=\"embla__slide slider-image item\"
+                style=\"margin-left: 1rem; margin-right: 1rem;\"
+              >
+                <div class=\"slide-content\">
+                  <div class=\"item-img\">
+                    <div class=\"item-wrapper\">
+                      <img
+                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+              }
+
+              ?>
+              <!-- <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2003.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2004.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2005.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2006.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2007.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2008.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2009.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2010.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="embla__slide slider-image item"
+                style="margin-left: 1rem; margin-right: 1rem;"
+              >
+                <div class="slide-content">
+                  <div class="item-img">
+                    <div class="item-wrapper">
+                      <img
+                        src="./Fotos/Kategorien/Erntefest/2011.png"
+                       
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <button class="embla__button embla__button--prev">
+            <span
+              class="mobi-mbri mobi-mbri-arrow-prev"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="sr-only visually-hidden visually-hidden"
+            >Previous</span>
+          </button>
+          <button class="embla__button embla__button--next">
+            <span
+              class="mobi-mbri mobi-mbri-arrow-next"
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only visually-hidden visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Fotogalerie Osterfeuer Ende-->
 
 
 
