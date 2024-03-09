@@ -38,12 +38,12 @@
     <div class="container">
       <div class="navbar-brand">
         <span class="navbar-logo">
-					<a href="http://ritzenbergen.de">
+					<a href="index.html">
 						<img src="./Fotos/ortschild1.gif" style="height: 4.3rem;">
 					</a>
 				</span>
 				<span class="navbar-caption-wrap">
-          <a class="navbar-caption text-black display-4" href="https://mobiri.se">Amedorf & Ritzenbergen</a>
+          <a class="navbar-caption text-black display-4" href="http://ritzenbergen.de">Amedorf & Ritzenbergen</a>
         </span>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -61,18 +61,21 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="#">Termine</a>
+            <a class="nav-link link text-black display-4" href="index.html#news-1-u6k7q0xyDG">Termine</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="#"
-              aria-expanded="false">Bilder</a>
+            <a class="nav-link link text-black display-4" href="galerie.php"
+              aria-expanded="false">Galerie</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="#">Kontakt</a>
+            <a class="nav-link link text-black display-4" href="index.html#call-to-action-9-u6k7q0zosO">Umgebung</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="index.html#contacts-2-u6k7q0Bejh">Kontakt</a>
           </li>
         </ul>
         <div class="navbar-buttons mbr-section-btn">
-          <a class="btn btn-primary display-4" href="./index.html#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>
+          <a class="btn btn-primary display-4" href="index.html#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>
         </div>
       </div>
     </div>
@@ -192,6 +195,21 @@
     </div>
   </div>
 </section>
+<section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10">
+              <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2">
+              <strong>Erntefeste in Ritzenbergen</strong>
+              </h3>
+              <p class="mbr-text mbr-fonts-style display-7">Hier kann ein Text hin. Das musst du dir leider versuchen was einfallen zu lassen
+                Tom. Ich bin da zu Unkreativ für. Ich habe den Text gemacht, damit da ein Optischer Abstand ist weil es blöd aussieht
+                wenn da so viele Slideshows untereinander sind.
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
 <!--Fotogalerie Erntefest Ende-->
 
 
@@ -273,6 +291,21 @@
     </div>
   </div>
 </section>
+<section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10">
+              <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2">
+              <strong>Osterfeuer in Ritzenbergen</strong>
+              </h3>
+              <p class="mbr-text mbr-fonts-style display-7">Hier kann ein Text hin. Das musst du dir leider versuchen was einfallen zu lassen
+                Tom. Ich bin da zu Unkreativ für. Ich habe den Text gemacht, damit da ein Optischer Abstand ist weil es blöd aussieht
+                wenn da so viele Slideshows untereinander sind.
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
 <!--Fotogalerie Osterfeuer Ende-->
 
 
@@ -351,6 +384,21 @@
     </div>
   </div>
 </section>
+<section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10">
+              <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2">
+              <strong>Fußballturniere in Ritzenbergen</strong>
+              </h3>
+              <p class="mbr-text mbr-fonts-style display-7">Hier kann ein Text hin. Das musst du dir leider versuchen was einfallen zu lassen
+                Tom. Ich bin da zu Unkreativ für. Ich habe den Text gemacht, damit da ein Optischer Abstand ist weil es blöd aussieht
+                wenn da so viele Slideshows untereinander sind.
+              </p>
+          </div>
+      </div>
+  </div>
+</section>
 <!--Fotogalerie Fußballturnier Ende-->
 
 
@@ -426,6 +474,21 @@
         </div>
       </div>
     </div>
+  </div>
+</section>
+<section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-md-12 col-lg-10">
+              <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2">
+              <strong>Doppelkopf in Ritzenbergen</strong>
+              </h3>
+              <p class="mbr-text mbr-fonts-style display-7">Hier kann ein Text hin. Das musst du dir leider versuchen was einfallen zu lassen
+                Tom. Ich bin da zu Unkreativ für. Ich habe den Text gemacht, damit da ein Optischer Abstand ist weil es blöd aussieht
+                wenn da so viele Slideshows untereinander sind.
+              </p>
+          </div>
+      </div>
   </div>
 </section>
 <!--Fotogalerie Doppelkopf Ende-->
