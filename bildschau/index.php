@@ -41,7 +41,7 @@
             $bilder2 = array();
             $bilder_mit_kommentar = array();
             foreach (scandir($bilderpath) as $key => $value) {
-                if ($value == "." || $value == ".." || $value == "@eaDir" || pathinfo($value)["extension"] == "txt") {
+                if ($value == "." || $value == ".." || $value == "@eaDir" || pathinfo($value,PATHINFO_EXTENSION) == "txt") {
                     continue;
                 }
                 array_push($bilder2, $value);
