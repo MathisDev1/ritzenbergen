@@ -31,17 +31,26 @@
 </head>
 
 <body>
+    <style>
+        .active {
+            width: 800px;
+        }
+
+        .unactive {
+            width: 100px;
+        }
+    </style>
     <div class="main">
         <section class="flex-card-wrapper">
             <?php
-            $bilderpath = "../bilder/".$_GET["path"];
+            $bilderpath = "../bilder/" . $_GET["path"];
             $bilder = scandir($bilderpath);
 
             $i = 0;
             $bilder2 = array();
             $bilder_mit_kommentar = array();
             foreach (scandir($bilderpath) as $key => $value) {
-                if ($value == "." || $value == ".." || $value == "@eaDir" || pathinfo($value,PATHINFO_EXTENSION) == "txt") {
+                if ($value == "." || $value == ".." || $value == "@eaDir" || pathinfo($value, PATHINFO_EXTENSION) == "txt") {
                     continue;
                 }
                 array_push($bilder2, $value);
@@ -53,11 +62,11 @@
             array_unique($bilder_mit_kommentar);
             foreach ($bilder_mit_kommentar as $key => $value) {
                 foreach (rowforeach("SELECT * from fotoscomments where bildpfad='$value'") as $j => $row) {
-                    $kommentare[$value]="<p class=\"comments\">".$row[1].": ".$row[2]."</p>";
+                    $kommentare[$value] = "<p class=\"comments\">" . $row[1] . ": " . $row[2] . "</p>";
                 }
             }
             foreach ($bilder as $key => $filename) {
-                if ($filename == "@eaDir" || $filename == "." || $filename == ".." || $filename=="Thumbs.db" || pathinfo($filename,PATHINFO_EXTENSION) == "txt") {
+                if ($filename == "@eaDir" || $filename == "." || $filename == ".." || $filename == "Thumbs.db" || pathinfo($filename, PATHINFO_EXTENSION) == "txt") {
                     continue;
                 }
                 $value = $bilderpath . "/" . $filename;
@@ -69,12 +78,18 @@
                 } else {
                     $datastring = $i . "-" . ($i + 2);
                 }
-                if(in_array($value,$bilder_mit_kommentar)){
-                    $kommentar=$kommentare[$value];
-                }else{
-                    $kommentar="";
+                if (in_array($value, $bilder_mit_kommentar)) {
+                    $kommentar = $kommentare[$value];
+                } else {
+                    $kommentar = "";
                 }
-                echo "<article class=\"flex-card-container lazy-loading\" data-title=\"" . $i . "\" data-id=\"" . $datastring . "\" data-name=\"" . htmlentities($kommentar) . "\" data-src=\"".$bilderpath."/".$filename."\"></article>";
+                /**
+                 * data-title: Nummer des Bildes
+                 * data-id: Die Bilder davor und danach
+                 * data-name: Kommentare
+                 * data-src: Pfad zu den Bildern
+                 */
+                echo "<article class=\"flex-card-container lazy-loading" . ((($i == 0 && $_GET["bild"] == 0) || (($i > 0) && $_GET["bild"] > 0)) ? " active" : "") . ((($i == $_GET["bild"] - 1) || ($i == $_GET["bild"] + 1)) ? " unactive" : "") . "\" data-title=\"" . $i . "\" data-id=\"" . $datastring . "\" data-name=\"" . htmlentities($kommentar) . "\" data-src=\"" . $bilderpath . "/" . $filename . "\"></article>";
                 $i++;
             }
             ?>
@@ -84,7 +99,8 @@
         <form action="kommentareintragen.php" method="post">
             <input type="text" name="username" placeholder="Name"> :
             <input type="text" name="kommentar" placeholder="Kommentar">
-            <input type="hidden" name="bildpfad" class="bilderpath" value="<?php echo $bilderpath.$bilder2[$_GET["bild"]]; ?>">
+            <input type="hidden" name="bildpfad" class="bilderpath"
+                value="<?php echo $bilderpath . $bilder2[$_GET["bild"]]; ?>">
             <input type="hidden" name="bild" value="<?php echo $_GET["bild"]; ?>" class="bildform">
 
             <input type="submit" value="Absenden">

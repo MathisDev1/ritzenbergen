@@ -13,7 +13,7 @@ $loaderColor: $ciGreen
     .flex-card-container
         margin: 0 10px 0 0
         height: 100%
-        width: 0%
+        width: 1000px
         transition: 50ms all ease-in-out
         border-radius: 20px
         cursor: pointer
@@ -22,25 +22,6 @@ $loaderColor: $ciGreen
         background-position: center center
         background-size: cover
         background-repeat: no-repeat
-
-        &.unactive
-            width: 10%
-
-        &.active
-            width: 80%
-
-            .overlay
-                h3, p
-                    opacity: 1
-                    transform: translateX(0)
-
-                .icon
-                    width: 5rem
-                    height: 5rem
-
-                    img
-                        width: 2.5rem
-                        height: 2.5rem
 
         &.bild-1
             background-image: url('../../Bilder/6R01.jpg')
@@ -107,3 +88,9 @@ $loaderColor: $ciGreen
 
 .main
     flex-direction: column
+
+.active
+    width: 800px
+
+.unactive
+    width: 100px
