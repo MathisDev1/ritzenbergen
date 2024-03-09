@@ -120,7 +120,7 @@
 
 
 <!--Fotogalerie Erntefest-->
-<br><br><br><br><br>
+<br><br>
 <section
   class="slider4 mbr-embla cid-u6k7q0yLdW"
   id="erntefest"
@@ -201,7 +201,7 @@
 
 
 <!--Fotogalerie Osterfeuer-->
-<br><br><br><br><br>
+<br><br><br>
 <section
   class="slider4 mbr-embla cid-u6k7q0yLdW"
   id="osterfeuer"
@@ -278,8 +278,157 @@
 
 
 
+<!--Fotogalerie Fußballturnier-->
+<br><br><br>
+<section
+  class="slider4 mbr-embla cid-u6k7q0yLdW"
+  id="fussballturnier"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+        <strong>Fußballturnier</strong>
+      </h4>
+
+      <div class="col-12"><br>
+        <div
+          class="embla position-relative"
+          data-skip-snaps="true"
+          data-align="center"
+          data-contain-scroll="trimSnaps"
+          data-loop="true"
+          data-auto-play="true"
+          data-auto-play-interval="2"
+          data-draggable="true"
+        >
+          <div class="embla__viewport">
+            <div class="embla__container">
+              <?php
+              $jahre=[];
+              $blacklist=[".",".."];
+              foreach(scandir("bilder/erntefest") as $value){
+                if(!is_dir("bilder/erntefest/".$value)) continue;
+                if(in_array($value,$blacklist)) continue;
+                $jahre[]=$value;
+              }
+              foreach ($jahre as $key => $value) {
+                echo "<div
+                class=\"embla__slide slider-image item\"
+                style=\"margin-left: 1rem; margin-right: 1rem;\"
+              >
+                <div class=\"slide-content\">
+                  <div class=\"item-img\">
+                    <div class=\"item-wrapper\">
+                      <img
+                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+              }
+
+              ?>
+            </div>
+          </div>
+          <button class="embla__button embla__button--prev">
+            <span
+              class="mobi-mbri mobi-mbri-arrow-prev"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="sr-only visually-hidden visually-hidden"
+            >Previous</span>
+          </button>
+          <button class="embla__button embla__button--next">
+            <span
+              class="mobi-mbri mobi-mbri-arrow-next"
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only visually-hidden visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Fotogalerie Fußballturnier Ende-->
 
 
+
+<!--Fotogalerie Doppelkopf-->
+<br><br><br>
+<section
+  class="slider4 mbr-embla cid-u6k7q0yLdW"
+  id="doppelkopf"
+>
+  <div class="container-fluid">
+    <div class="row">
+      <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+        <strong>Doppelkopf</strong>
+      </h4>
+
+      <div class="col-12"><br>
+        <div
+          class="embla position-relative"
+          data-skip-snaps="true"
+          data-align="center"
+          data-contain-scroll="trimSnaps"
+          data-loop="true"
+          data-auto-play="true"
+          data-auto-play-interval="2"
+          data-draggable="true"
+        >
+          <div class="embla__viewport">
+            <div class="embla__container">
+              <?php
+              $jahre=[];
+              $blacklist=[".",".."];
+              foreach(scandir("bilder/erntefest") as $value){
+                if(!is_dir("bilder/erntefest/".$value)) continue;
+                if(in_array($value,$blacklist)) continue;
+                $jahre[]=$value;
+              }
+              foreach ($jahre as $key => $value) {
+                echo "<div
+                class=\"embla__slide slider-image item\"
+                style=\"margin-left: 1rem; margin-right: 1rem;\"
+              >
+                <div class=\"slide-content\">
+                  <div class=\"item-img\">
+                    <div class=\"item-wrapper\">
+                      <img
+                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
+                    </div>
+                  </div>
+                </div>
+              </div>";
+              }
+
+              ?>
+            </div>
+          </div>
+          <button class="embla__button embla__button--prev">
+            <span
+              class="mobi-mbri mobi-mbri-arrow-prev"
+              aria-hidden="true"
+            ></span>
+            <span
+              class="sr-only visually-hidden visually-hidden"
+            >Previous</span>
+          </button>
+          <button class="embla__button embla__button--next">
+            <span
+              class="mobi-mbri mobi-mbri-arrow-next"
+              aria-hidden="true"
+            ></span>
+            <span class="sr-only visually-hidden visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Fotogalerie Doppelkopf Ende-->
 
 
 
@@ -314,6 +463,14 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+
 
 <script src="assets/parallax/jarallax.js"></script>
   <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
