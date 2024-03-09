@@ -74,7 +74,7 @@
                 }else{
                     $kommentar="";
                 }
-                echo "<article class=\"flex-card-container lazy-loading\" data-title=\"" . $i . "\" data-id=\"" . $datastring . "\" data-name=\"" . htmlentities($kommentar) . "\" data-src=\"".$bilderpath.$filename."\"></article>";
+                echo "<article class=\"flex-card-container lazy-loading\" data-title=\"" . $i . "\" data-id=\"" . $datastring . "\" data-name=\"" . htmlentities($kommentar) . "\" data-src=\"".$bilderpath."/".$filename."\"></article>";
                 $i++;
             }
             ?>
