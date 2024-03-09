@@ -7,7 +7,7 @@
     error_reporting(-1);
 
     // mysql verbinden
-    include("./mysqlverbinden.php");
+    include("../../mysqlverbinden.php");
 
     // Funktion rowforeach einbinden
     include("./phpscripts/rowforeach.php");
@@ -47,12 +47,12 @@
                 array_push($bilder2, $value);
             }
             $kommentare = array();
-            foreach (rowforeach("SELECT * from DB1.fotoscomments") as $j => $row) {
+            foreach (rowforeach("SELECT * from fotoscomments") as $j => $row) {
                 array_push($bilder_mit_kommentar, $row[3]);
             }
             array_unique($bilder_mit_kommentar);
             foreach ($bilder_mit_kommentar as $key => $value) {
-                foreach (rowforeach("SELECT * from DB1.fotoscomments where bildpfad='$value'") as $j => $row) {
+                foreach (rowforeach("SELECT * from fotoscomments where bildpfad='$value'") as $j => $row) {
                     $kommentare[$value]="<p class=\"comments\">".$row[1].": ".$row[2]."</p>";
                 }
             }
