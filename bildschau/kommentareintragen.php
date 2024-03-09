@@ -6,7 +6,7 @@
     error_reporting(-1);
 
     // mysql verbinden
-    include("../mysqlverbinden.php");
+    include("../../mysqlverbinden.php");
 
     // Kurzen Titel setzen
     $titel_short="Fotos";
@@ -31,7 +31,7 @@
             <div class="circle6"></div>
         </div>
         <?php
-            mysqli_query($db_id,"INSERT INTO DB1.fotoscomments (schreiber,kommentar,bildpfad) VALUES ('".$_POST["username"]."','".$_POST["kommentar"]."','".$_POST["bildpfad"]."')");
+            mysqli_query($db_id,"INSERT INTO fotoscomments (schreiber,kommentar,bildpfad) VALUES ('".$_POST["username"]."','".$_POST["kommentar"]."','".$_POST["bildpfad"]."')");
         ?>
         <script>
             window.location.href="index.php?bild=<?php echo $_POST["bild"]; ?>";
