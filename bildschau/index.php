@@ -34,7 +34,7 @@
     <div class="main">
         <section class="flex-card-wrapper">
             <?php
-            $bilderpath = "bilder/".$_GET["path"];
+            $bilderpath = "../bilder/".$_GET["path"];
             $bilder = scandir($bilderpath);
 
             $i = 0;
