@@ -57,7 +57,7 @@
                 }
             }
             foreach ($bilder as $key => $filename) {
-                if ($filename == "@eaDir" || $filename == "." || $filename == ".." || $filename=="Thumbs.db" || pathinfo($filename)["extension"] == "txt") {
+                if ($filename == "@eaDir" || $filename == "." || $filename == ".." || $filename=="Thumbs.db" || pathinfo($filename,PATHINFO_EXTENSION) == "txt") {
                     continue;
                 }
                 $value = $bilderpath . $filename;
