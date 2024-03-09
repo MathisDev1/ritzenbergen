@@ -60,7 +60,7 @@
                 if ($filename == "@eaDir" || $filename == "." || $filename == ".." || $filename=="Thumbs.db" || pathinfo($filename,PATHINFO_EXTENSION) == "txt") {
                     continue;
                 }
-                $value = $bilderpath . $filename;
+                $value = $bilderpath . "/" . $filename;
                 $bilderlen = count($bilder2);
                 if ($i == 0) {
                     $datastring = "2";
