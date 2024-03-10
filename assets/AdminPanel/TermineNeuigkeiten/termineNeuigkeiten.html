@@ -20,8 +20,18 @@
         <label for="datum">Datum:</label>
         <input type="date" name="datum" id="datum" required><br><br>
         <label for="inhalt">Inhalt:</label>
-        <textarea name="inhalt" id="inhalt" rows="20" cols="43" placeholder="Inhalt eingeben" required></textarea><br><br>
 
+        <div class="buttonArea">
+            <textarea name="inhalt" id="inhalt" rows="20" cols="43" placeholder="Inhalt eingeben" required></textarea><br><br>
+            <p>Button:</p>
+            <select name="box" id="buttonBox" size="2">
+                <option value="1">Ja</option>
+                <option value="2">Nein</option>
+            </select><br><br>
+                <input class="buttonLink" type="text" name="buttonLink" id="buttonLink" placeholder="Button Link" required><br><br>
+                <input class="buttonLink" type="text" name="buttonText" id="buttonText" placeholder="Button Text" required><br><br>
+        </div>
+            
         <button type="submit" onclick="return confirm('Achtung! Wenn du bestätigst werden die änderungen sofort auf der Seite wirksam! Willst du den Text wirklich absenden?')">Absenden</button>    </form>
 
 
