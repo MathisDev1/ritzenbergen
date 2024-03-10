@@ -3,18 +3,17 @@ $loaderColor: $ciGreen
 @import loader
 .flex-card-wrapper
     width: 90rem
-    max-width: 60rem
-    height: 70vh
+    max-width: 160rem
+    height: 40rem
     max-height: 50rem
     display: flex
     justify-content: space-between
     align-items: stretch
 
     .flex-card-container
-        margin: 0 10px 0 0
+        padding: 0 0 0 0
         height: 100%
-        width: 1000px
-        transition: 50ms all ease-in-out
+        transition: 500ms all ease-in-out
         border-radius: 20px
         cursor: pointer
         overflow: hidden
@@ -22,75 +21,20 @@ $loaderColor: $ciGreen
         background-position: center center
         background-size: cover
         background-repeat: no-repeat
-
-        &.bild-1
-            background-image: url('../../Bilder/6R01.jpg')
-
-        &.bild-2
-            background-image: url('../../Bilder/6R02.jpg')
-
-        &.bild-3
-            background-image: url('../../Bilder/6R03.jpg')
-
-        &.bild-4
-            background-image: url('../../Bilder/6R01.jpg')
+        margin: 0 0 0 0
+        display: none
 
         &:last-child
             margin: 0 0 0 0
+        &.active
+            width: 88%
+            margin-left: 1%
+            margin-right: 1%
+            display: block
 
-        .overlay
-            position: absolute
-            bottom: 0
-            left: 0
-            right: 0
-            z-index: 2
-            height: 9rem
-            padding: 0 0 2rem 1.5rem
-            display: flex
-            justify-content: flex-start
-            align-items: flex-end
-            width: 100%
-            transition: 450ms all ease-in-out
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%)
-
-            .icon
-                width: 3rem
-                height: 3rem
-                border-radius: 100%
-                background-color: $second
-                transition: 450ms all ease-in-out
-                display: flex
-                justify-content: center
-                align-items: center
-
-                img
-                    width: 1.5rem
-                    height: 1.5rem
-                    transition: 450ms all ease-in-out
-
-            h3
-                top: 0
-                font-size: 1.8rem
-                transition: 350ms 200ms all ease-in-out
-
-            p
-                top: 3rem
-                font-size: 1.2rem
-                transition: 350ms 300ms all ease-in-out
-
-            h3, p
-                color: white
-                position: absolute
-                left: 9rem
-                width: 20rem
-                opacity: 0
-                transform: translateX(-15px)
+        &.unactive
+            width: 5%
+            display: block
 
 .main
     flex-direction: column
-
-.active
-    width: 800px
-
-.unactive
-    width: 100px

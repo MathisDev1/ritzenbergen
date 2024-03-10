@@ -21,6 +21,7 @@ function addClass($event) {
   const target = $event.currentTarget;
   removeActiveClass();
   target.classList.add(ACTIVECLASS);
+  document.querySelector(".bildform").value=target.dataset.title;
   hiddenkommentarfield(target);
   removeUnactiveClass();
   addUnactiveClass(target);

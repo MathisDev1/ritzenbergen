@@ -31,15 +31,6 @@
 </head>
 
 <body>
-    <style>
-        .active {
-            width: 800px;
-        }
-
-        .unactive {
-            width: 100px;
-        }
-    </style>
     <div class="main">
         <section class="flex-card-wrapper">
             <?php
@@ -89,7 +80,7 @@
                  * data-name: Kommentare
                  * data-src: Pfad zu den Bildern
                  */
-                echo "<article class=\"flex-card-container lazy-loading" . ((($i == 0 && $_GET["bild"] == 0) || (($i > 0) && $_GET["bild"] > 0)) ? " active" : "") . ((($i == $_GET["bild"] - 1) || ($i == $_GET["bild"] + 1)) ? " unactive" : "") . "\" data-title=\"" . $i . "\" data-id=\"" . $datastring . "\" data-name=\"" . htmlentities($kommentar) . "\" data-src=\"" . $bilderpath . "/" . $filename . "\"></article>";
+                echo "<article class=\"flex-card-container lazy-loading" . (($i==$_GET["bild"]) ? " active" : "") . ((($i == $_GET["bild"] - 1) || ($i == $_GET["bild"] + 1)) ? " unactive" : "") . "\" data-title=\"" . $i . "\" data-id=\"" . $datastring . "\" data-name=\"" . htmlentities($kommentar) . "\" data-src=\"" . $bilderpath . "/" . $filename . "\"></article>";
                 $i++;
             }
             ?>
