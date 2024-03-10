@@ -156,7 +156,7 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<div
+                echo "<a href=\"bildschau/index.php?path=erntefest/".$value."&bild=0\"><div
                 class=\"embla__slide slider-image item\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
@@ -168,7 +168,7 @@
                     </div>
                   </div>
                 </div>
-              </div>";
+              </div></a>";
               }
 
               ?>
@@ -243,16 +243,16 @@
         >
           <div class="embla__viewport">
             <div class="embla__container">
-              <?php
+            <?php
               $jahre=[];
               $blacklist=[".",".."];
-              foreach(scandir("bilder/erntefest") as $value){
-                if(!is_dir("bilder/erntefest/".$value)) continue;
+              foreach(scandir("bilder/osterfeuer") as $value){
+                if(!is_dir("bilder/osterfeuer/".$value)) continue;
                 if(in_array($value,$blacklist)) continue;
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<div
+                echo "<a href=\"bildschau/index.php?path=osterfeuer/".$value."&bild=0\"><div
                 class=\"embla__slide slider-image item\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
@@ -260,11 +260,11 @@
                   <div class=\"item-img\">
                     <div class=\"item-wrapper\">
                       <img
-                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
+                        src=\"randomimage.php?path=bilder/osterfeuer/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
                     </div>
                   </div>
                 </div>
-              </div>";
+              </div></a>";
               }
 
               ?>
@@ -336,16 +336,16 @@
         >
           <div class="embla__viewport">
             <div class="embla__container">
-              <?php
+            <?php
               $jahre=[];
               $blacklist=[".",".."];
-              foreach(scandir("bilder/erntefest") as $value){
-                if(!is_dir("bilder/erntefest/".$value)) continue;
+              foreach(scandir("bilder/fussball") as $value){
+                if(!is_dir("bilder/fussball/".$value)) continue;
                 if(in_array($value,$blacklist)) continue;
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<div
+                echo "<a href=\"bildschau/index.php?path=fussball/".$value."&bild=0\"><div
                 class=\"embla__slide slider-image item\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
@@ -353,11 +353,11 @@
                   <div class=\"item-img\">
                     <div class=\"item-wrapper\">
                       <img
-                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
+                        src=\"randomimage.php?path=bilder/fussball/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
                     </div>
                   </div>
                 </div>
-              </div>";
+              </div></a>";
               }
 
               ?>
@@ -428,16 +428,16 @@
         >
           <div class="embla__viewport">
             <div class="embla__container">
-              <?php
+            <?php
               $jahre=[];
               $blacklist=[".",".."];
-              foreach(scandir("bilder/erntefest") as $value){
-                if(!is_dir("bilder/erntefest/".$value)) continue;
+              foreach(scandir("bilder/doppelkopf") as $value){
+                if(!is_dir("bilder/doppelkopf/".$value)) continue;
                 if(in_array($value,$blacklist)) continue;
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<div
+                echo "<a href=\"bildschau/index.php?path=doppelkopf/".$value."&bild=0\"><div
                 class=\"embla__slide slider-image item\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
@@ -445,11 +445,11 @@
                   <div class=\"item-img\">
                     <div class=\"item-wrapper\">
                       <img
-                        src=\"randomimage.php?path=bilder/erntefest/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
+                        src=\"randomimage.php?path=bilder/doppelkopf/".$value."&recursive=1&tn=1&text=".$value."&color=white\"/>
                     </div>
                   </div>
                 </div>
-              </div>";
+              </div></a>";
               }
 
               ?>
