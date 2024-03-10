@@ -62,7 +62,9 @@ function getImage($path)
     }
     $imagekey = array_rand($images);
     $imagepath = $images[$imagekey];
-    $image = imagecreatefromjpeg($imagepath);
+    if(pathinfo($imagepath,PATHINFO_EXTENSION)=="jpg") $image = imagecreatefromjpeg($imagepath);
+    if(pathinfo($imagepath,PATHINFO_EXTENSION)=="png") $image = imagecreatefrompng($imagepath);
+    if(pathinfo($imagepath,PATHINFO_EXTENSION)=="gif") $image = imagecreatefromgif($imagepath);
     if ($tn) {
         $size = 100;
         $tb = imagettfbbox($size, 0, $font, $text);
