@@ -66,7 +66,7 @@ function getImage($path)
     if(pathinfo($imagepath,PATHINFO_EXTENSION)=="png") $image = imagecreatefrompng($imagepath);
     if(pathinfo($imagepath,PATHINFO_EXTENSION)=="gif") $image = imagecreatefromgif($imagepath);
     if ($tn) {
-        $size = 100;
+        $size = 0.2*imagesx($image);
         $tb = imagettfbbox($size, 0, $font, $text);
         $x = ceil((imagesx($image) - $tb[2]) / 2);
         $y = ceil((imagesy($image) - $tb[5]) / 2);
