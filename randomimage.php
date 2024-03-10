@@ -32,7 +32,7 @@ if (isset($_GET["tn"])) {
         $color = hexdec(color_name_to_hex($_GET["color"]));
 }
 $path = $_GET["path"];
-$blacklist = [];
+$blacklist = ["@eaDir"];
 $file_ext = ["jpg", "png", "gif"];
 $tn = isset($_GET["tn"]);
 $font = "tnfont.ttf";
@@ -69,7 +69,7 @@ function getImage($path)
         $size = 100;
         $tb = imagettfbbox($size, 0, $font, $text);
         $x = ceil((imagesx($image) - $tb[2]) / 2);
-        $y = ceil((imagesy($image) - $tb[3]) / 2);
+        $y = ceil((imagesy($image) - $tb[5]) / 2);
         imagettftext($image, $size, 0, $x, $y, $color, $font, $text);
     }
     imagepng($image);
