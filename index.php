@@ -232,6 +232,7 @@
         <?php
         $vorschaulen=30;
         $eventdata = rowforeach("SELECT `eventname`,`datum`,`type`,`content`,`fotos`,`foto`,`id` from `ritzenbergen-events`;");
+        if(count($eventdata)==0) echo "<h5 class=\"align-center\">Es stehen keine Events an.</h5>";
         foreach ($eventdata as $i=>$value) {
           $value[3]=file_get_contents($value[3]);
           $date = explode("-", $value[1]);
@@ -557,13 +558,13 @@ foreach($eventdata as $i=>$value){
     <div class="container-fluid">
       <div class="loop-container">
         <div class="item display-1" data-linewords="
-        Amdeorf & Ritzenbergen *
+        Amedorf & Ritzenbergen *
           Niedersachsen *
           Gemeinde Blender *
           Landkreis Verden *" data-direction="-1" data-speed="0.05">
         </div>
         <div class="item display-1" data-linewords="
-          Amdeorf & Ritzenbergen *
+          Amedorf & Ritzenbergen *
           Niedersachsen *
           Gemeinde Blender *
           Landkreis Verden *" data-direction="-1" data-speed="0.05">
