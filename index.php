@@ -230,32 +230,53 @@
           </div>
         </div> -->
         <?php
-        $vorschaulen=30;
-        $eventdata = rowforeach("SELECT `eventname`,`datum`,`type`,`content`,`fotos`,`foto`,`id` from `ritzenbergen-events`;");
-        if(count($eventdata)==0) echo "<h5 class=\"align-center\">Es stehen keine Events an.</h5>";
-        foreach ($eventdata as $i=>$value) {
-          $value[3]=file_get_contents($value[3]);
-          $date = explode("-", $value[1]);
-          $slidetodata=($i%4==0)?"":" data-slide-to=\"".(($i%4)+0)."\" data-bs-slide-to=\"".(($i%4)+0)."\"";
-          $vorschautext = strip_tags($value[3]);
-          if (strlen($vorschautext) > $vorschaulen) {
-            $vorschautext = substr($vorschautext, 0, $vorschaulen-3) . "...";
-          }
+        $vorschaulen = 30;
+        $eventdata = rowforeach("SELECT `eventname`,`datum`,`type`,`content`,`fotos`,`foto`,`id`,`link` from `ritzenbergen-events`;");
+        if (count($eventdata) == 0)
+          echo "<h5 class=\"align-center\">Es stehen keine Events an.</h5>";
+        foreach ($eventdata as $i => $value) {
           if ($value[2] == "html") {
+            $value[3] = file_get_contents($value[3]);
+            $date = explode("-", $value[1]);
+            $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
+            $vorschautext = strip_tags($value[3]);
+            if (strlen($vorschautext) > $vorschaulen) {
+              $vorschautext = substr($vorschautext, 0, $vorschaulen - 3) . "...";
+            }
             echo "
           
           <div class=\"item features-image col-12 col-md-6 col-lg-3\">
 				    <div class=\"item-wrapper\">
 					    <div class=\"item-img mb-3\">
-						    <img src=\"bilder/" . $value[5] . "\"".$slidetodata.">
+						    <img src=\"bilder/" . $value[5] . "\"" . $slidetodata . ">
 					    </div>
 					    <div class=\"item-content align-left\">
 						    <h6 class=\"item-subtitle mbr-fonts-style mt-0 mb-3 display-5\">
-							    <strong><a class=\"text-black fw-bold modal-open-btn".(($i%4==0)?" active":"")."\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
+							    <strong><a class=\"text-black fw-bold modal-open-btn" . (($i % 4 == 0) ? " active" : "") . "\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
 						    </h6>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $vorschautext . "</p>
 						  <div class=\"mbr-section-btn item-footer\"><button class=\"btn item-btn btn-primary display-7 modal-open-btn\" data-id=\"" . $value[6] . "\">Mehr</button></div>
+					  </div>
+				  </div>
+			  </div>
+          ";
+          }
+          else if($value[2]=="link"){
+            echo "
+          
+          <div class=\"item features-image col-12 col-md-6 col-lg-3\">
+				    <div class=\"item-wrapper\">
+					    <div class=\"item-img mb-3\">
+						    <img src=\"bilder/" . $value[5] . "\"" . $slidetodata . ">
+					    </div>
+					    <div class=\"item-content align-left\">
+						    <h6 class=\"item-subtitle mbr-fonts-style mt-0 mb-3 display-5\">
+							    <strong><a class=\"text-black fw-bold modal-open-btn" . (($i % 4 == 0) ? " active" : "") . "\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
+						    </h6>
+						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
+						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $value[3] . "</p>
+						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"".$value[7]."\" download>Einladung runterladen</a></div>
 					  </div>
 				  </div>
 			  </div>
@@ -267,21 +288,22 @@
       </div>
     </div>
   </section>
-<?php
-foreach($eventdata as $i=>$value){
-  if($value[2]=="html"){
-    $value[3]=file_get_contents($value[3]);
-    echo "<div>
-    <div class=\"eventmodal".$value[6]." modal\">
+  <?php
+  foreach ($eventdata as $i => $value) {
+    if ($value[2] == "html") {
+      echo "<div>
+    <div class=\"eventmodal" . $value[6] . " modal\">
       <div class=\"modal-content\">
         <span class=\"close modal-close-btn\">×</span>
-        ".$value[3]."
+        ";
+      include($value[3]);
+      echo "
       </div>
     </div>";
+    }
   }
-}
 
-?>
+  ?>
 
   <!--Modal-NewITEM-4-->
   <!-- <div id="modal-NewITEM-4">
@@ -304,70 +326,70 @@ foreach($eventdata as $i=>$value){
         </h4>
       </div>
     </div> -->
-    <style>
+  <style>
+    .modal {
+      margin: auto;
+      justify-content: center;
+      text-align: center;
+      width: 100ch;
+      height: 600px;
+      top: 0;
+      /* Positioniert das Modal oben im Viewport */
+      left: 0;
+      /* Positioniert das Modal links im Viewport */
+      right: 0;
+      /* Erweitert das Modal auf die gesamte Breite */
+      bottom: 0;
+      /* Erweitert das Modal auf die gesamte Höhe */
+      z-index: 3000;
+      /* Bringt das Modal in den Vordergrund */
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      /* Hintergrundfarbe des Inhalts */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      /* Schatten */
+      border: none;
+      /* Entferne den Rahmen */
+      margin: 15% auto;
+      height: auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+    }
+
+    .close {
+      color: #4CAF50;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+
+    @media (max-width: 768px) {
+
+      /* Anpassungen für Smartphones */
       .modal {
-        margin: auto;
-        justify-content: center;
-        text-align: center;
-        width: 100ch;
-        height: 600px;
-        top: 0;
-        /* Positioniert das Modal oben im Viewport */
-        left: 0;
-        /* Positioniert das Modal links im Viewport */
-        right: 0;
-        /* Erweitert das Modal auf die gesamte Breite */
-        bottom: 0;
-        /* Erweitert das Modal auf die gesamte Höhe */
-        z-index: 3000;
-        /* Bringt das Modal in den Vordergrund */
+        max-width: 100vw;
       }
 
       .modal-content {
-        background-color: #ffffff;
-        /* Hintergrundfarbe des Inhalts */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-        /* Schatten */
-        border: none;
-        /* Entferne den Rahmen */
-        margin: 15% auto;
-        height: auto;
-        padding: 20px;
-        border-radius: 10px;
-        width: 80%;
+        max-width: 100vw;
+        /* 100% Breite auf Smartphones */
+        text-align: left;
       }
-
-      .close {
-        color: #4CAF50;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: red;
-        cursor: pointer;
-      }
+    }
+  </style>
 
 
-      @media (max-width: 768px) {
-
-        /* Anpassungen für Smartphones */
-        .modal {
-          max-width: 100vw;
-        }
-
-        .modal-content {
-          max-width: 100vw;
-          /* 100% Breite auf Smartphones */
-          text-align: left;
-        }
-      }
-    </style>
-
-
-    <!-- <script>
+  <!-- <script>
 
 
       const modal = document.getElementById("modal");
