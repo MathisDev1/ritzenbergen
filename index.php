@@ -162,7 +162,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="item features-image col-12 col-md-6 col-lg-3 active">
+        <!-- <div class="item features-image col-12 col-md-6 col-lg-3 active">
           <div class="item-wrapper">
             <div class="item-img mb-3">
               <img src="./Fotos/preisdoppelkopf2007.jpg">
@@ -228,7 +228,7 @@
             </div>
 
           </div>
-        </div>
+        </div> -->
         <?php
         $vorschaulen=30;
         $eventdata = rowforeach("SELECT `eventname`,`datum`,`type`,`content`,`fotos`,`foto`,`id` from `ritzenbergen-events`;");
