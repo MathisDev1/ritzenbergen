@@ -8,31 +8,29 @@
 </head>
 <body>
     <h1>Termine & Neuigkeiten</h1>
-    <form action="#">
-        <select name="box" id="box" size="4">
-            <option value="1">Box 1</option>
-            <option value="2">Box 2</option>
-            <option value="3">Box 3</option>
-            <option value="4">Box 4</option>
+    <form action="eintragen.php" method="post">
+        <select name="box" id="box" size="5">
+            <option value="html">PHP- oder HTML-Datei</option>
+            <option value="text">Text</option>
+            <option value="link">Link</option>
+            <option value="dlink">Link (Download)</option>
+            <option value="fotos">Fotos</option>
         </select><br><br>
+        
         <label for="ueberschrift">Überschrift:</label>
         <input type="text" name="ueberschrift" id="ueberschrift" placeholder="Überschrift eingeben" required><br><br>
         <label for="datum">Datum:</label>
         <input type="date" name="datum" id="datum" required><br><br>
-        <label for="inhalt">Inhalt:</label>
+        <label for="inhalt">Inhalt, Vorschau oder Pfad zur HTML- oder PHP-Datei:</label>
 
         <div class="buttonArea">
             <textarea name="inhalt" id="inhalt" rows="20" cols="43" placeholder="Inhalt eingeben" required></textarea><br><br>
-            <p>Button:</p>
-            <select name="box" id="buttonBox" size="2">
-                <option value="1">Ja</option>
-                <option value="2">Nein</option>
-            </select><br><br>
-                <input class="buttonLink" type="text" name="buttonLink" id="buttonLink" placeholder="Button Link" required><br><br>
-                <input class="buttonLink" type="text" name="buttonText" id="buttonText" placeholder="Button Text" required><br><br>
+            <input class="linkinput" type="text" name="link" id="link" placeholder="Link"><br><br>
+            <input type="text" name="foto" id="fotoinput" placeholder="Pfad zum Foto (vom Ordner bilder aus)">
         </div>
-            
-        <button type="submit" onclick="return confirm('Achtung! Wenn du bestätigst werden die änderungen sofort auf der Seite wirksam! Willst du den Text wirklich absenden?')">Absenden</button>    </form>
+        
+        <input type="submit" id="submit-btn"/>    
+    </form>
 
 
 </body>
