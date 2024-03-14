@@ -313,6 +313,30 @@
 			  </div>
             
             ";
+          }else if($value[2]=="fotos"){
+            $date = explode("-", $value[1]);
+            $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
+            $vorschautext = strip_tags($value[3]);
+            if (strlen($vorschautext) > $vorschaulen) {
+              $vorschautext = substr($vorschautext, 0, $vorschaulen - 3) . "...";
+            }
+            echo "
+            <div class=\"item features-image col-12 col-md-6 col-lg-3\">
+				    <div class=\"item-wrapper\">
+					    <div class=\"item-img mb-3\">
+						    <img src=\"bilder/" . $value[5] . "\"" . $slidetodata . ">
+					    </div>
+					    <div class=\"item-content align-left\">
+						    <h6 class=\"item-subtitle mbr-fonts-style mt-0 mb-3 display-5\">
+							    <strong><a class=\"text-black fw-bold modal-open-btn" . (($i % 4 == 0) ? " active" : "") . "\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
+						    </h6>
+						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
+						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $value[3] . "</p>
+						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"bildschau?path=".$value[4]."\">Fotos ansehen</a></div>
+					  </div>
+				  </div>
+			  </div>
+            ";
           }
         }
 

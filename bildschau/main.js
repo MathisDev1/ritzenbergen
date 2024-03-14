@@ -49,12 +49,14 @@ function removeUnactiveClass() {
     element.classList.remove(UNACTIVECLASS);
   });
 }
-if (getURLData().bild) {
+if (getURLData().bild && getURLData().path) {
   IMAGES[getURLData().bild].classList.add(ACTIVECLASS);
   showImage(IMAGES[getURLData().bild]);
   addUnactiveClass(IMAGES[getURLData().bild]);
+} else if(!getURLData().path){
+  window.location.href="../galerie.php";
 } else {
-  window.location.href = "index.php?bild=0";
+  window.location.href = "index.php?path="+getURLData().path+"&bild=0";
 }
 function hiddenkommentarfield(target) {
   // console.log(target.style.backgroundImage.split('url("')[1].split('")')[0]);
