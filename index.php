@@ -231,7 +231,7 @@
         </div> -->
         <?php
         $vorschaulen = 30;
-        $eventdata = rowforeach("SELECT `eventname`,`datum`,`type`,`content`,`fotos`,`foto`,`id`,`link` from `ritzenbergen-events`;");
+        $eventdata = rowforeach("SELECT `eventname`,`datum`,`type`,`content`, `link`, `foto`,`id` from `ritzenbergen-events` ORDER BY datum DESC;");
         if (count($eventdata) == 0)
           echo "<h5 class=\"align-center\">Es stehen keine Events an.</h5>";
         foreach ($eventdata as $i => $value) {
@@ -262,7 +262,13 @@
 			  </div>
           ";
           }
-          else if($value[2]=="link"){
+          else if($value[2]=="link" || $value[2]=="dlink"){
+            $date = explode("-", $value[1]);
+            $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
+            $vorschautext = strip_tags($value[3]);
+            if (strlen($vorschautext) > $vorschaulen) {
+              $vorschautext = substr($vorschautext, 0, $vorschaulen - 3) . "...";
+            }
             echo "
           
           <div class=\"item features-image col-12 col-md-6 col-lg-3\">
@@ -276,11 +282,37 @@
 						    </h6>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $value[3] . "</p>
-						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"".$value[7]."\" download>Einladung runterladen</a></div>
+						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"".$value[4]."\"".(($value[2]=="dlink")?" download":"").">Einladung ".(($value[2]=="dlink")?" runterladen":" öffnen")."</a></div>
 					  </div>
 				  </div>
 			  </div>
           ";
+          }else if($value[2]=="text"){
+            $date = explode("-", $value[1]);
+            $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
+            $vorschautext = strip_tags($value[3]);
+            if (strlen($vorschautext) > $vorschaulen) {
+              $vorschautext = substr($vorschautext, 0, $vorschaulen - 3) . "...";
+            }
+            echo "
+            
+            <div class=\"item features-image col-12 col-md-6 col-lg-3\">
+				    <div class=\"item-wrapper\">
+					    <div class=\"item-img mb-3\">
+						    <img src=\"bilder/" . $value[5] . "\"" . $slidetodata . ">
+					    </div>
+					    <div class=\"item-content align-left\">
+						    <h6 class=\"item-subtitle mbr-fonts-style mt-0 mb-3 display-5\">
+							    <strong><a class=\"text-black fw-bold modal-open-btn" . (($i % 4 == 0) ? " active" : "") . "\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
+						    </h6>
+						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
+						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $vorschautext . "</p>
+						  <div class=\"mbr-section-btn item-footer\"><button class=\"btn item-btn btn-primary display-7 modal-open-btn\" data-id=\"" . $value[6] . "\">Mehr</button></div>
+					  </div>
+				  </div>
+			  </div>
+            
+            ";
           }
         }
 
@@ -300,6 +332,14 @@
       echo "
       </div>
     </div>";
+    }else if($value[2]=="text"){
+      echo "<div>
+      <div class=\"eventmodal" . $value[6] . " modal\">
+        <div class=\"modal-content\">
+          <span class=\"close modal-close-btn\">×</span>
+          ".nl2br($value[3])."
+        </div>
+      </div>";
     }
   }
 
