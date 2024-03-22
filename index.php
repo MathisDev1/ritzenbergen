@@ -926,10 +926,12 @@
           <br>
           <br>
           Bei dieser Seite handelt es sich um eine Private Homepage der Dorfgemeinschaft Amedorf & Ritzenbergen.
-          Sie wird für keinerlei Gewerbliche oder Verkäufliche Zwecke genutzt. Daher wird kein Impressum benötigt.
           <br><br>
           © Front-End und Web Design: Mathis Kuhlenkamp <br>
           © Back-End und Datenbanken: Tom Kuhlenkamp, Jonas Kuhlenkamp
+          <br>
+          <br>
+          <a href="./assets/AdminPanel/LoginFormular/loginform.html">Administrations Login</a>
         </p><br><br>
 
       </div>
@@ -950,6 +952,7 @@
       openButtonUeber.addEventListener("click", openUeberModal);
 
       closeButtonUeber.addEventListener("click", closeUeberModal);
+
     </script>
   </div>
   <div class="modalKontakt">

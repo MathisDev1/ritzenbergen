@@ -1,3 +1,29 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +50,8 @@
     <title>
         <?php echo $titel_short; ?>
     </title>
-    <link rel="stylesheet" href="css/style.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/kommentarOptik.css">
     <link rel="stylesheet" href="./js-scripts/lazyloading.css">
     <script src="./js-scripts/getURLData.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -86,16 +113,16 @@
             ?>
         </section>
         <br><br>
+        <p id="info">Info: Bilder sehen aufgrund der automatischen skalierung auf größeren Bildschirmen besser aus.</p>
         <div class="kommentare"></div>
-        <form action="kommentareintragen.php" method="post">
-            <input type="text" name="username" placeholder="Name"> :
-            <input type="text" name="kommentar" placeholder="Kommentar">
-            <input type="hidden" name="bildpfad" class="bilderpath"
-                value="<?php echo $bilderpath . $bilder2[$_GET["bild"]]; ?>">
-            <input type="hidden" name="bild" value="<?php echo $_GET["bild"]; ?>" class="bildform">
 
-            <input type="submit" value="Absenden">
-        </form>
+            <form class="formular" action="kommentareintragen.php" method="post">
+            <input class="username-input" type="text" name="username" placeholder="Name"> <br>
+            <input class="kommentar-input" type="text" name="kommentar" placeholder="Kommentar">
+            <input type="hidden" name="bildpfad" class="bilderpath" value="<?php echo $bilderpath . $bilder2[$_GET["bild"]]; ?>">
+            <input type="hidden" name="bild" value="<?php echo $_GET["bild"]; ?>" class="bildform">
+            <input class="absenden-button" type="submit" value="Absenden">
+            </form>
     </div>
     <script src="main.js"></script>
 </body>
