@@ -8,7 +8,7 @@
   <link rel="shortcut icon" href="./Fotos/ortschild1.gif" type="image/x-icon">
   <meta name="description" content="Internetseite der Dorfgemeinschaft Amedorf und Ritzenbergen">
 
-  <title>Willkommen auf ritzenbergen.de</title>
+  <title>Das Bundesliga-Tippspiel</title>
   <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
   <link rel="stylesheet" href="assets/parallax/jarallax.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -26,7 +26,7 @@
   </noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/additional.css">
   <link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
-  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/bulitipp.css">
 
 
 
@@ -119,10 +119,9 @@
       <div class="row">
         <div class="content-wrap col-12 col-md-10">
           <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-            <strong>Willkommen Ritzenbergen</strong>
+            <strong>Willkommen im Bundesliga Tippspiel</strong>
           </h1>
-          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Dies ist eine Private Homepage für die Bewohner
-            der Dorfgemeinschaft Amedorf & Ritzenbergen</p>
+          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Das Tippspiel befindet sich noch in der Entwicklung. Es können auf dieser Seite bisher nur Tabellen und Spieltage angeschaut werden.</p>
           <div class="mbr-section-btn"><a class="btn btn-white-outline display-7"
               href="#gallery-9-u6k7q0xbqP">Erkunden</a></div>
         </div>

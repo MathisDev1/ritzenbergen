@@ -38,7 +38,7 @@
     <div class="container">
       <div class="navbar-brand">
         <span class="navbar-logo">
-					<a href="index.html">
+					<a href="index.php">
 						<img src="./Fotos/ortschild1.gif" style="height: 4.3rem;">
 					</a>
 				</span>
@@ -70,6 +70,9 @@
           <li class="nav-item">
             <a class="nav-link link text-black display-4" href="index.html#call-to-action-9-u6k7q0zosO">Umgebung</a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="bulitipp.php">Buli-Tipp</a>
+            </li>
           <li class="nav-item">
             <a class="nav-link link text-black display-4" href="index.html#contacts-2-u6k7q0Bejh">Kontakt</a>
           </li>
@@ -497,35 +500,170 @@
 
 
 
+<style>
+    .modal {
+      margin: auto;
+      justify-content: center;
+      text-align: center;
+      width: 100ch;
+      height: 600px;
+      top: 0;
+      /* Positioniert das Modal oben im Viewport */
+      left: 0;
+      /* Positioniert das Modal links im Viewport */
+      right: 0;
+      /* Erweitert das Modal auf die gesamte Breite */
+      bottom: 0;
+      /* Erweitert das Modal auf die gesamte Höhe */
+      z-index: 3000;
+      /* Bringt das Modal in den Vordergrund */
+    }
+
+    .modal-content {
+      background-color: #ffffff;
+      /* Hintergrundfarbe des Inhalts */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      /* Schatten */
+      border: none;
+      /* Entferne den Rahmen */
+      margin: 15% auto;
+      height: auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 80%;
+    }
+
+    .close {
+      color: #4CAF50;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: red;
+      cursor: pointer;
+    }
+
+
+    @media (max-width: 768px) {
+
+      /* Anpassungen für Smartphones */
+      .modal {
+        max-width: 100vw;
+      }
+
+      .modal-content {
+        max-width: 100vw;
+        /* 100% Breite auf Smartphones */
+        text-align: left;
+      }
+    }
+  </style>
 
 
 
 
 
- 
+
+
+
 <section class="footer3 cid-u6k7q0Blvk" once="footers" id="footer-6-u6k7q0Blvk">
     <div class="container">
-        <div class="row">
-            <div class="row-links">
-                <ul class="header-menu">
-                <li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="#" class="text-white">Über</a>
-                  </li><li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="#" class="text-white">Kontakt</a>
-                  </li><li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="#" class="text-white">Impressum</a>
-                  </li><li class="header-menu-item mbr-fonts-style display-5">
-                    <a href="#" class="text-white">Datenschutz</a>
-                  </li></ul>
-              </div>
-            <div class="col-12 mt-4">
-                <p class="mbr-fonts-style copyright display-7">
-                    © 2024 Ritzenbergen. Alle Rechte vorbehalten. <br>
-                </p>
-            </div>
+      <div class="row">
+        <div class="row-links">
+          <ul class="header-menu">
+            <li class="header-menu-item mbr-fonts-style display-5">
+              <button class="text-white btn-ueber">Über</button>
+            </li>
+            <li class="header-menu-item mbr-fonts-style display-5">
+              <button class="text-white btn-kontakt">Kontakt</button>
+            </li>
+            
+          </ul>
         </div>
+        <div class="col-12 mt-4">
+          <p class="mbr-fonts-style copyright display-7">
+            © 2024 Ritzenbergen. Alle Rechte vorbehalten. <br>
+          </p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+
+
+  <div class="modalUeber">
+    <div id="modalUeber" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeUeberModal()">×</span>
+        <h1>Über</h1>
+        <p>
+          Ritzenbergen ist ein kleines Dorf der Gemeinde Blender und liegt dicht an der Weser.
+          <br>
+          <br>
+          Bei dieser Seite handelt es sich um eine Private Homepage der Dorfgemeinschaft Amedorf & Ritzenbergen.
+          <br><br>
+          © Front-End und Web Design: Mathis Kuhlenkamp <br>
+          © Back-End und Datenbanken: Tom Kuhlenkamp, Jonas Kuhlenkamp
+          <br>
+          <br>
+          <a href="./assets/AdminPanel/LoginFormular/loginform.html">Administrations Login</a>
+        </p><br><br>
+
+      </div>
+    </div>
+    <script>
+      const modalUeber = document.getElementById("modalUeber");
+      const openButtonUeber = document.querySelector(".btn-ueber");
+      const closeButtonUeber = document.querySelector(".close-button");
+
+      function openUeberModal() {
+        modalUeber.style.display = "block";
+      }
+
+      function closeUeberModal() {
+        modalUeber.style.display = "none";
+      }
+
+      openButtonUeber.addEventListener("click", openUeberModal);
+
+      closeButtonUeber.addEventListener("click", closeUeberModal);
+
+    </script>
+  </div>
+  <div class="modalKontakt">
+
+    <div id="modalKontaktFormular" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeKontaktFormularModal()">×</span>
+        <h1>Kontakt</h1>
+        <p>
+          Tom Kuhlenkamp <br>
+          tom@ritzenbergen.de
+        </p><br><br>
+
+      </div>
+    </div>
+
+    <script>
+      const modalKontaktFormular = document.getElementById("modalKontaktFormular");
+      const openButtonKontaktFormular = document.querySelector(".btn-kontakt");
+      const closeButtonKontaktFormular = document.querySelector(".close-button");
+
+      function openKontaktFormularModal() {
+        modalKontaktFormular.style.display = "block";
+      }
+
+      function closeKontaktFormularModal() {
+        modalKontaktFormular.style.display = "none";
+      }
+
+      openButtonKontaktFormular.addEventListener("click", openKontaktFormularModal);
+
+      closeButtonKontaktFormular.addEventListener("click", closeKontaktFormularModal);
+    </script>
+  </div>
 
 
 
@@ -546,6 +684,7 @@
   <script src="assets/ytplayer/index.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
+  <script src="main.js"></script>
   
   <script>
 

@@ -1,9 +1,43 @@
-.username-input {
-    margin-bottom: 3px;
+.kommentare {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 80%;
 }
 
+.formular {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
-.kommentare {
-  margin-bottom: 20px;
-  font-family: Arial, sans-serif;
+.username-input, .kommentar-input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.absenden-button {
+  background-color: #0073b7;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #0073b7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.absenden-button:hover {
+  background-color: #00578b;
+}
+
+@media (max-width: 768px) {
+  .kommentare {
+    flex-direction: column;
+  }
 }
