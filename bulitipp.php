@@ -300,12 +300,308 @@
 </section>
 
 
+<<<<<<< HEAD
 <section class="bl-tabelle" id="bl-tabelle">
     <br><br><br>
     <div id="fblwidget_table"></div>
     <script src="//bundesliga-widgets.de/js/table.js"
     type="text/javascript"></script>
 </section>
+=======
+  <section class="gallery09 cid-u6k7q0xbqP" id="gallery-9-u6k7q0xbqP">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-12 col-lg-4 main-text">
+          <div class="">
+            <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
+              <strong>Bilderbuch Ritzenbergen</strong>
+            </h5>
+            <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
+              Klicke auf ein Bild um in unsere Galerie zu gelangen. Die Bilder sind nach Jahreszahl und Kategorie
+              geordnet.
+            </h6>
+          </div>
+        </div>
+        <div class="col-lg-8 side-features row">
+          <div class="item features-image col-12 col-md-6 col-lg-6 active">
+            <div class="item-wrapper">
+              <div class="item-img">
+                <a href="./galerie.php#doppelkopf"><img
+                    src="./randomimage.php?path=bilder/doppelkopf&recursive=1&tn=1&color=white&text=Doppelkopf&size=3"></a>
+              </div>
+            </div>
+          </div>
+          <div class="item features-image col-12 col-md-6 col-lg-6 active">
+            <div class="item-wrapper">
+              <div class="item-img">
+                <a href="./galerie.php#erntefest"><img
+                    src="./randomimage.php?path=bilder/erntefest&recursive=1&tn=1&color=white&text=Erntefest&size=3"></a>
+              </div>
+            </div>
+          </div>
+          <div class="item features-image col-12 col-md-6 col-lg-6 active">
+            <div class="item-wrapper">
+              <div class="item-img">
+                <a href="./galerie.php#fussballturnier"><img
+                    src="./randomimage.php?path=bilder/fussball&recursive=1&tn=1&color=white&text=Fußballturnier&size=3"></a>
+              </div>
+            </div>
+          </div>
+          <div class="item features-image col-12 col-md-6 col-lg-6 active">
+            <div class="item-wrapper">
+              <div class="item-img">
+                <a href="./galerie.php#osterfeuer"><img
+                    src="./randomimage.php?path=bilder/osterfeuer&recursive=1&tn=1&color=white&text=Osterfeuer&size=3"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="slider4 mbr-embla cid-u6k7q0yLdW" id="gallery-13-u6k7q0yLdW">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="embla position-relative" data-skip-snaps="true" data-align="center"
+            data-contain-scroll="trimSnaps" data-loop="true" data-auto-play="true" data-auto-play-interval="2"
+            data-draggable="true">
+            <div class="embla__viewport">
+              <div class="embla__container">
+                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                  <div class="slide-content">
+                    <div class="item-img">
+                      <div class="item-wrapper">
+                        <a href="galerie.php#erntefest">
+                          <img
+                            src="./randomimage.php?path=bilder/erntefest&recursive=1&tn=1&color=white&text=Erntefest&size=5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                  <div class="slide-content">
+                    <div class="item-img">
+                      <div class="item-wrapper">
+                        <a href="galerie.php#fussballturnier">
+                          <img
+                            src="./randomimage.php?path=bilder/fussball&recursive=1&tn=1&color=white&text=Fußballturnier&size=3" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                  <div class="slide-content">
+                    <div class="item-img">
+                      <div class="item-wrapper">
+                        <a href="galerie.php#doppelkopf">
+                          <img
+                            src="./randomimage.php?path=bilder/doppelkopf&recursive=1&tn=1&color=white&text=Doppelkopfturnier&size=3" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                  <div class="slide-content">
+                    <div class="item-img">
+                      <div class="item-wrapper">
+                        <a href="galerie.php#osterfeuer">
+                          <img
+                            src="./randomimage.php?path=bilder/osterfeuer&recursive=1&tn=1&color=white&text=Osterfeuer&size=5" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
+                  <div class="slide-content">
+                    <div class="item-img">
+                      <div class="item-wrapper">
+                        <img src="./Fotos/hauptfoto.jpg" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="embla__button embla__button--prev">
+              <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
+              <span class="sr-only visually-hidden visually-hidden">Previous</span>
+            </button>
+            <button class="embla__button embla__button--next">
+              <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
+              <span class="sr-only visually-hidden visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12 col-lg-10">
+          <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2">
+            <strong>Willkommen in Ritzenbergen</strong>
+          </h3>
+          <p class="mbr-text mbr-fonts-style display-7">Ritzenbergen, ehemalig "Rikinburg" wurde nur ein einziges mal im
+            Jahr 935 in der historischen Überlieferung erwähnt. In diesem Jahr wurde sie vom Edelherren Willarius der
+            Bremer Kirche geschenkt. Eine Identifikation dieser Burg mit einem auf einer Karte des Amtes Thedinghausen
+            von 1765 eingetragenen Hügel von etwa 150 m Durchmesser oberhalb eines alten Weserarms in Ritzenbergen ist
+            aber bisher nicht gesichert.</p>
+          <p class="mbr-text mbr-fonts-style display-7">Die Gemeinde Amedorf/Ritzenbergen wurde zusammen mit der
+            Gemeinde Holtum-Marsch im Jahr 1968 in die damalige Gemeinde Blender eingegliedert.</p>
+          <p class="mbr-text mbr-fonts-style display-7">In der Galerie findest du viele Fotos aus den letzten Jahren</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="gallery10 cid-u6k7q0zbuN" id="features-61-u6k7q0zbuN">
+    <div class="container-fluid">
+      <div class="loop-container">
+        <div class="item display-1" data-linewords="
+        Amedorf & Ritzenbergen *
+          Niedersachsen *
+          Gemeinde Blender *
+          Landkreis Verden *" data-direction="-1" data-speed="0.05">
+        </div>
+        <div class="item display-1" data-linewords="
+          Amedorf & Ritzenbergen *
+          Niedersachsen *
+          Gemeinde Blender *
+          Landkreis Verden *" data-direction="-1" data-speed="0.05">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="header14 cid-u6k7q0zosO mbr-parallax-background" id="call-to-action-9-u6k7q0zosO">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="card col-12 col-md-12 col-lg-10">
+          <div class="card-wrapper">
+            <div class="card-box align-center">
+              <h1 class="card-title mbr-fonts-style mb-4 display-1">
+                <strong>Entdecke die Umgebung</strong>
+              </h1>
+              <p class="mbr-text mbr-fonts-style mb-4 display-7">
+                Mit klicken auf den Button findest du nützliche Links aus der Umgebung
+              </p>
+              <div class="mbr-section-btn mt-4">
+                <button class="btn btn-primary display-7 btn-entdecken" id="myBtn">Jetzt Entdecken</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <style>
+    ul {
+      list-style-type: none;
+      /* Entfernt den Aufzählungspunkt */
+    }
+  </style>
+
+  <!--Modal-Entdecken-->
+  <div id="modalEntdecken" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEntdeckenModal()">×</span>
+      <h1>Entdecke unsere Umgebung</h1>
+      <h5>An dieser Stelle finden Sie einige Verbindungen zu anderen Stellen im WWW. Beim Anwählen verlassen Sie den
+        Bereich der Homepage von Amedorf und Ritzenbergen. Dementsprechend übernehmen wir (selbstverständlicherweise)
+        keine Haftung für die Folgen des Konsums verlinkter Inhalte.</h5><br><br>
+      <ul>
+        <b>
+          <li><a href="https://alt-blender.de" target="_blank">alt-blender.de - Historische Fotos und Dokumente aus
+              Blender und umzu</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.verden.de/" target="_blank">Verden/Aller</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.langwedel.de/" target="_blank">Flecken Langwedel</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.feuerwehr-blender.de/" target="_blank">Freiwillige Feuerwehr Blender</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.browiede.de/" target="_blank">Landgasthaus Browiede</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.mittelweserverband.de/" target="_blank">Mittelweserverband</a></li>
+        </b>
+        <b>
+          <li><a href="http://angelverein-doerverden.de/" target="_blank">Angelverein Dörverden</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.theater-holtum.de/" target="_blank">Theatergruppe des gemischten Chores "Polyhymnia"
+              Holtum Marsch</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
+        </b>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    const modalEntdecken = document.getElementById("modalEntdecken");
+    const openButtonEntdecken = document.querySelector(".btn-entdecken");
+    const closeButtonEntdecken = document.querySelector(".close-button");
+
+    function openEntdeckenModal() {
+      modalEntdecken.style.display = "block";
+    }
+
+    function closeEntdeckenModal() {
+      modalEntdecken.style.display = "none";
+    }
+
+    openButtonEntdecken.addEventListener("click", openEntdeckenModal);
+
+    closeButtonEntdecken.addEventListener("click", closeEntdeckenModal);
+  </script>
+  </div>
+
+
+
+
+
+
+
+>>>>>>> a6171a30d716d619c928d18a1fcac0f9a1cd0480
 
 
 
