@@ -671,13 +671,13 @@
           <div class="card-wrapper">
             <div class="card-box align-center">
               <h1 class="card-title mbr-fonts-style mb-4 display-1">
-                <strong>Endecke die Umgebung</strong>
+                <strong>Entdecke die Umgebung</strong>
               </h1>
               <p class="mbr-text mbr-fonts-style mb-4 display-7">
                 Mit klicken auf den Button findest du nützliche Links aus der Umgebung
               </p>
               <div class="mbr-section-btn mt-4">
-                <button class="btn btn-primary display-7 btn-entdecken" id="myBtn">Jetzt Enddecken</button>
+                <button class="btn btn-primary display-7 btn-entdecken" id="myBtn">Jetzt Entdecken</button>
               </div>
             </div>
           </div>
