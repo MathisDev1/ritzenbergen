@@ -30,7 +30,7 @@
 <head>
     <?php
     // Fehler anzeigen lassen
-    error_reporting(-1);
+    error_reporting(0);
 
     // mysql verbinden
     include("../../mysqlverbinden.php");
@@ -79,9 +79,11 @@
             }
             array_unique($bilder_mit_kommentar);
             foreach ($bilder_mit_kommentar as $key => $value) {
+                $aktuellerkommentar="";
                 foreach (rowforeach("SELECT * from fotoscomments where bildpfad='$value'") as $j => $row) {
-                    $kommentare[$value] = "<p class=\"comments\">" . $row[1] . ": " . $row[2] . "</p>";
+                    $aktuellerkommentar .= "<p class=\"comments\">" . $row[1] . ": " . $row[2] . "</p>";
                 }
+                $kommentare[$value]=$aktuellerkommentar;
             }
             foreach ($bilder as $key => $filename) {
                 if ($filename == "@eaDir" || $filename == "." || $filename == ".." || $filename == "Thumbs.db" || pathinfo($filename, PATHINFO_EXTENSION) == "txt") {
