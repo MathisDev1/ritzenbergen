@@ -88,23 +88,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
             <li class="nav-item">
-              <a class="nav-link link text-black display-4" href="#news-1-u6k7q0xyDG">Termine</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link text-black display-4" href="galerie.php" aria-expanded="false">Galerie</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link text-black display-4" href="#call-to-action-9-u6k7q0zosO">Umgebung</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link text-black display-4" href="bulitipp.php">Buli-Tipp</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link link text-black display-4" href="#contacts-2-u6k7q0Bejh">Kontakt</a>
+              <a class="nav-link link text-black display-4" href="#bl-tabelle">Tabelle</a>
             </li>
           </ul>
           <div class="navbar-buttons mbr-section-btn">
-            <a class="btn btn-primary display-4" href="#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>
+            <a class="btn btn-primary display-4" href="#contact-form-2-u6k7q0BfGa">Registrieren</a>
           </div>
         </div>
       </div>
@@ -152,224 +140,6 @@
 
 
 
-  <section class="features03 cid-u6k7q0xyDG" id="news-1-u6k7q0xyDG">
-    <div class="container-fluid">
-      <div class="row justify-content-center mb-5">
-        <div class="col-12 content-head">
-          <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-              <strong>Termine & Neuigkeiten</strong>
-            </h4>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <!-- <div class="item features-image col-12 col-md-6 col-lg-3 active">
-          <div class="item-wrapper">
-            <div class="item-img mb-3">
-              <img src="./Fotos/preisdoppelkopf2007.jpg">
-            </div>
-            <div class="item-content align-left">
-              <h6 class="item-subtitle mbr-fonts-style mb-3 display-5">
-                <strong><a class="text-black fw-bold" href="#">Doppelkopf in Jerusalem!</a></strong>
-              </h6>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7">28.03.2024</p>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7">Es findet wieder das alljährige Doppelkopf in Jerusalem
-                statt. Klicke auf den Button um mehr zu erfahren.</p>
-              <div class="mbr-section-btn item-footer"><a href="#contact-form-2-u6k7q0BfGa"
-                  class="btn item-btn btn-primary display-7">Mehr</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="item features-image col-12 col-md-6 col-lg-3">
-          <div class="item-wrapper">
-            <div class="item-img mb-3">
-              <img src="./Fotos/osterfeuer2011.jpg" data-slide-to="1" data-bs-slide-to="1">
-            </div>
-            <div class="item-content align-left">
-              <h6 class="item-subtitle mbr-fonts-style mb-3 display-5">
-                <strong><a class="text-black fw-bold" href="#">Osterfeuer</a></strong>
-              </h6>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7">Ostersonntag</p>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7">Bald ist wieder Osterfeuer in Ritzenbergen!</p>
-              <div class="mbr-section-btn item-footer"><a href="#"
-                  class="btn item-btn btn-primary display-7">Einladung</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="item features-image col-12 col-md-6 col-lg-3">
-          <div class="item-wrapper">
-            <div class="item-img mb-3">
-              <img src="./Fotos/erntefest2011.jpg" data-slide-to="2" data-bs-slide-to="2">
-            </div>
-            <div class="item-content align-left">
-              <h6 class="item-subtitle mbr-fonts-style mt-0 mb-3 display-5">
-                <strong><a class="text-black fw-bold" href="#">Erntefest</a></strong>
-              </h6>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7">September</p>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7">Amedorf & Ritzenbergen feiern wieder Erntefest!</p>
-              <div class="mbr-section-btn item-footer"><a href="#"
-                  class="btn item-btn btn-primary display-7">Einladung</a></div>
-            </div>
-          </div>
-        </div>
-        <div class="item features-image col-12 col-md-6 col-lg-3">
-          <div class="item-wrapper">
-            <div class="item-img mb-3">
-              <img src="./Fotos/fußballturniert2007.jpg" data-slide-to="3" data-bs-slide-to="3">
-            </div>
-            <div class="item-content align-left">
-              <h6 class="item-subtitle mbr-fonts-style mt-0 mb-3 display-5">
-                <strong><a class="text-black fw-bold" href="#">Neue Homepage</a></strong>
-              </h6>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7">März</p>
-              <p class="mbr-text mbr-fonts-style mb-3 display-7">Ritzenbergen hat nun endlich eine neue Homepage</p>
-              <div class="mbr-section-btn item-footer"><button
-                  class="btn item-btn btn-primary display-7 btn-item4">Mehr</button>
-              </div>
-            </div>
-
-          </div>
-        </div> -->
-        <?php
-        $vorschaulen = 30;
-        $eventdata = rowforeach("SELECT `eventname`,`datum`,`type`,`content`, `link`, `foto`,`id` from `ritzenbergen-events` ORDER BY datum DESC;");
-        if (count($eventdata) == 0)
-          echo "<h5 class=\"align-center\">Es stehen keine Events an.</h5>";
-        foreach ($eventdata as $i => $value) {
-          if ($value[2] == "html") {
-            $value[3] = file_get_contents($value[3]);
-            $date = explode("-", $value[1]);
-            $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
-            $vorschautext = strip_tags($value[3]);
-            if (strlen($vorschautext) > $vorschaulen) {
-              $vorschautext = substr($vorschautext, 0, $vorschaulen - 3) . "...";
-            }
-            echo "
-          
-          <div class=\"item features-image col-12 col-md-6 col-lg-3\">
-				    <div class=\"item-wrapper\">
-					    <div class=\"item-img mb-3\">
-						    <img src=\"bilder/" . $value[5] . "\"" . $slidetodata . ">
-					    </div>
-					    <div class=\"item-content align-left\">
-						    <h6 class=\"item-subtitle mbr-fonts-style mt-0 mb-3 display-5\">
-							    <strong><a class=\"text-black fw-bold modal-open-btn" . (($i % 4 == 0) ? " active" : "") . "\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
-						    </h6>
-						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
-						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $vorschautext . "</p>
-						  <div class=\"mbr-section-btn item-footer\"><button class=\"btn item-btn btn-primary display-7 modal-open-btn\" data-id=\"" . $value[6] . "\">Mehr</button></div>
-					  </div>
-				  </div>
-			  </div>
-          ";
-          }
-          else if($value[2]=="link" || $value[2]=="dlink"){
-            $date = explode("-", $value[1]);
-            $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
-            $vorschautext = strip_tags($value[3]);
-            if (strlen($vorschautext) > $vorschaulen) {
-              $vorschautext = substr($vorschautext, 0, $vorschaulen - 3) . "...";
-            }
-            echo "
-          
-          <div class=\"item features-image col-12 col-md-6 col-lg-3\">
-				    <div class=\"item-wrapper\">
-					    <div class=\"item-img mb-3\">
-						    <img src=\"bilder/" . $value[5] . "\"" . $slidetodata . ">
-					    </div>
-					    <div class=\"item-content align-left\">
-						    <h6 class=\"item-subtitle mbr-fonts-style mt-0 mb-3 display-5\">
-							    <strong><a class=\"text-black fw-bold modal-open-btn" . (($i % 4 == 0) ? " active" : "") . "\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
-						    </h6>
-						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
-						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $value[3] . "</p>
-						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"".$value[4]."\"".(($value[2]=="dlink")?" download":"").">Einladung ".(($value[2]=="dlink")?" runterladen":" öffnen")."</a></div>
-					  </div>
-				  </div>
-			  </div>
-          ";
-          }else if($value[2]=="text"){
-            $date = explode("-", $value[1]);
-            $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
-            $vorschautext = strip_tags($value[3]);
-            if (strlen($vorschautext) > $vorschaulen) {
-              $vorschautext = substr($vorschautext, 0, $vorschaulen - 3) . "...";
-            }
-            echo "
-            
-            <div class=\"item features-image col-12 col-md-6 col-lg-3\">
-				    <div class=\"item-wrapper\">
-					    <div class=\"item-img mb-3\">
-						    <img src=\"bilder/" . $value[5] . "\"" . $slidetodata . ">
-					    </div>
-					    <div class=\"item-content align-left\">
-						    <h6 class=\"item-subtitle mbr-fonts-style mt-0 mb-3 display-5\">
-							    <strong><a class=\"text-black fw-bold modal-open-btn" . (($i % 4 == 0) ? " active" : "") . "\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
-						    </h6>
-						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
-						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $vorschautext . "</p>
-						  <div class=\"mbr-section-btn item-footer\"><button class=\"btn item-btn btn-primary display-7 modal-open-btn\" data-id=\"" . $value[6] . "\">Mehr</button></div>
-					  </div>
-				  </div>
-			  </div>
-            
-            ";
-          }else if($value[2]=="fotos"){
-            $date = explode("-", $value[1]);
-            $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
-            $vorschautext = strip_tags($value[3]);
-            if (strlen($vorschautext) > $vorschaulen) {
-              $vorschautext = substr($vorschautext, 0, $vorschaulen - 3) . "...";
-            }
-            echo "
-            <div class=\"item features-image col-12 col-md-6 col-lg-3\">
-				    <div class=\"item-wrapper\">
-					    <div class=\"item-img mb-3\">
-						    <img src=\"bilder/" . $value[5] . "\"" . $slidetodata . ">
-					    </div>
-					    <div class=\"item-content align-left\">
-						    <h6 class=\"item-subtitle mbr-fonts-style mt-0 mb-3 display-5\">
-							    <strong><a class=\"text-black fw-bold modal-open-btn" . (($i % 4 == 0) ? " active" : "") . "\" href=\"#\" data-id=\"" . $value[6] . "\">" . $value[0] . "</a></strong>
-						    </h6>
-						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
-						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $value[3] . "</p>
-						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"bildschau?path=".$value[4]."\">Fotos ansehen</a></div>
-					  </div>
-				  </div>
-			  </div>
-            ";
-          }
-        }
-
-        ?>
-      </div>
-    </div>
-  </section>
-  <?php
-  foreach ($eventdata as $i => $value) {
-    if ($value[2] == "html") {
-      echo "<div>
-    <div class=\"eventmodal" . $value[6] . " modal\">
-      <div class=\"modal-content\">
-        <span class=\"close modal-close-btn\">×</span>
-        ";
-      include($value[3]);
-      echo "
-      </div>
-    </div>";
-    }else if($value[2]=="text"){
-      echo "<div>
-      <div class=\"eventmodal" . $value[6] . " modal\">
-        <div class=\"modal-content\">
-          <span class=\"close modal-close-btn\">×</span>
-          ".nl2br($value[3])."
-        </div>
-      </div>";
-    }
-  }
-
-  ?>
 
   <!--Modal-NewITEM-4-->
   <!-- <div id="modal-NewITEM-4">
@@ -476,301 +246,66 @@
     </script> -->
   </div>
 
+<section class="rangliste" id="rangliste">
+
+        <h1>Das Ritzenberger Bundesliga Tippspiel</h1>
+
+        <table class="spieltag">
+            <thead>
+                <tr>
+                    <th>Heim</th>
+                    <th>Ergebnis </th>
+                    <th>Gast</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Werder Bremen</td>
+                    <td>5:2</td>
+                    <td>Bayern München</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="spieler-rangliste">
+            <thead>
+                <tr>
+                    <th>Platz</th>
+                    <th>Verein</th>
+                    <th>Name</th>
+                    <th>Punkte</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><img src="https://e7.pngegg.com/pngimages/505/255/png-clipart-sv-werder-bremen-ii-3-liga-1964-65-bundesliga-sc-paderborn-07-football-text-sport.png" alt="FC Bayern München"></td>
+                    <td>Mathis Kuhlenkamp</td>
+                    <td>120</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><img src="https://e7.pngegg.com/pngimages/505/255/png-clipart-sv-werder-bremen-ii-3-liga-1964-65-bundesliga-sc-paderborn-07-football-text-sport.png" alt="Borussia Dortmund"></td>
+                    <td>Tom Kuhlenkamp</td>
+                    <td>115</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><img src="https://e7.pngegg.com/pngimages/505/255/png-clipart-sv-werder-bremen-ii-3-liga-1964-65-bundesliga-sc-paderborn-07-football-text-sport.png" alt="RB Leipzig"></td>
+                    <td>Jonas Kuhlenkamp</td>
+                    <td>110</td>
+                </tr>
+                </tbody>
+        </table>
+</section>
 
 
-  <section class="gallery09 cid-u6k7q0xbqP" id="gallery-9-u6k7q0xbqP">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-12 col-lg-4 main-text">
-          <div class="">
-            <h5 class="mbr-section-title mbr-fonts-style mt-0 mb-4 display-2">
-              <strong>Bilderbuch Ritzenbergen</strong>
-            </h5>
-            <h6 class="mbr-section-subtitle mbr-fonts-style mt-0 mb-4 display-7">
-              Klicke auf ein Bild um in unsere Galerie zu gelangen. Die Bilder sind nach Jahreszahl und Kategorie
-              geordnet.
-            </h6>
-          </div>
-        </div>
-        <div class="col-lg-8 side-features row">
-          <div class="item features-image col-12 col-md-6 col-lg-6 active">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <a href="./galerie.php#doppelkopf"><img
-                    src="./randomimage.php?path=bilder/doppelkopf&recursive=1&tn=1&color=white&text=Doppelkopf&size=3"></a>
-              </div>
-            </div>
-          </div>
-          <div class="item features-image col-12 col-md-6 col-lg-6 active">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <a href="./galerie.php#erntefest"><img
-                    src="./randomimage.php?path=bilder/erntefest&recursive=1&tn=1&color=white&text=Erntefest&size=3"></a>
-              </div>
-            </div>
-          </div>
-          <div class="item features-image col-12 col-md-6 col-lg-6 active">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <a href="./galerie.php#fussballturnier"><img
-                    src="./randomimage.php?path=bilder/fussball&recursive=1&tn=1&color=white&text=Fußballturnier&size=3"></a>
-              </div>
-            </div>
-          </div>
-          <div class="item features-image col-12 col-md-6 col-lg-6 active">
-            <div class="item-wrapper">
-              <div class="item-img">
-                <a href="./galerie.php#osterfeuer"><img
-                    src="./randomimage.php?path=bilder/osterfeuer&recursive=1&tn=1&color=white&text=Osterfeuer&size=3"></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-
-  <section class="slider4 mbr-embla cid-u6k7q0yLdW" id="gallery-13-u6k7q0yLdW">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="embla position-relative" data-skip-snaps="true" data-align="center"
-            data-contain-scroll="trimSnaps" data-loop="true" data-auto-play="true" data-auto-play-interval="2"
-            data-draggable="true">
-            <div class="embla__viewport">
-              <div class="embla__container">
-                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                  <div class="slide-content">
-                    <div class="item-img">
-                      <div class="item-wrapper">
-                        <a href="galerie.php#erntefest">
-                          <img
-                            src="./randomimage.php?path=bilder/erntefest&recursive=1&tn=1&color=white&text=Erntefest&size=5" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                  <div class="slide-content">
-                    <div class="item-img">
-                      <div class="item-wrapper">
-                        <a href="galerie.php#fussballturnier">
-                          <img
-                            src="./randomimage.php?path=bilder/fussball&recursive=1&tn=1&color=white&text=Fußballturnier&size=3" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                  <div class="slide-content">
-                    <div class="item-img">
-                      <div class="item-wrapper">
-                        <a href="galerie.php#doppelkopf">
-                          <img
-                            src="./randomimage.php?path=bilder/doppelkopf&recursive=1&tn=1&color=white&text=Doppelkopfturnier&size=3" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                  <div class="slide-content">
-                    <div class="item-img">
-                      <div class="item-wrapper">
-                        <a href="galerie.php#osterfeuer">
-                          <img
-                            src="./randomimage.php?path=bilder/osterfeuer&recursive=1&tn=1&color=white&text=Osterfeuer&size=5" />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="embla__slide slider-image item" style="margin-left: 1rem; margin-right: 1rem;">
-                  <div class="slide-content">
-                    <div class="item-img">
-                      <div class="item-wrapper">
-                        <img src="./Fotos/hauptfoto.jpg" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <button class="embla__button embla__button--prev">
-              <span class="mobi-mbri mobi-mbri-arrow-prev" aria-hidden="true"></span>
-              <span class="sr-only visually-hidden visually-hidden">Previous</span>
-            </button>
-            <button class="embla__button embla__button--next">
-              <span class="mobi-mbri mobi-mbri-arrow-next" aria-hidden="true"></span>
-              <span class="sr-only visually-hidden visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-md-12 col-lg-10">
-          <h3 class="mbr-section-title mbr-fonts-style mb-4 mt-0 display-2">
-            <strong>Willkommen in Ritzenbergen</strong>
-          </h3>
-          <p class="mbr-text mbr-fonts-style display-7">Ritzenbergen, ehemalig "Rikinburg" wurde nur ein einziges mal im
-            Jahr 935 in der historischen Überlieferung erwähnt. In diesem Jahr wurde sie vom Edelherren Willarius der
-            Bremer Kirche geschenkt. Eine Identifikation dieser Burg mit einem auf einer Karte des Amtes Thedinghausen
-            von 1765 eingetragenen Hügel von etwa 150 m Durchmesser oberhalb eines alten Weserarms in Ritzenbergen ist
-            aber bisher nicht gesichert.</p>
-          <p class="mbr-text mbr-fonts-style display-7">Die Gemeinde Amedorf/Ritzenbergen wurde zusammen mit der
-            Gemeinde Holtum-Marsch im Jahr 1968 in die damalige Gemeinde Blender eingegliedert.</p>
-          <p class="mbr-text mbr-fonts-style display-7">In der Galerie findest du viele Fotos aus den letzten Jahren</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-
-  <section class="gallery10 cid-u6k7q0zbuN" id="features-61-u6k7q0zbuN">
-    <div class="container-fluid">
-      <div class="loop-container">
-        <div class="item display-1" data-linewords="
-        Amedorf & Ritzenbergen *
-          Niedersachsen *
-          Gemeinde Blender *
-          Landkreis Verden *" data-direction="-1" data-speed="0.05">
-        </div>
-        <div class="item display-1" data-linewords="
-          Amedorf & Ritzenbergen *
-          Niedersachsen *
-          Gemeinde Blender *
-          Landkreis Verden *" data-direction="-1" data-speed="0.05">
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <section class="header14 cid-u6k7q0zosO mbr-parallax-background" id="call-to-action-9-u6k7q0zosO">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="card col-12 col-md-12 col-lg-10">
-          <div class="card-wrapper">
-            <div class="card-box align-center">
-              <h1 class="card-title mbr-fonts-style mb-4 display-1">
-                <strong>Endecke die Umgebung</strong>
-              </h1>
-              <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                Mit klicken auf den Button findest du nützliche Links aus der Umgebung
-              </p>
-              <div class="mbr-section-btn mt-4">
-                <button class="btn btn-primary display-7 btn-entdecken" id="myBtn">Jetzt Enddecken</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <style>
-    ul {
-      list-style-type: none;
-      /* Entfernt den Aufzählungspunkt */
-    }
-  </style>
-
-  <!--Modal-Entdecken-->
-  <div id="modalEntdecken" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeEntdeckenModal()">×</span>
-      <h1>Entdecke unsere Umgebung</h1>
-      <h5>An dieser Stelle finden Sie einige Verbindungen zu anderen Stellen im WWW. Beim Anwählen verlassen Sie den
-        Bereich der Homepage von Amedorf und Ritzenbergen. Dementsprechend übernehmen wir (selbstverständlicherweise)
-        keine Haftung für die Folgen des Konsums verlinkter Inhalte.</h5><br><br>
-      <ul>
-        <b>
-          <li><a href="https://alt-blender.de" target="_blank">alt-blender.de - Historische Fotos und Dokumente aus
-              Blender und umzu</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.verden.de/" target="_blank">Verden/Aller</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.langwedel.de/" target="_blank">Flecken Langwedel</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.feuerwehr-blender.de/" target="_blank">Freiwillige Feuerwehr Blender</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.browiede.de/" target="_blank">Landgasthaus Browiede</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.mittelweserverband.de/" target="_blank">Mittelweserverband</a></li>
-        </b>
-        <b>
-          <li><a href="http://angelverein-doerverden.de/" target="_blank">Angelverein Dörverden</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.theater-holtum.de/" target="_blank">Theatergruppe des gemischten Chores "Polyhymnia"
-              Holtum Marsch</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
-        </b>
-
-      </ul>
-    </div>
-  </div>
-
-
-
-
-
-  <script>
-    const modalEntdecken = document.getElementById("modalEntdecken");
-    const openButtonEntdecken = document.querySelector(".btn-entdecken");
-    const closeButtonEntdecken = document.querySelector(".close-button");
-
-    function openEntdeckenModal() {
-      modalEntdecken.style.display = "block";
-    }
-
-    function closeEntdeckenModal() {
-      modalEntdecken.style.display = "none";
-    }
-
-    openButtonEntdecken.addEventListener("click", openEntdeckenModal);
-
-    closeButtonEntdecken.addEventListener("click", closeEntdeckenModal);
-  </script>
-  </div>
-
-
-
-
-
-
-
+<section class="bl-tabelle" id="bl-tabelle">
+    <br><br><br>
+    <div id="fblwidget_table"></div>
+    <script src="//bundesliga-widgets.de/js/table.js"
+    type="text/javascript"></script>
+</section>
 
 
 

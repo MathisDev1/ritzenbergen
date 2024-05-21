@@ -96,9 +96,7 @@
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#call-to-action-9-u6k7q0zosO">Umgebung</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link link text-black display-4" href="bulitipp.php">Buli-Tipp</a>
-            </li>
+
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#contacts-2-u6k7q0Bejh">Kontakt</a>
             </li>
@@ -671,13 +669,13 @@
           <div class="card-wrapper">
             <div class="card-box align-center">
               <h1 class="card-title mbr-fonts-style mb-4 display-1">
-                <strong>Endecke die Umgebung</strong>
+                <strong>Entdecke die Umgebung</strong>
               </h1>
               <p class="mbr-text mbr-fonts-style mb-4 display-7">
                 Mit klicken auf den Button findest du nützliche Links aus der Umgebung
               </p>
               <div class="mbr-section-btn mt-4">
-                <button class="btn btn-primary display-7 btn-entdecken" id="myBtn">Jetzt Enddecken</button>
+                <button class="btn btn-primary display-7 btn-entdecken" id="myBtn">Jetzt Entdecken</button>
               </div>
             </div>
           </div>
@@ -786,12 +784,12 @@
         <div class="col-12 content-head">
           <div class="mbr-section-head mb-5">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-              <strong>Registrierung für das BuLi-Tipp Spiel</strong>
+              <strong>Kuchenspende Erntefest 2024</strong>
             </h3><br>
             <h5 style="text-align: center;"><b></b> <br>
-              In der kommenden Fußball Saison 24/25 wollen wir wieder mit dem Bundesliga Tippspiel durchstarten. Dies wurde komplett überarbeitet und nutzerfreundlicher gemacht. 
-            Falls du in der nächsten Saison wieder Tippen willst, kannst du dich hier anmelden.</h5><br>
-            <p style="text-align: center;">Bisherige Anmeldungen: 1</p>
+              Am 31. August findet wieder unser Erntefest statt. Wie in jedem Jahr, können auch wieder Kuchen & Torten gespendet werden. <br>
+            Bitte meldet euch mit Vor & Nachnamen sowie der Tortenart an.</h5><br>
+            <p style="text-align: center;">Bisherige Spenden: 0</p>
           </div>
         </div>
       </div>
@@ -800,8 +798,7 @@
           <form action="" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input
               type="hidden" name="email" data-form-email="true" value="">
             <div class="row">
-              <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Du hast dich erfolgreich zum
-                Buli Tipp angemeldet</div>
+              <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Vielen dank für deine Spende 🍀</div>
               <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">
                 Oh. Da hat etwas nicht richtig funktioniert.
               </div>
@@ -813,7 +810,7 @@
               </div>
 
               <div class="col-12 form-group mb-3" data-for="textarea">
-                <textarea name="textarea" placeholder="Personenanzahl" data-form-field="textarea" class="form-control"
+                <textarea name="textarea" placeholder="Tortenart/Anzahl" data-form-field="textarea" class="form-control"
                   id="textarea-form02-0"></textarea>
               </div>
               <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn"><button type="submit"

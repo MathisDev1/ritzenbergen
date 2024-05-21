@@ -70,9 +70,7 @@
           <li class="nav-item">
             <a class="nav-link link text-black display-4" href="index.html#call-to-action-9-u6k7q0zosO">Umgebung</a>
           </li>
-          <li class="nav-item">
-              <a class="nav-link link text-black display-4" href="bulitipp.php">Buli-Tipp</a>
-            </li>
+
           <li class="nav-item">
             <a class="nav-link link text-black display-4" href="index.html#contacts-2-u6k7q0Bejh">Kontakt</a>
           </li>
