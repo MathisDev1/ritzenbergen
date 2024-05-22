@@ -81,17 +81,15 @@
 }
 
 .formular {
-  display: flex;
+  display: left;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   margin: 10px;
-  padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 5px;
 }
 
 .username-input, .kommentar-input {
-  width: 100%;
+  width: 20%;
   margin-bottom: 10px;
   padding: 10px;
   border: 1px solid #ddd;
@@ -114,5 +112,12 @@
 @media (max-width: 768px) {
   .kommentare {
     flex-direction: column;
+  }
+  .username-input, .kommentar-input {
+    width: 50%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
   }
 }

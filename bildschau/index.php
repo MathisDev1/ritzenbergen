@@ -188,7 +188,7 @@
             <input class="username-input" type="text" name="username" placeholder="Name"> <br>
             <input class="kommentar-input" type="text" name="kommentar" placeholder="Kommentar">
             <input type="hidden" name="bildpfad" class="bilderpath" value="<?php echo $bilderpath . $bilder2[$_GET["bild"]]; ?>">
-            <input type="hidden" name="bild" value="<?php echo $_GET["bild"]; ?>" class="bildform">
+            <input type="hidden" name="bild" value="<?php echo $_GET["bild"]; ?>" class="bildform"><br>
             <input class="absenden-button" type="submit" value="Absenden">
             </form>
     </div>
