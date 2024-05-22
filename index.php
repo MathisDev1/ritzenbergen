@@ -53,7 +53,7 @@
   <?php
 
   include("../mysqlverbinden.php");
-  include("bildschau/phpscripts/rowforeach.php");
+  include("rowforeach.php");
 
   ?>
 </head>

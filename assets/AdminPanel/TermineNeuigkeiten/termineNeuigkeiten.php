@@ -1,3 +1,7 @@
+<?php 
+include("../../../../mysqlverbinden.php");
+include("../../../rowforeach.php");
+include("../header.php"); if($valid){ ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -35,3 +39,4 @@
 
 </body>
 </html>
+<?php } include("../footer.php"); ?>
