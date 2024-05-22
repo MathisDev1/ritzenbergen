@@ -25,7 +25,6 @@
   <link rel="preload" as="style" href="assets/mobirise/css/additional.css"><link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
   <link rel="stylesheet" href="./assets/css/index.css">
   
-  
 
   <style>:root{ --background: #FCFCF8; --dominant-color: #DDE5B6; --primary-color: #A98467; --secondary-color: #6C584C; --success-color: #23BA74; --danger-color: #BC2130; --warning-color: #DDA600; --info-color: #0BB0D2; --background-text: #000000; --dominant-text: #000000; --primary-text: #000000; --secondary-text: #FFFFFF; --success-text: #FFFFFF; --danger-text: #FFFFFF; --warning-text: #000000; --info-text: #FFFFFF;}</style>
 </head>
@@ -493,7 +492,6 @@
   </div>
 </section>
 <!--Fotogalerie Doppelkopf Ende-->
-
 
 
 

@@ -55,9 +55,76 @@
     <link rel="stylesheet" href="./js-scripts/lazyloading.css">
     <script src="./js-scripts/getURLData.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+<div id="handy-warnung" style="display: none;">
+    <div class="inner">
+      <h2>Warnung!</h2>
+      <p>Aufgrund der automatischen Skalierung sind Fotos auf dem Handy sehr verkleinert. 
+      Wir empfehlen die Fotos auf einem Tablet oder Computer anzusehen.</p>
+      <button onclick="schliessen()">Schließen</button>
+    </div>
+  </div>
+
+
+  <style>
+    #handy-warnung {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .inner {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      font-family: "Roboto", sans-serif;
+    }
+
+    .inner h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    .inner p {
+      margin-bottom: 20px;
+    }
+
+    .inner button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+
+
+  <script>
+    // Funktion zum Schließen der Modalbox
+    function schliessen() {
+      document.getElementById('handy-warnung').style.display = 'none';
+    }
+
+    // Prüfen, ob die Seite auf einem mobilen Gerät geöffnet wird
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      document.getElementById('handy-warnung').style.display = 'block';
+    }
+  </script>
+
+
     <div class="main">
         <section class="flex-card-wrapper">
             <?php
@@ -115,7 +182,6 @@
             ?>
         </section>
         <br><br>
-        <p id="info">Info: Bilder sehen aufgrund der automatischen skalierung auf größeren Bildschirmen besser aus.</p>
         <div class="kommentare"></div>
 
             <form class="formular" action="kommentareintragen.php" method="post">
