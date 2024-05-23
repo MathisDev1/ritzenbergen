@@ -106,48 +106,21 @@
 
 <section>
     <div class="galerie-container">
-        <b><h2>Fußballturnier 2010</h2><p>Vorschaubilder</p></b>
+        <b><h2><?php echo explode("\r\n",file_get_contents("bilder/".$_GET["ev"]."/info.txt"))[1]; ?></h2><p>Vorschaubilder</p></b>
+        <?php echo count(glob("bilder/".$_GET["ev"]."/*.jpg")); ?> Bilder
         <table>
           
-          <tr>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 6"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 7"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 8"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 9"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 9"></td>
+            <?php 
+              for ($i=0; $i < count(glob("bilder/".$_GET["ev"]."/*.jpg"));) { 
+                echo "<tr>";
+                for($j=0;$j<5&&$i<count(glob("bilder/".$_GET["ev"]."/*.jpg"));$i++){
+                  echo "<td><a href=\"bildschau?path=".$_GET["ev"]."&&bild=".$i."\"><img src=\"".glob("bilder/".$_GET["ev"]."/*.jpg")[$i]."\" alt=\"Vorschaubild\"></td></a>"; 
+                  $j++;
+                }
+                echo "</tr>";
+              }
+            ?>
 
-          </tr>
-          <tr>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 11"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 12"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 13"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 14"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 9"></td>
-          </tr>
-          <tr>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 6"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 7"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 8"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 9"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 9"></td>
-
-          </tr>
-          <tr>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 11"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 12"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 13"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 14"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 9"></td>
-
-          </tr>
-          <tr>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 11"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 12"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 13"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 14"></td>
-            <td><img src="./Fotos/fußballturniert2007.jpg" alt="Bildbeschreibung 9"></td>
-
-          </tr>
           </table>
       </div>
 
