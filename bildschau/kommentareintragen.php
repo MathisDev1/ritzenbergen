@@ -38,7 +38,7 @@
         mysqli_query($db_id, "INSERT INTO fotoscomments (schreiber,kommentar,bildpfad) VALUES ('" . $_POST["username"] . "','" . $_POST["kommentar"] . "','" . $_POST["bildpfad"] . "')");
         ?>
         <script>
-            window.location.href = "index.php?bild=<?php echo $_POST["bild"]; ?>&path=<?php echo substr(dirname($_POST["bildpfad"]), 10); ?>";
+            window.location.href = "../bildschau.php?bild=<?php echo $_POST["bild"]; ?>&path=<?php echo substr(dirname($_POST["bildpfad"]), 9); ?>";
         </script>
     </div>
 </body>
