@@ -26,10 +26,10 @@
   <link rel="stylesheet" href="./assets/css/index.css">
   <?php
     // Fehler anzeigen lassen
-    error_reporting(0);
+    error_reporting(-1);
 
     // mysql verbinden
-    include("../../mysqlverbinden.php");
+    include("../mysqlverbinden.php");
 
     // Funktion rowforeach einbinden
     include("./bildschau/phpscripts/rowforeach.php");
