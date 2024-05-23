@@ -114,7 +114,7 @@
               for ($i=0; $i < count(glob("bilder/".$_GET["ev"]."/*.jpg"));) { 
                 echo "<tr>";
                 for($j=0;$j<5&&$i<count(glob("bilder/".$_GET["ev"]."/*.jpg"));$i++){
-                  echo "<td><a href=\"bildschau?path=".$_GET["ev"]."&&bild=".$i."\"><img src=\"".glob("bilder/".$_GET["ev"]."/*.jpg")[$i]."\" alt=\"Vorschaubild\"></td></a>"; 
+                  echo "<td><a href=\"bildschau.php?path=".$_GET["ev"]."&&bild=".$i."\"><img src=\"".glob("bilder/".$_GET["ev"]."/*.jpg")[$i]."\" alt=\"Vorschaubild\"></td></a>"; 
                   $j++;
                 }
                 echo "</tr>";

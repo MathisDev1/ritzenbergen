@@ -156,7 +156,7 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<a href=\"bildschau/index.php?path=erntefest/".$value."&bild=0\"><div
+                echo "<a href=\"bildvorschau.php?ev=erntefest/".$value."\"><div
                 class=\"embla__slide slider-image item\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
@@ -252,7 +252,7 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<a href=\"bildschau/index.php?path=osterfeuer/".$value."&bild=0\"><div
+                echo "<a href=\"bildvorschau.php?ev=osterfeuer/".$value."&bild=0\"><div
                 class=\"embla__slide slider-image item\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
@@ -345,7 +345,7 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<a href=\"bildschau/index.php?path=fussball/".$value."&bild=0\"><div
+                echo "<a href=\"bildvorschau.php?ev=fussball/".$value."&bild=0\"><div
                 class=\"embla__slide slider-image item\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
@@ -437,7 +437,7 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<a href=\"bildschau/index.php?path=doppelkopf/".$value."&bild=0\"><div
+                echo "<a href=\"bildvorschau.php?ev=doppelkopf/".$value."&bild=0\"><div
                 class=\"embla__slide slider-image item\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
