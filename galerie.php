@@ -156,8 +156,8 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<a href=\"bildvorschau.php?ev=erntefest/".$value."\"><div
-                class=\"embla__slide slider-image item\"
+                echo "<div data-href=\"bildvorschau.php?ev=erntefest/".$value."\"
+                class=\"embla__slide slider-image item js-link\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
                 <div class=\"slide-content\">
@@ -168,7 +168,7 @@
                     </div>
                   </div>
                 </div>
-              </div></a>";
+              </div>";
               }
 
               ?>
@@ -252,8 +252,8 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<a href=\"bildvorschau.php?ev=osterfeuer/".$value."&bild=0\"><div
-                class=\"embla__slide slider-image item\"
+                echo "<div data-href=\"bildvorschau.php?ev=osterfeuer/".$value."&bild=0\"
+                class=\"embla__slide slider-image item js-link\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
                 <div class=\"slide-content\">
@@ -264,7 +264,7 @@
                     </div>
                   </div>
                 </div>
-              </div></a>";
+              </div>";
               }
 
               ?>
@@ -345,8 +345,8 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<a href=\"bildvorschau.php?ev=fussball/".$value."&bild=0\"><div
-                class=\"embla__slide slider-image item\"
+                echo "<div data-href=\"bildvorschau.php?ev=fussball/".$value."&bild=0\"
+                class=\"embla__slide slider-image item js-link\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
                 <div class=\"slide-content\">
@@ -357,7 +357,7 @@
                     </div>
                   </div>
                 </div>
-              </div></a>";
+              </div>";
               }
 
               ?>
@@ -437,8 +437,8 @@
                 $jahre[]=$value;
               }
               foreach ($jahre as $key => $value) {
-                echo "<a href=\"bildvorschau.php?ev=doppelkopf/".$value."&bild=0\"><div
-                class=\"embla__slide slider-image item\"
+                echo "<div data-href=\"bildvorschau.php?ev=doppelkopf/".$value."&bild=0\"
+                class=\"embla__slide slider-image item js-link\"
                 style=\"margin-left: 1rem; margin-right: 1rem;\"
               >
                 <div class=\"slide-content\">
@@ -449,7 +449,7 @@
                     </div>
                   </div>
                 </div>
-              </div></a>";
+              </div>";
               }
 
               ?>

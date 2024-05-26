@@ -21,3 +21,8 @@ var modalCloseBtns=document.querySelectorAll(`.${modalCloseBtnClass}`);
 modalCloseBtns.forEach((element)=>{
     element.addEventListener("click",closemodal);
 });
+document.querySelectorAll(".js-link").forEach((element)=>{
+    element.addEventListener("click",(ev)=>{
+        window.location.href=ev.currentTarget.dataset.href;
+    })
+});
