@@ -22,6 +22,7 @@ body {
     width: 150px; /* Bildbreite anpassen */
     height: 100px; /* Bildhöhe anpassen */
     cursor: pointer; /* Mauszeiger als Zeiger anzeigen */
+    transition: all ease-in-out 100ms;
   }
   
   img.grayscale {
