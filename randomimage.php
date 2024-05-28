@@ -41,7 +41,7 @@ $path = $_GET["path"];
 $blacklist = ["@eaDir"];
 $file_ext = ["jpg", "png", "gif"];
 $tn = isset($_GET["tn"]);
-$font = "tnfont.ttf";
+$font = "./tnfont.ttf";
 
 function getImages($path)
 {

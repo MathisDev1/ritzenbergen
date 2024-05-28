@@ -27,6 +27,8 @@
   <link rel="preload" as="style" href="assets/mobirise/css/additional.css">
   <link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
   <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/chatbox.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
 
 
@@ -147,6 +149,15 @@
       </div>
     </div>
   </section>
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1004,6 +1015,109 @@
     })();
 
   </script>
+
+
+
+
+<!--Zusatzskripte-->
+
+
+<button class="material-symbols-outlined" id="chatbox-button">chat</button>
+
+<div id="modalbox">
+  <div id="modalbox-header">
+      <span class="material-symbols-outlined">chat</span><h3 id="modalbox-title">Klönkasten</h3>
+    <span id="close-button">&times;</span>
+  </div>
+
+  <div id="chat-messages">
+    <i>22. Mai 2024</i>
+    <div class="message own-message">
+      <span class="message-sender">Jonas Kuhlenkamp</span>
+      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag?</span>
+    </div>
+    <i>23. Mai 2024</i>
+    <div class="message other-message">
+      <span class="message-sender">Mathis Kuhlenkamp</span>
+      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag?.</span>
+    </div>
+
+    <div class="message own-message">
+      <span class="message-sender">Jonas Kuhlenkamp</span>
+      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag??</span>
+    </div>
+    <div class="message own-message">
+      <span class="message-sender">Mathis Kuhlenkamp</span>
+      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag??</span>
+    </div>
+    <i>24. Mai 2024</i>
+    <div class="message other-message">
+      <span class="message-sender">Jonas Kuhlenkamp</span>
+      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag?.</span>
+    </div>
+
+    <div class="message own-message">
+      <span class="message-sender">Mathis Kuhlenkamp</span>
+      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag??</span>
+    </div>
+  </div>
+
+  <div id="chat-input">
+    <input type="text" id="name-input" placeholder="Name">
+    <input type="text" id="message-input" placeholder="Nachricht">
+    <button id="send-button">Senden</button>
+  </div>
+</div>
+
+<script>
+  const chatboxButton = document.getElementById('chatbox-button');
+  const modalbox = document.getElementById('modalbox');
+  const closeButton = document.getElementById('close-button');
+  const chatMessages = document.getElementById('chat-messages');
+  const nameInput = document.getElementById('name-input');
+  const messageInput = document.getElementById('message-input');
+  const sendButton = document.getElementById('send-button');
+
+  chatboxButton.addEventListener('click', () => {
+    modalbox.style.display = 'block';
+  });
+
+  closeButton.addEventListener('click', () => {
+    modalbox.style.display = 'none';
+  });
+
+  sendButton.addEventListener('click', () => {
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
+
+    if (name && message) {
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('message');
+
+      const senderElement = document.createElement('span');
+      senderElement.classList.add('message-sender');
+      senderElement.textContent = name + ': ';
+
+      const contentElement = document.createElement('span');
+      contentElement.classList.add('message-content');
+      contentElement.textContent = message;
+
+      messageElement.appendChild(senderElement);
+      messageElement.appendChild(contentElement);
+
+      if (name === 'Max Mustermann') {
+        messageElement.classList.add('own-message');
+      } else {
+        messageElement.classList.add('other-message');
+      }
+
+      chatMessages.appendChild(messageElement);
+      messageInput.value = '';
+
+      chatMessages.scrollTop = chatMessages.scrollHeight; // Scrollen zum Ende der Nachrichten
+    }
+  });
+</script>
 </body>
 
 </html>

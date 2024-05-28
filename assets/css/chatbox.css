@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+
+
+
+/* Basis-Styling */
+
+
+
+    
+
+    #chatbox-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+      background-color: #996633; /* Braun #996633 */
+      color: white; /* Weiße Textfarbe */
+      border: none; /* Keine Umrandung */
+      border-radius: 50%; /* Runde Form */
+      padding: 20px; /* Innenabstand */
+      font-size: 20px;
+      transition: background-color 0.3s ease; /* Hover-Effekt */
+    }
+    
+    #chatbox-button:hover {
+      background-color: #774422; /* Dunkleres Braun beim Hovern */
+    }
+    
+
+    
+
+    #modalbox {
+      position: fixed; /* Festlegen der Position */
+      top: 50%; /* Positionierung vertikal mittig */
+      left: 50%; /* Positionierung horizontal mittig */
+      transform: translate(-50%, -50%); /* Verschieben von der Mitte */
+      width: 350px; /* Breite der Modalbox */
+      max-width: 90%; /* Maximale Breite für Responsiveness */
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      display: none; /* Modalbox wird zunächst ausgeblendet */
+    }
+
+    #modalbox-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    #modalbox-title {
+      font-weight: bold;
+      font-family: "Permanent Marker", cursive;
+    }
+
+    #close-button {
+      cursor: pointer;
+    }
+
+    #chat-messages {
+      height: 300px; /* Höhe des Nachrichtenbereichs */
+      overflow-y: scroll; /* Scrollfunktion aktivieren */
+      padding: 10px;
+    }
+
+    .message {
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      position: relative;
+    }
+
+    .message-sender {
+      font-weight: bold;
+    }
+
+    .message-content {
+      margin-top: 2px;
+    }
+
+    .own-message {
+      background-color: #f0f0f0;
+      align-self: flex-end; /* Eigene Nachrichten rechtsbündig */
+    }
+
+    .other-message {
+      background-color: #e0e0e0;
+    }
+
+    #chat-input {
+      display: flex;
+      flex-direction: column; /* Anordnung in Spalten */
+    }
+
+    #name-input {
+      flex-grow: 1; /* Nameingabefeld über die gesamte Breite */
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px; 
+      margin-top: 10px;
+    }
+
+    #message-input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px; 
+        margin-bottom: 5px; /* Abstand zwischen den Eingabefeldern */
+    }
+
+    #send-button {
+      background-color: #4CAF50; /* Grün */
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      width: auto; /* Automatische Breite */
+    }
+
+    @media (max-width: 768px) {
+        #chat-input {
+            flex-direction: column; /* Anordnung in Spalten */
+        }
+
+        #name-input,
+        #message-input {
+            margin-bottom: 1px; /* Abstand zwischen den Eingabefeldern */
+        }
+
+        #send-button {
+            width: 100%; /* Volle Breite des Containers */
+            margin-top: 1px; /* Abstand zum vorherigen Element */
+        }
+        #chatbox-button {
+            font-size: 10px;
+          }
+
+}

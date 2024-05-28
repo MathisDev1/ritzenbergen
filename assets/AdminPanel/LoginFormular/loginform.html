@@ -54,12 +54,12 @@
       }
       function encode() {
         hash(document.querySelector(".password-input").value).then((text) => {
+          //console.log(text);
           document.querySelector(".password-input").value = text;
           document.querySelector(".login-form").submit();
         });
         return false;
       }
-      document.querySelector(".login-form").addEventListener("submit", encode);
     </script>
   </body>
 </html>

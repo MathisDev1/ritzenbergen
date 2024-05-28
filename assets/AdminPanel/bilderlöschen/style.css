@@ -1,0 +1,39 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  
+  th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  img {
+    width: 150px; /* Bildbreite anpassen */
+    height: 100px; /* Bildhöhe anpassen */
+    cursor: pointer; /* Mauszeiger als Zeiger anzeigen */
+  }
+  
+  img.grayscale {
+    filter: grayscale(100%); /* Schwarz-Weiß-Filter */
+  }
+  
+  #save-button {
+    background-color: #4CAF50; /* Grün */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: auto; /* Automatische Breite */
+  }
