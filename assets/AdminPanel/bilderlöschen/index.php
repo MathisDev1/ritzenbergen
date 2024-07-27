@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bildgalerie Admin Dashboard</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -16,7 +17,7 @@
 
         <?php
 
-        $imagepath = "../../../" . "bilder/erntefest";
+        $imagepath = "../../../" . "bilder/erntefest/2011";
         $whitelistpath = "../../../" . "bilder/erntefest/whitelist.txt";
         $whitelist = explode("\r\n", file_get_contents($whitelistpath));
         $images = [];
@@ -43,7 +44,7 @@
           if($i%6==0){
             echo "<tr>";
           }
-          echo "<td><img onclick=\"convertImageToBlackAndWhite(this)\" src=\"bildbeschriften.php?image=".$images[$i]."&text=0000\"></td>";
+          echo "<td><img onclick=\"convertImageToBlackAndWhite(this)\" class=\"grayscale\" src=\"bildbeschriften.php?image=".$images[$i]."&text=0000\"></td>";
           if($i%6==5){
             echo "</tr>";
           }
@@ -56,7 +57,7 @@
         
     </table>
   </div>
-
+  <script>var whitelistpath="<?php echo $whitelistpath; ?>";</script>
   <script src="script.js"></script>
 </body>
 
