@@ -17,7 +17,7 @@
 
         <?php
 
-        $imagepath = "../../../" . "bilder/erntefest/2011";
+        $imagepath = "../../../" . "bilder/erntefest";
         $whitelistpath = "../../../" . "bilder/erntefest/whitelist.txt";
         $whitelist = explode("\r\n", file_get_contents($whitelistpath));
         $images = [];
@@ -40,11 +40,12 @@
         $images = recursiveDir($imagepath);
         function showImage($i)
         {
-          global $images;
+          global $images,$whitelist;
           if($i%6==0){
             echo "<tr>";
           }
-          echo "<td><img onclick=\"convertImageToBlackAndWhite(this)\" class=\"grayscale\" src=\"bildbeschriften.php?image=".$images[$i]."&text=0000\"></td>";
+          $grayscale=!in_array(substr($images[$i],9),$whitelist);
+          echo "<td><img onclick=\"convertImageToBlackAndWhite(this)\" ".(($grayscale)?"class=\"grayscale\" ":"")."src=\"bildbeschriften.php?image=".$images[$i]."&text=0000\"></td>";
           if($i%6==5){
             echo "</tr>";
           }
