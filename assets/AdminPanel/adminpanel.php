@@ -39,7 +39,7 @@ if ($valid) { ?>
         <a href="#" class="weiterleitung" onclick="openWithPassword('TermineNeuigkeiten/termineNeuigkeiten.php');">Termine & Neuigkeiten</a><br>
         <a href="#" class="weiterleitung" onclick="openWithPassword('hitcounter/hitcounter.php');">Besucheranzahl</a><br>
         <a href="#" class="weiterleitung" onclick="openWithPassword('bilderlöschen/index.php');">Random Bilder löschen</a><br>
-        <a href="#" class="weiterleitung" onclick="openWithPassword('formular/formular.php');">Anmeldeformular</a>
+        <a href="#" class="weiterleitung" onclick="openWithPassword('formular/index.php');">Anmeldeformular</a>
 
 
     </body>

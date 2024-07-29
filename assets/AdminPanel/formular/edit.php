@@ -1,25 +1,16 @@
-<?php 
-include("../../../../mysqlverbinden.php");
-include("../../../rowforeach.php");
-include("../header.php"); if($valid){ ?>
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ritzenbergen.de AdminPanel</title>
+    <title>Bearbeiten</title>
     <link rel="stylesheet" href="../adminpanel.css">
 </head>
 <body>
-    <h1>Anmeldeformular Konfiguration</h1>
+    <select>
+        <option value="kuchenspende24">kuchenspende24 bearbeiten</option>
+    </select>
     <form action="eintragen.php" method="post">
-        <p>Anzeigen: Ja/Nein</p>
-        <select name="box" id="box" size="2">
-            <option value="html">Ja</option>
-            <option value="text">Nein</option>
-
-        </select><br><br>
-        
         <label for="ueberschrift">Überschrift:</label>
         <input type="text" name="ueberschrift" id="ueberschrift" placeholder="Überschrift eingeben" required><br><br>
         <label for="datum">Beschreibung</label>
@@ -36,10 +27,7 @@ include("../header.php"); if($valid){ ?>
         <div class="buttonArea">
         </div>
         
-        <input type="submit" id="submit-btn"/>    
+        <input type="submit" id="submit-btn" value="Input-Feld hinzufügen"/>    
     </form>
-
-
 </body>
 </html>
-<?php } include("../footer.php"); ?>
