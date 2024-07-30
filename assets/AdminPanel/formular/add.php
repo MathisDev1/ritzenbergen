@@ -13,6 +13,9 @@ include("../header.php"); if($valid){ ?>
 <body>
     <h1>Anmeldeformular Konfiguration</h1>
     <form action="eintragen.php" method="post">
+        <input type="hidden" name="type" value="add">
+        <input type="hidden" name="username" value="<?php echo $_POST["username"]; ?>">
+        <input type="hidden" name="password" value="<?php echo $_POST["password"]; ?>">
         <label for="ueberschrift">Überschrift:</label>
         <input type="text" name="ueberschrift" id="ueberschrift" placeholder="Überschrift eingeben" required><br><br>
         <label for="datum">Beschreibung</label>
