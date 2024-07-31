@@ -6,6 +6,18 @@
     <title>Ergebnisse ausgeben</title>
 </head>
 <body>
+    <select>
+        <?php
+            include("../../../../mysqlverbinden.php");
+            include("../../../rowforeach.php");
+            foreach (srowforeach("SELECT `ueberschrift`,`id` from `ritzenbergen-formulare`;",[]) as $key => $value) {
+                $id=$value[1];
+                $ueberschrift=$value[0];
+                echo "<option value=\"".$id."\">".$ueberschrift." (ID: ".$id.")</option>";
+            }
+        ?>
+    
+    </select>
     <table>
         <tr>
             <td>Formular</td>

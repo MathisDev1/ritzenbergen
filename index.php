@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/chatbox.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 
   <style>
@@ -788,14 +788,15 @@
 
   <!--Kontaktformular Vorlage Anfang-->
 <?php
-$texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo` from `ritzenbergen-formulare`",[]);
+$texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo`,`id` from `ritzenbergen-formulare`",[]);
 foreach ($texte as $key => $value) {
   $ueberschrift=$value[0];
   $minitext=$value[1];
   $inhalt=$value[2];
   $labelone=$value[3];
   $labeltwo=$value[4];
-  $minitext=str_replace("{0}",srowforeach("SELECT COUNT(`id`) from `ritzenbergen-formulare`",[])[0][0],$minitext);
+  $id=$value[5];
+  $minitext=str_replace("{0}",srowforeach("SELECT COUNT(`id`) from `ritzenbergen-formular-ergebnisse` where formularid=?;",[$id])[0][0],$minitext);
 echo "
   <section class=\"form5 cid-u6k7q0BfGa\" id=\"contact-form-2-u6k7q0BfGa\">
     <div class=\"container\">
@@ -813,8 +814,8 @@ echo "
       </div>
       <div class=\"row justify-content-center\">
         <div class=\"col-lg-8 mx-auto mbr-form\" data-form-type=\"formoid\">
-          <form action=\"\" method=\"POST\" class=\"mbr-form form-with-styler\" data-form-title=\"Form Name\"><input
-              type=\"hidden\" name=\"email\" data-form-email=\"true\" value=\"\">
+          <form action=\"formularergebnisse-eintragen.php\" method=\"POST\" class=\"mbr-form form-with-styler\" data-form-title=\"Form Name\"><input
+              type=\"hidden\" name =\"email\" data-form-email=\"true\" value=\"\">
             <div class=\"row\">
               <div hidden=\"hidden\" data-form-alert=\"\" class=\"alert alert-success col-12\">Vielen dank für deine Spende 🍀</div>
               <div hidden=\"hidden\" data-form-alert-danger=\"\" class=\"alert alert-danger col-12\">
@@ -823,17 +824,18 @@ echo "
             </div>
             <div class=\"dragArea row\">
               <div class=\"col-md col-sm-12 form-group mb-3\" data-for=\"name\">
-                <input type=\"text\" name=\"name\" placeholder=\"".$labelone."\" data-form-field=\"name\" class=\"form-control\" value=\"\"
+                <input type=\"text\" maxlength=\"128\" name=\"name\" placeholder=\"".$labelone."\" data-form-field=\"name\" class=\"form-control\" value=\"\"
                   id=\"name-form02-0\">
               </div>
 
               <div class=\"col-12 form-group mb-3\" data-for=\"textarea\">
-                <textarea name=\"textarea\" placeholder=\"".$labeltwo."\" data-form-field=\"textarea\" class=\"form-control\"
+                <input type=\"text\" name=\"textarea\" maxlength=\"128\" placeholder=\"".$labeltwo."\" data-form-field=\"textarea\" class=\"form-control\"
                   id=\"textarea-form02-0\"></textarea>
               </div>
               <div class=\"col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn\"><button type=\"submit\"
-                  class=\"btn btn-primary display-7\">Absenden</button></div>
+                  class=\"btn btn-primary display-7 formular-submit-button\">Absenden</button></div>
             </div>
+            <input type=\"hidden\" value=\"".$id."\" name=\"id\">
           </form>
         </div>
       </div>
