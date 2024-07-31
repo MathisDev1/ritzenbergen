@@ -788,7 +788,7 @@
 
   <!--Kontaktformular Vorlage Anfang-->
 <?php
-$texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo`,`id` from `ritzenbergen-formulare`",[]);
+$texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo`,`id`,`link` from `ritzenbergen-formulare`",[]);
 foreach ($texte as $key => $value) {
   $ueberschrift=$value[0];
   $minitext=$value[1];
@@ -796,8 +796,10 @@ foreach ($texte as $key => $value) {
   $labelone=$value[3];
   $labeltwo=$value[4];
   $id=$value[5];
+  $link=$value[6];
   $minitext=str_replace("{0}",srowforeach("SELECT COUNT(`id`) from `ritzenbergen-formular-ergebnisse` where formularid=?;",[$id])[0][0],$minitext);
-echo "
+  $linkhtml=($link==null)?"":"<a href=\"showResults.php?id=".$id."\">".$link."</a>";
+  echo "
   <section class=\"form5 cid-u6k7q0BfGa\" id=\"contact-form-2-u6k7q0BfGa\">
     <div class=\"container\">
       <div class=\"row justify-content-center\">
@@ -808,7 +810,7 @@ echo "
             </h3><br>
             <h5 style=\"text-align: center;\"><b></b> <br>
               ".$inhalt."</h5><br>
-            <p style=\"text-align: center;\">".$minitext."</p>
+            <p style=\"text-align: center;\">".$minitext."<br><br>".$linkhtml."</p>
           </div>
         </div>
       </div>

@@ -6,6 +6,13 @@
     <title>Formular entfernen</title>
 </head>
 <body>
-    <button>Formular kuchenspende24 entfernen</button>
+    <?php
+    include("../../../../mysqlverbinden.php");
+    include("../../../rowforeach.php");
+    foreach (srowforeach("SELECT `id`,`ueberschrift` from `ritzenbergen-formulare`",[]) as $key => $value) {
+        echo "<button></button>";
+    }
+    
+    ?>
 </body>
 </html>

@@ -48,9 +48,9 @@
                 <td>".$timestamp."</td>
             </tr>";
         }
+        echo "</table>";
     }
     ?>
-    </table>
     <script src="show.js"></script>
 </body>
 </html>

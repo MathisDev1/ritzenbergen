@@ -30,12 +30,19 @@ if ($type == "add") {
         die("POST labeltwo fehlt");
     $labeltwo=$_POST["labeltwo"];
 
+    if(!isset($_POST["link"])) 
+        die("POST link fehlt");
+    $link=$_POST["link"];
+    
+    $link=($link=="")?null:$link;
+
     echo "Überschrift: ".$ueberschrift."<br>";
     echo "Minitext: ".$minitext."<br>";
     echo "Label 1: ".$labelone."<br>";
     echo "Label 2: ".$labeltwo."<br>";
     echo "Inhalt: ".$inhalt."<br>";
+    echo "Link: ".$link;
 
-    mysqli_execute_query($db_id,"INSERT INTO `ritzenbergen-formulare` (ueberschrift,minitext,inhalt,labelone,labeltwo) VALUES (?,?,?,?,?);",[$ueberschrift,$minitext,$inhalt,$labelone,$labeltwo]);
+    mysqli_execute_query($db_id,"INSERT INTO `ritzenbergen-formulare` (ueberschrift,minitext,inhalt,labelone,labeltwo,`link`) VALUES (?,?,?,?,?,?);",[$ueberschrift,$minitext,$inhalt,$labelone,$labeltwo,$link]);
 }
 ?>

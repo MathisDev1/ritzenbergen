@@ -29,6 +29,9 @@ include("../header.php"); if($valid){ ?>
         <label for="datum">Text-Label 2</label>
         <input type="text" name="labeltwo" id="labeltwo" placeholder="Labeltext eingeben" required><br><br>
 
+        <label for="link">Link</label>
+        <input type="text" name="link" id="link" placeholder="Link, der zu den Ergebnissen führt. Leer lassen, um keinen Link zu erstellen">
+
         <div class="buttonArea">
         </div>
         
