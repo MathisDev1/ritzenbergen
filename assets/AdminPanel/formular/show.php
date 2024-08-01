@@ -35,7 +35,7 @@ if ($valid) { ?>
         $labeltwo=$value[2];
         
         echo "
-            <table id=\"table".$id."\" style=\"display: none;\">
+            <table id=\"table".$id."\" style=\"display: ".(($key!=0)?"none":"block").";\">
                 <tr>
                     <td>".$labelone."</td>
                     <td>".$labeltwo."</td>

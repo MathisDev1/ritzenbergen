@@ -1048,35 +1048,11 @@ foreach ($texte as $key => $value) {
       <span class="message-sender">Jonas Kuhlenkamp</span>
       <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag?</span>
     </div>
-    <i>23. Mai 2024</i>
-    <div class="message other-message">
-      <span class="message-sender">Mathis Kuhlenkamp</span>
-      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag?.</span>
-    </div>
-
-    <div class="message own-message">
-      <span class="message-sender">Jonas Kuhlenkamp</span>
-      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag??</span>
-    </div>
-    <div class="message own-message">
-      <span class="message-sender">Mathis Kuhlenkamp</span>
-      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag??</span>
-    </div>
-    <i>24. Mai 2024</i>
-    <div class="message other-message">
-      <span class="message-sender">Jonas Kuhlenkamp</span>
-      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag?.</span>
-    </div>
-
-    <div class="message own-message">
-      <span class="message-sender">Mathis Kuhlenkamp</span>
-      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag??</span>
-    </div>
-  </div>
 
   <div id="chat-input">
-    <input type="text" id="name-input" placeholder="Name">
-    <input type="text" id="message-input" placeholder="Nachricht">
+    <input type="text" id="name-input" maxlength="64" placeholder="Name">
+    <input type="email" id="email-input" maxlength="128" placeholder="E-Mail">
+    <input type="text" id="message-input" placeholder="Nachricht" maxlength="1024">
     <button id="send-button">Senden</button>
   </div>
 </div>

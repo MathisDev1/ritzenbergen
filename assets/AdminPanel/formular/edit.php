@@ -33,7 +33,7 @@ if ($valid) { ?>
         $minitext=$value[5];
         $inhalt=$value[6];
         echo "
-        <form action=\"update.php\" method=\"post\" id=\"table$id\" style=\"display:none;\">
+        <form action=\"update.php\" method=\"post\" id=\"table$id\" style=\"display: ".(($key!=0)?"none":"block").";\">
             <label for=\"ueberschrift\">Überschrift:</label>
             <input value=\"$ueberschrift\" type=\"text\" name=\"ueberschrift\" id=\"ueberschrift\" placeholder=\"Überschrift eingeben\" required><br><br>
             <label for=\"datum\">Beschreibung</label>

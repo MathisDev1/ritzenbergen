@@ -44,7 +44,7 @@ if ($valid) { ?>
         echo "<br>";
         $fussball = scandir("../../../bilder/fussball");
         for ($i = 0; $i < count($fussball); $i++) {
-            if (!in_array($erntefeste[$i], $blacklist)) {
+            if (!in_array($fussball[$i], $blacklist)) {
                 echo "<input type=\"radio\" name=\"images\" value=\"../../../bilder/fussball/" . $fussball[$i] . "\"> Fußballturnier " . $fussball[$i] . "<br>";
             }
         }

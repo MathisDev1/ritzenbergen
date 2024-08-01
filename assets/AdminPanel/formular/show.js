@@ -1,4 +1,4 @@
-var id=-1;
+var id=0;
 document.querySelector("#select").addEventListener("change",(ev)=>{
     if(id!=-1){
         document.querySelector(`#table${id}`).style.display="none";
