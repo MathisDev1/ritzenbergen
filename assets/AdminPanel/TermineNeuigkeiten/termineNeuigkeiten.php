@@ -32,6 +32,8 @@ include("../header.php"); if($valid){ ?>
             <input class="linkinput" type="text" name="link" id="link" placeholder="Link"><br><br>
             <input type="text" name="foto" id="fotoinput" placeholder="Pfad zum Foto (vom Ordner bilder aus)">
         </div>
+        <input type="hidden" name="username" value="<?php echo $_POST["username"]; ?>">
+        <input type="hidden" name="password" value="<?php echo $_POST["password"]; ?>">
         
         <input type="submit" id="submit-btn"/>    
     </form>

@@ -1,3 +1,8 @@
+<?php
+include ("../../../../mysqlverbinden.php");
+include ("../../../rowforeach.php");
+include ("../header.php");
+if ($valid) { ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +13,7 @@
 </head>
 
 <body>
-    <form action="bilderauswaehlen.php">
+    <form action="bilderauswaehlen.php" method="post">
         <input type="radio" name="images" value="../../../bilder/erntefest"> Alle Erntefeste <br>
         <input type="radio" name="images" value="../../../bilder/osterfeuer"> Alle Osterfeuer <br>
         <input type="radio" name="images" value="../../../bilder/doppelkopf"> Alle Doppelkopfturniere <br>
@@ -48,8 +53,17 @@
         <!-- <input type="radio" name="images" value="../../../bilder/erntefest/1982"> Erntefest 1982<br>
         <input type="radio" name="images" value="../../../bilder/erntefest/2002"> Erntefest 2002<br> -->
         <br>
+
+        <input type="hidden" name="username" value="<?php echo $_POST["username"]; ?>">
+        <input type="hidden" name="password" value="<?php echo $_POST["password"]; ?>">
+
         <input type="submit" value="Auswählen">
     </form>
 </body>
 
 </html>
+
+<?php
+}
+include ("../footer.php");
+?>

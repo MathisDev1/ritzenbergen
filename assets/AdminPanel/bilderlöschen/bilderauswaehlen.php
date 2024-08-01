@@ -1,3 +1,8 @@
+<?php
+include ("../../../../mysqlverbinden.php");
+include ("../../../rowforeach.php");
+include ("../header.php");
+if ($valid) { ?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -16,8 +21,8 @@
     <table>
 
         <?php
-        if(!isset($_GET["images"])) die("GET images fehlt");
-        $imagepath = $_GET["images"];
+        if(!isset($_POST["images"])) die("POST images fehlt");
+        $imagepath = $_POST["images"];
         $whitelistpath = $imagepath."/whitelist.txt";
         $whitelist = explode("\r\n", file_get_contents($whitelistpath));
         $images = [];
@@ -45,7 +50,7 @@
             echo "<tr>";
           }
           $grayscale=!in_array(substr($images[$i],9),$whitelist);
-          echo "<td><img onclick=\"convertImageToBlackAndWhite(this)\" ".(($grayscale)?"class=\"grayscale\" ":"")."src=\"bildbeschriften.php?image=".$images[$i]."&text=0000\"></td>";
+          echo "<td><img onclick=\"convertImageToBlackAndWhite(this)\" ".(($grayscale)?"class=\"grayscale\" ":"")."src=\"bildbeschriften.php?image=".$images[$i]."&text=0000&username=".$_POST["username"]."&password=".$_POST["password"]."\"></td>";
           if($i%6==5){
             echo "</tr>";
           }
@@ -58,8 +63,17 @@
         
     </table>
   </div>
-  <script>var whitelistpath="<?php echo $whitelistpath; ?>";</script>
+  <script>
+  var whitelistpath="<?php echo $whitelistpath; ?>";
+        var username=`<?php echo $_POST["username"]; ?>`;
+        var password=`<?php echo $_POST["password"]; ?>`;
+</script>
   <script src="script.js"></script>
 </body>
 
 </html>
+
+<?php
+}
+include ("../footer.php");
+?>

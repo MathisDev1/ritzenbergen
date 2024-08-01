@@ -1,4 +1,9 @@
 <?php
+include ("../../../../mysqlverbinden.php");
+include ("../../../rowforeach.php");
+include ("../headerGET.php");
+if ($valid) { ?>
+<?php
 header("Content-Type: image/png");
 if(!isset($_GET["image"])) die("Bitte gebe GET image an!");
 if(!isset($_GET["text"])) die("Bitte gebe GET text an!");
@@ -13,3 +18,9 @@ $y = ceil((imagesy($image) - $tb[5]) / 2);
 imagettftext($image, $newsize, 0, $x, $y, 0xFFFFFF, "../../../tnfont.ttf", $text);
 
 imagepng($image);
+?>
+
+<?php
+}
+include ("../footer.php");
+?>

@@ -1,3 +1,8 @@
+<?php
+include ("../../../../mysqlverbinden.php");
+include ("../../../rowforeach.php");
+include ("../header.php");
+if ($valid) { ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,3 +42,7 @@
 
 </body>
 </html>
+<?php
+}
+include ("../footer.php");
+?>

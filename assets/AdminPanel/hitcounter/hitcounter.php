@@ -1,3 +1,8 @@
+<?php
+include ("../../../../mysqlverbinden.php");
+include ("../../../rowforeach.php");
+include ("../header.php");
+if ($valid) { ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -70,3 +75,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+<?php
+}
+include ("../footer.php");
+?>

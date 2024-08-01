@@ -1,8 +1,13 @@
+<?php
+include ("../../../../mysqlverbinden.php");
+include ("../../../rowforeach.php");
+include ("../headerGET.php");
+if ($valid) { ?>
 <?php header("Content-type: application/javascript") ?>
 function openWithPassword(url,id) {
     if(!window.confirm("Möchtest du wirklich Formular Nr. "+id+" löschen?")) return;
-    var password = `<?php echo $_POST["password"]; ?>`;
-    var username = `<?php echo $_POST["username"]; ?>`;
+    var password = `<?php echo $_GET["password"]; ?>`;
+    var username = `<?php echo $_GET["username"]; ?>`;
     var formTag = document.createElement("form");
     formTag.action = url;
     formTag.method = "post";
@@ -24,3 +29,7 @@ function openWithPassword(url,id) {
     document.body.appendChild(formTag);
     formTag.submit();
 }
+<?php
+}
+include ("../footer.php");
+?>

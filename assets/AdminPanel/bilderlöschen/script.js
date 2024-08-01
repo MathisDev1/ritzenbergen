@@ -20,7 +20,7 @@ function bilderspeichern(bilder){
   console.log("Speichere... ",bilder2);
   $.ajax("bilderspeichern.php",{
     method: "post",
-    data: {"bilder": bilder2,whitelistpath: whitelistpath},
+    data: {"bilder": bilder2,whitelistpath: whitelistpath,username: username, password: password},
     complete: (res)=>{
       window.alert("Gespeichert, Rückmeldung von PHP: "+res.responseText);
     }

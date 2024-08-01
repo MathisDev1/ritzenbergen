@@ -1,3 +1,8 @@
+<?php
+include ("../../../../mysqlverbinden.php");
+include ("../../../rowforeach.php");
+include ("../header.php");
+if ($valid) { ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,6 @@
     <?php
         include("../../../../mysqlverbinden.php");
         
-        print_r($_POST);
         $eventname=$_POST["ueberschrift"];
         $datum=$_POST["datum"];
         $type=$_POST["box"];
@@ -24,3 +28,7 @@
     <a href="../../../#news-1-u6k7q0xyDG">Ansehen</a>
 </body>
 </html>
+<?php
+}
+include ("../footer.php");
+?>

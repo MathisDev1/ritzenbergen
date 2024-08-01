@@ -1,3 +1,8 @@
+<?php
+include ("../../../../mysqlverbinden.php");
+include ("../../../rowforeach.php");
+include ("../header.php");
+if ($valid) { ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +20,6 @@
 <table>
     <select id="select">
         <?php
-            include("../../../../mysqlverbinden.php");
-            include("../../../rowforeach.php");
             foreach (srowforeach("SELECT `ueberschrift`,`id` from `ritzenbergen-formulare`;",[]) as $key => $value) {
                 $id=$value[1];
                 $ueberschrift=$value[0];
@@ -54,3 +57,7 @@
     <script src="show.js"></script>
 </body>
 </html>
+<?php
+}
+include ("../footer.php");
+?>
