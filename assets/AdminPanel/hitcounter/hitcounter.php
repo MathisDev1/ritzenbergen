@@ -13,11 +13,17 @@ if ($valid) { ?>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
+    <?php
+    
+        $file=fopen("../../../hits.txt","r");
+        $hits=fread($file,9999999);
+        fclose($file);
+    
+    ?>
 <div class="counter-container">
     <h1 class="counter-heading">Besucherzähler</h1>
 
-    <p class="total-visitors" id="totalVisitors">0</p>
+    <p class="total-visitors" id="totalVisitors"><?php echo $hits; ?></p>
 
     <h2>Besucher der letzten 24 Stunden</h2>
 
@@ -29,7 +35,15 @@ if ($valid) { ?>
             </tr>
         </thead>
         <tbody>
-            </tbody>
+            <?php
+                foreach (srowforeach("SELECT `ip`,`timestamp` from `ritzenbergen-hits` where `timestamp` > NOW() - INTERVAL 1 DAY",[]) as $key => $value) {
+                    $ip=$value[0];
+                    $timestamp=$value[1];
+                    echo "<tr><td>$timestamp</td><td>$ip</td></tr>";
+                }
+                
+            ?>
+        </tbody>
     </table>
 </div>
 

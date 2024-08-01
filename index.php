@@ -1,3 +1,7 @@
+<?php
+include("addhit.php");
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -52,12 +56,6 @@
       --info-text: #FFFFFF;
     }
   </style>
-  <?php
-
-  include("../mysqlverbinden.php");
-  include("rowforeach.php");
-
-  ?>
 </head>
 
 <body>
