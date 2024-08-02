@@ -47,3 +47,27 @@ document.querySelectorAll(".formular-submit-button").forEach((btn)=>{
         });
     });
 });
+function sendMsg(name,email,msg){
+    $.ajax("kloenkasten-nachricht.php",{
+        method: "post",
+        complete: (res)=>{
+            var response=res.responseText;
+            console.log(response);
+        },
+        data: {msg: msg, email: email, name: name}
+    });
+}
+document.querySelector("#chat-input").addEventListener("submit",function(ev){
+    ev.preventDefault();
+    
+    var name=ev.currentTarget.querySelector("#name-input").value;
+    var email=ev.currentTarget.querySelector("#email-input").value;
+    var msg=ev.currentTarget.querySelector("#message-input").value;
+    sendMsg(name,email,msg);
+    window.setTimeout(()=>{
+        location.href="index.php?newMessage=true";
+        window.setTimeout(()=>{location.reload();},50);
+    },3000);
+    //location.reload();
+    return false;
+});

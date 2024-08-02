@@ -1,5 +1,5 @@
 <?php
-include("addhit.php");
+include ("addhit.php");
 
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,8 @@ include("addhit.php");
   <link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
   <link rel="stylesheet" href="./assets/css/index.css">
   <link rel="stylesheet" href="./assets/css/chatbox.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 
@@ -271,8 +272,7 @@ include("addhit.php");
 				  </div>
 			  </div>
           ";
-          }
-          else if($value[2]=="link" || $value[2]=="dlink"){
+          } else if ($value[2] == "link" || $value[2] == "dlink") {
             $date = explode("-", $value[1]);
             $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
             $vorschautext = strip_tags($value[3]);
@@ -292,12 +292,12 @@ include("addhit.php");
 						    </h6>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $value[3] . "</p>
-						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"".$value[4]."\"".(($value[2]=="dlink")?" download":"").">Einladung ".(($value[2]=="dlink")?" runterladen":" öffnen")."</a></div>
+						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"" . $value[4] . "\"" . (($value[2] == "dlink") ? " download" : "") . ">Einladung " . (($value[2] == "dlink") ? " runterladen" : " öffnen") . "</a></div>
 					  </div>
 				  </div>
 			  </div>
           ";
-          }else if($value[2]=="text"){
+          } else if ($value[2] == "text") {
             $date = explode("-", $value[1]);
             $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
             $vorschautext = strip_tags($value[3]);
@@ -323,7 +323,7 @@ include("addhit.php");
 			  </div>
             
             ";
-          }else if($value[2]=="fotos"){
+          } else if ($value[2] == "fotos") {
             $date = explode("-", $value[1]);
             $slidetodata = ($i % 4 == 0) ? "" : " data-slide-to=\"" . (($i % 4) + 0) . "\" data-bs-slide-to=\"" . (($i % 4) + 0) . "\"";
             $vorschautext = strip_tags($value[3]);
@@ -342,7 +342,7 @@ include("addhit.php");
 						    </h6>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $value[3] . "</p>
-						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"bildschau?path=".$value[4]."\">Fotos ansehen</a></div>
+						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"bildschau?path=" . $value[4] . "\">Fotos ansehen</a></div>
 					  </div>
 				  </div>
 			  </div>
@@ -362,16 +362,16 @@ include("addhit.php");
       <div class=\"modal-content\">
         <span class=\"close modal-close-btn\">×</span>
         ";
-      include($value[3]);
+      include ($value[3]);
       echo "
       </div>
     </div>";
-    }else if($value[2]=="text"){
+    } else if ($value[2] == "text") {
       echo "<div>
       <div class=\"eventmodal" . $value[6] . " modal\">
         <div class=\"modal-content\">
           <span class=\"close modal-close-btn\">×</span>
-          ".nl2br($value[3])."
+          " . nl2br($value[3]) . "
         </div>
       </div>";
     }
@@ -785,30 +785,30 @@ include("addhit.php");
 
 
   <!--Kontaktformular Vorlage Anfang-->
-<?php
-$texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo`,`id`,`link` from `ritzenbergen-formulare`",[]);
-foreach ($texte as $key => $value) {
-  $ueberschrift=$value[0];
-  $minitext=$value[1];
-  $inhalt=$value[2];
-  $labelone=$value[3];
-  $labeltwo=$value[4];
-  $id=$value[5];
-  $link=$value[6];
-  $minitext=str_replace("{0}",srowforeach("SELECT COUNT(`id`) from `ritzenbergen-formular-ergebnisse` where formularid=?;",[$id])[0][0],$minitext);
-  $linkhtml=($link==null)?"":"<a href=\"showResults.php?id=".$id."\">".$link."</a>";
-  echo "
+  <?php
+  $texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo`,`id`,`link` from `ritzenbergen-formulare`", []);
+  foreach ($texte as $key => $value) {
+    $ueberschrift = $value[0];
+    $minitext = $value[1];
+    $inhalt = $value[2];
+    $labelone = $value[3];
+    $labeltwo = $value[4];
+    $id = $value[5];
+    $link = $value[6];
+    $minitext = str_replace("{0}", srowforeach("SELECT COUNT(`id`) from `ritzenbergen-formular-ergebnisse` where formularid=?;", [$id])[0][0], $minitext);
+    $linkhtml = ($link == null) ? "" : "<a href=\"showResults.php?id=" . $id . "\">" . $link . "</a>";
+    echo "
   <section class=\"form5 cid-u6k7q0BfGa\" id=\"contact-form-2-u6k7q0BfGa\">
     <div class=\"container\">
       <div class=\"row justify-content-center\">
         <div class=\"col-12 content-head\">
           <div class=\"mbr-section-head mb-5\">
             <h3 class=\"mbr-section-title mbr-fonts-style align-center mb-0 display-2\">
-              <strong>".$ueberschrift."</strong>
+              <strong>" . $ueberschrift . "</strong>
             </h3><br>
             <h5 style=\"text-align: center;\"><b></b> <br>
-              ".$inhalt."</h5><br>
-            <p style=\"text-align: center;\">".$minitext."<br><br>".$linkhtml."</p>
+              " . $inhalt . "</h5><br>
+            <p style=\"text-align: center;\">" . $minitext . "<br><br>" . $linkhtml . "</p>
           </div>
         </div>
       </div>
@@ -824,18 +824,18 @@ foreach ($texte as $key => $value) {
             </div>
             <div class=\"dragArea row\">
               <div class=\"col-md col-sm-12 form-group mb-3\" data-for=\"name\">
-                <input type=\"text\" maxlength=\"128\" name=\"name\" placeholder=\"".$labelone."\" data-form-field=\"name\" class=\"form-control\" value=\"\"
+                <input type=\"text\" maxlength=\"128\" name=\"name\" placeholder=\"" . $labelone . "\" data-form-field=\"name\" class=\"form-control\" value=\"\"
                   id=\"name-form02-0\">
               </div>
 
               <div class=\"col-12 form-group mb-3\" data-for=\"textarea\">
-                <input type=\"text\" name=\"textarea\" maxlength=\"128\" placeholder=\"".$labeltwo."\" data-form-field=\"textarea\" class=\"form-control\"
+                <input type=\"text\" name=\"textarea\" maxlength=\"128\" placeholder=\"" . $labeltwo . "\" data-form-field=\"textarea\" class=\"form-control\"
                   id=\"textarea-form02-0\"></textarea>
               </div>
               <div class=\"col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn\"><button type=\"submit\"
                   class=\"btn btn-primary display-7 formular-submit-button\">Absenden</button></div>
             </div>
-            <input type=\"hidden\" value=\"".$id."\" name=\"id\">
+            <input type=\"hidden\" value=\"" . $id . "\" name=\"id\">
           </form>
         </div>
       </div>
@@ -843,8 +843,8 @@ foreach ($texte as $key => $value) {
   </section>
 
 ";
-}
-?>
+  }
+  ?>
 
 
   <!--Kontaktformular Vorlage Ende-->
@@ -919,7 +919,7 @@ foreach ($texte as $key => $value) {
             <li class="header-menu-item mbr-fonts-style display-5">
               <button class="text-white btn-kontakt">Kontakt</button>
             </li>
-            
+
           </ul>
         </div>
         <div class="col-12 mt-4">
@@ -1016,7 +1016,6 @@ foreach ($texte as $key => $value) {
   <script src="assets/ytplayer/index.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
-  <script src="main.js"></script>
   <script>
 
     (function () {
@@ -1031,81 +1030,94 @@ foreach ($texte as $key => $value) {
 
 
 
-<!--Zusatzskripte-->
+  <!--Zusatzskripte-->
 
 
-<button class="material-symbols-outlined" id="chatbox-button">chat</button>
+  <button class="material-symbols-outlined" id="chatbox-button">chat</button>
 
-<div id="modalbox">
-  <div id="modalbox-header">
-      <span class="material-symbols-outlined">chat</span><h3 id="modalbox-title">Klönkasten</h3>
-    <span id="close-button">&times;</span>
-  </div>
-
-  <div id="chat-messages">
-    <i>22. Mai 2024</i>
-    <div class="message own-message">
-      <span class="message-sender">Jonas Kuhlenkamp</span>
-      <span class="message-content">Moin, wie gehts es euch so? Wie war eurer Tag?</span>
+  <div id="modalbox" <?php echo (isset($_GET["newMessage"]))?"style=\"display:block;\"":""; ?>>
+    <div id="modalbox-header">
+      <span class="material-symbols-outlined">chat</span>
+      <h3 id="modalbox-title">Klönkasten</h3>
+      <span id="close-button">&times;</span>
     </div>
 
-  <div id="chat-input">
-    <input type="text" id="name-input" maxlength="64" placeholder="Name">
-    <input type="email" id="email-input" maxlength="128" placeholder="E-Mail">
-    <input type="text" id="message-input" placeholder="Nachricht" maxlength="1024">
-    <button id="send-button">Senden</button>
-  </div>
-</div>
-
-<script>
-  const chatboxButton = document.getElementById('chatbox-button');
-  const modalbox = document.getElementById('modalbox');
-  const closeButton = document.getElementById('close-button');
-  const chatMessages = document.getElementById('chat-messages');
-  const nameInput = document.getElementById('name-input');
-  const messageInput = document.getElementById('message-input');
-  const sendButton = document.getElementById('send-button');
-
-  chatboxButton.addEventListener('click', () => {
-    modalbox.style.display = 'block';
-  });
-
-  closeButton.addEventListener('click', () => {
-    modalbox.style.display = 'none';
-  });
-
-  sendButton.addEventListener('click', () => {
-    const name = nameInput.value.trim();
-    const message = messageInput.value.trim();
-
-    if (name && message) {
-      const messageElement = document.createElement('div');
-      messageElement.classList.add('message');
-
-      const senderElement = document.createElement('span');
-      senderElement.classList.add('message-sender');
-      senderElement.textContent = name + ': ';
-
-      const contentElement = document.createElement('span');
-      contentElement.classList.add('message-content');
-      contentElement.textContent = message;
-
-      messageElement.appendChild(senderElement);
-      messageElement.appendChild(contentElement);
-
-      if (name === 'Max Mustermann') {
-        messageElement.classList.add('own-message');
-      } else {
-        messageElement.classList.add('other-message');
+    <div id="chat-messages">
+      <?php
+      foreach (srowforeach("SELECT `name`,`email`,`timestamp`,`message` from `ritzenbergen-kloenkasten`", []) as $key => $value) {
+        $sender=$value[0];
+        $email=$value[1];
+        $timestamp=$value[2];
+        $msg=$value[3];
+        if ($email != null) {
+          $sender = "<a href=\"mailto:$email\">$sender</a>";
+        }
+        echo "<i>" . $timestamp . "</i>
+        <div class=\"message own-message\">
+          <span class=\"message-sender\">" . $sender . "</span>
+          <span class=\"message-content\">" . $msg . "</span>
+        </div>";
       }
+      ?>
+      <form id="chat-input" onsubmit="event.preventDefault();">
+        <input type="text" id="name-input" maxlength="64" placeholder="Name">
+        <input type="email" id="email-input" maxlength="128" placeholder="E-Mail">
+        <input type="text" id="message-input" placeholder="Nachricht" maxlength="1024">
+        <input type="submit" id="send-button" value="Senden">
+      </form>
+    </div>
 
-      chatMessages.appendChild(messageElement);
-      messageInput.value = '';
+    <script>
+      const chatboxButton = document.getElementById('chatbox-button');
+      const modalbox = document.getElementById('modalbox');
+      const closeButton = document.getElementById('close-button');
+      const chatMessages = document.getElementById('chat-messages');
+      // const nameInput = document.getElementById('name-input');
+      // const messageInput = document.getElementById('message-input');
+      // const sendButton = document.getElementById('send-button');
 
-      chatMessages.scrollTop = chatMessages.scrollHeight; // Scrollen zum Ende der Nachrichten
-    }
-  });
-</script>
+      chatboxButton.addEventListener('click', () => {
+        modalbox.style.display = 'block';
+      });
+
+      closeButton.addEventListener('click', () => {
+        modalbox.style.display = 'none';
+      });
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      // sendButton.addEventListener('click', () => {
+      //   const name = nameInput.value.trim();
+      //   const message = messageInput.value.trim();
+
+      //   if (name && message) {
+      //     const messageElement = document.createElement('div');
+      //     messageElement.classList.add('message');
+
+      //     const senderElement = document.createElement('span');
+      //     senderElement.classList.add('message-sender');
+      //     senderElement.textContent = name + ': ';
+
+      //     const contentElement = document.createElement('span');
+      //     contentElement.classList.add('message-content');
+      //     contentElement.textContent = message;
+
+      //     messageElement.appendChild(senderElement);
+      //     messageElement.appendChild(contentElement);
+
+      //     if (name === 'Max Mustermann') {
+      //       messageElement.classList.add('own-message');
+      //     } else {
+      //       messageElement.classList.add('other-message');
+      //     }
+
+      //     chatMessages.appendChild(messageElement);
+      //     messageInput.value = '';
+
+      //     chatMessages.scrollTop = chatMessages.scrollHeight; // Scrollen zum Ende der Nachrichten
+      //   }
+      // });
+    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
