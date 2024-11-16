@@ -101,6 +101,8 @@ include ("addhit.php");
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#contacts-2-u6k7q0Bejh">Kontakt</a>
             </li>
+            
+            
           </ul>
           <div class="navbar-buttons mbr-section-btn">
             <a class="btn btn-primary display-4" href="#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>

@@ -138,34 +138,17 @@
   </section>
 
 
-  <section class="iframe-container">
-    <iframe id="myIframe" src="" frameborder="0"></iframe>
+  <section class="buli-container">
+      <form action="tippen.php" id="loginform" method="post" onsubmit="return false;">
+
+        <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag">
+        <input type="text" name="user" maxlength="64" placeholder="Benutzer">
+        <input type="password" name="pass" id="password-input" placeholder="Passwort">
+
+        <input type="submit" value="=> Tippen! <=">
+
+      </form>
   </section>
-
-  <style>
-    .iframe-container {
-      display: flex; /* Zentriert das iframe horizontal */
-      justify-content: center;
-      align-items: center; /* Zentriert das iframe vertikal */
-    }
-
-    #myIframe {
-      width: 80%; 
-      height: 500px; 
-    }
-
-  </style>
-
-  <script>
-    const myIframe = document.getElementById("myIframe");
-    const url = "https://www.kicktipp.de/ritzenberger-euro-2024/"; // Hier deine gewünschte URL einfügen
-
-    myIframe.src = url; 
-
-  </script>
-
-
-
 
 
   <section class="contacts02 map1 cid-u6k7q0Bejh" id="contacts-2-u6k7q0Bejh">
@@ -323,6 +306,7 @@
     })();
 
   </script>
+  <script src="encodeBuLiLogin.js"></script>
 </body>
 
 </html>
