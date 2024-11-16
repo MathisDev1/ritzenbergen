@@ -50,12 +50,6 @@
       --info-text: #FFFFFF;
     }
   </style>
-  <?php
-
-  include("../mysqlverbinden.php");
-  include("bildschau/phpscripts/rowforeach.php");
-
-  ?>
 </head>
 
 <body>

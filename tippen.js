@@ -1,5 +1,13 @@
 function tippen(json){
-    
+    $.ajax("tippeintragen.php",{
+        method: "post",
+        data: {user: username, pass: password, spieltag: spieltag, tipp: json},
+        complete: (response)=>{
+            window.alert("Tipp wurde eingesendet. Antwort vom Server: "+response.responseText);
+            window.location.reload();
+        }
+    });
+    window.alert("Tipp wird gesendet...");
 }
 
 
