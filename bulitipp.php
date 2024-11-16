@@ -144,6 +144,21 @@
       </form>
   </section>
 
+  <section class="buli-results">
+    <table>
+      <tr>
+        <td>Mannschaft1</td>
+        <td>Mannschaft2</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    </table>
+  </section>
+
+  
+
 
   <section class="contacts02 map1 cid-u6k7q0Bejh" id="contacts-2-u6k7q0Bejh">
     <div class="container">
