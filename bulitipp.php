@@ -103,7 +103,8 @@
           <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
             <strong>Willkommen im Bundesliga Tippspiel</strong>
           </h1>
-          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Das Tippspiel befindet sich noch in der Entwicklung. Es können auf dieser Seite bisher nur Tabellen und Spieltage angeschaut werden.</p>
+          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Das Tippspiel befindet sich noch in der
+            Entwicklung. Es können auf dieser Seite bisher nur Tabellen und Spieltage angeschaut werden.</p>
           <div class="mbr-section-btn"><a class="btn btn-white-outline display-7"
               href="#gallery-9-u6k7q0xbqP">Erkunden</a></div>
         </div>
@@ -133,31 +134,45 @@
 
 
   <section class="buli-container">
-      <form action="tippen.php" id="loginform" method="post" onsubmit="return false;">
+    <form action="tippen.php" id="loginform" method="post" onsubmit="return false;">
 
-        <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag">
-        <input type="text" name="user" maxlength="64" placeholder="Benutzer">
-        <input type="password" name="pass" id="password-input" placeholder="Passwort">
+      <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag">
+      <input type="text" name="user" maxlength="64" placeholder="Benutzer">
+      <input type="password" name="pass" id="password-input" placeholder="Passwort">
 
-        <input type="submit" value="=> Tippen! <=">
+      <input type="submit" value="=> Tippen! <=">
 
-      </form>
+    </form>
   </section>
 
   <section class="buli-results">
     <table>
       <tr>
-        <td>Mannschaft1</td>
-        <td>Mannschaft2</td>
+        <td>Paarung</td>
+        <td>Ergebnis</td>
       </tr>
-      <tr>
-        <td>1</td>
-        <td>1</td>
-      </tr>
+      <?php
+      include("../mysqlverbinden.php");
+      include("./rowforeach.php");
+      $spieltag = 1;
+      foreach (srowforeach("SELECT paarung, score1, score2 from `buli-results` where spieltag=?;", [$spieltag]) as $key => $value) {
+        $paarung = srowforeach("SELECT heim, gast from `buli-paarungen` where `id`=?;", [$value[0]])[0];
+        $score1 = $value[1];
+        $score2 = $value[2];
+        $url="buli-punkte.php?detail=spiel&spieltag=".$spieltag."&paarung=".$value[0];
+        ?>
+        
+          <tr>
+            <td><a href="<?php echo $url; ?>"><?php echo $paarung[0]; ?> - <?php echo $paarung[1]; ?></a></td>
+            <td><a href="<?php echo $url; ?>"><?php echo $score1; ?> - <?php echo $score2; ?></a></td>
+          </tr>
+        <?php
+      }
+      ?>
     </table>
   </section>
 
-  
+
 
 
   <section class="contacts02 map1 cid-u6k7q0Bejh" id="contacts-2-u6k7q0Bejh">
@@ -207,7 +222,7 @@
             <li class="header-menu-item mbr-fonts-style display-5">
               <button class="text-white btn-kontakt">Kontakt</button>
             </li>
-            
+
           </ul>
         </div>
         <div class="col-12 mt-4">
