@@ -154,25 +154,74 @@
       <?php
       include("../mysqlverbinden.php");
       include("./rowforeach.php");
-      $spieltag = 1;
+      include("buli-inc.php");
+      $spieltag = getmaxspieltag();
       foreach (srowforeach("SELECT paarung, score1, score2 from `buli-results` where spieltag=?;", [$spieltag]) as $key => $value) {
         $paarung = srowforeach("SELECT heim, gast from `buli-paarungen` where `id`=?;", [$value[0]])[0];
         $score1 = $value[1];
         $score2 = $value[2];
-        $url="buli-punkte.php?detail=spiel&spieltag=".$spieltag."&paarung=".$value[0];
+        $url = "buli-punkte.php?detail=spiel&spieltag=" . $spieltag . "&paarung=" . $value[0];
         ?>
-        
-          <tr>
-            <td><a href="<?php echo $url; ?>"><?php echo $paarung[0]; ?> - <?php echo $paarung[1]; ?></a></td>
-            <td><a href="<?php echo $url; ?>"><?php echo $score1; ?> - <?php echo $score2; ?></a></td>
-          </tr>
+
+        <tr>
+          <td><a href="<?php echo $url; ?>"><?php echo $paarung[0]; ?> - <?php echo $paarung[1]; ?></a></td>
+          <td><a href="<?php echo $url; ?>"><?php echo $score1; ?> - <?php echo $score2; ?></a></td>
+        </tr>
         <?php
       }
       ?>
     </table>
   </section>
 
+  <section class="buli-table">
+      <table>
+        <tr>
+          <td>Tag</td>
+          <?php
+          foreach (srowforeach("SELECT username from `buli-user`;",[]) as $key => $value) {
+          ?>
+          <td><?php echo $value[0]; ?></td>
+          <?php
+          }
+          ?>
+        </tr>
+        <?php
+          for($i=0;$i<getmaxspieltag();$i++){
+            
+        ?>
+        <tr>
+          
+          <td><?php echo $i+1; ?></td>
+          
+          <?php
+            foreach (srowforeach("SELECT username from `buli-user`;",[]) as $key => $value) {
+              $punkte=ts($value[0],$i+1);
+          ?>
 
+          <td><?php echo $punkte; ?></td>
+          
+          <?php } ?>
+        </tr>
+        <?php
+        }
+        ?>
+        <tr>
+          <td>Summe</td>
+          <?php
+          foreach (srowforeach("SELECT username from `buli-user`;",[]) as $key => $value) {
+            $punkte=gs($value[0],getmaxspieltag());
+            ?>
+            <td><?php echo $punkte; ?></td>
+          <?php
+          }
+          ?>
+        </tr>
+      </table>
+  </section>
+
+  <section class="rangliste">
+
+  </section>
 
 
   <section class="contacts02 map1 cid-u6k7q0Bejh" id="contacts-2-u6k7q0Bejh">
