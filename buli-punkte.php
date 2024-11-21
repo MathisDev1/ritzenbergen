@@ -78,11 +78,12 @@
                 $heim=$paarungQuery[0];
                 $gast=$paarungQuery[1];
                 $punkte=ps($name,$spieltag,$id);
+                $tippstr=($tipp==null)?"-":$tipp[0]." - ".$tipp[1];
                 ?>
             <tr>
                 <td><?php echo $heim; ?> - <?php echo $gast; ?></td>
                 <td><?php echo $score1; ?> - <?php echo $score2; ?></td>
-                <td><?php echo $tipp[0] ?> - <?php echo $tipp[1]; ?></td>
+                <td><?php echo $tippstr; ?></td>
                 <td><?php echo $punkte; ?></td>
             </tr>    
                 

@@ -160,7 +160,7 @@
         $paarung = srowforeach("SELECT heim, gast from `buli-paarungen` where `id`=?;", [$value[0]])[0];
         $score1 = $value[1];
         $score2 = $value[2];
-        $url = "buli-punkte.php?detail=spiel&spieltag=" . $spieltag . "&paarung=" . $value[0];
+        $url = "buli-punkte.php?name=null&detail=spiel&spieltag=" . $spieltag . "&paarung=" . $value[0];
         ?>
 
         <tr>
