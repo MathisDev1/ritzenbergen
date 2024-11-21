@@ -1,3 +1,7 @@
+<?php
+include("buli-check.php");
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -152,9 +156,7 @@
         <td>Ergebnis</td>
       </tr>
       <?php
-      include("../mysqlverbinden.php");
-      include("./rowforeach.php");
-      include("buli-inc.php");
+      
       $spieltag = getmaxspieltag();
       foreach (srowforeach("SELECT paarung, score1, score2 from `buli-results` where spieltag=?;", [$spieltag]) as $key => $value) {
         $paarung = srowforeach("SELECT heim, gast from `buli-paarungen` where `id`=?;", [$value[0]])[0];
