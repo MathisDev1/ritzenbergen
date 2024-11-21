@@ -220,9 +220,48 @@
   </section>
 
   <section class="rangliste">
-
+    <table>
+      <tr>
+        <td>Platz</td>
+        <td>Name</td>
+        <td>Punkte</td>
+      </tr>
+        <?php
+        $usersWithPoints=[];
+        foreach (srowforeach("SELECT username from `buli-user`;",[]) as $key => $value) {
+          $username=$value[0];
+          $punkte=gs($username,getmaxspieltag());
+          $usersWithPoints[$username]=$punkte;
+        }
+        array_multisort($usersWithPoints,SORT_DESC);
+        $i=0;
+        foreach ($usersWithPoints as $key => $value) {
+          $i++;
+          ?>
+        <tr>
+          <td><?php echo $i; ?></td>
+          <td><?php echo $key; ?></td>
+          <td><?php echo $value; ?></td>
+        </tr> 
+          
+        <?php
+        }
+        ?>
+    </table>
   </section>
 
+  <section class="tipperdetails">
+    <?php
+    foreach(srowforeach("SELECT username from `buli-user`;",[]) as $key => $value){
+      $username=$value[0];
+      ?>
+      <a href="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $username; ?>"><?php echo $username; ?></a>
+      
+      <?php
+    }
+    
+    ?>
+  </section>
 
   <section class="contacts02 map1 cid-u6k7q0Bejh" id="contacts-2-u6k7q0Bejh">
     <div class="container">

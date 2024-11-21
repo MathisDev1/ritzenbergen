@@ -18,15 +18,9 @@ include("./rowforeach.php");
 include("./check-buli-password.php");
 if(!$valid) die("Falsches Passwort!");
 
-include("getTipp.php");
-if(count($tippQueryResult)>0) die("Du hast bereits getippt!");
+include("buli-inc.php");
+if(count(srowforeach("SELECT `id` from `buli-tipp` where user=? AND spieltag=?;",[$user,$spieltag]))>0) die("Du hast bereits getippt!");
 
-function deadline($spieltag){ // Gibt true zurück, wenn die Deadline überschritten ist.
-    $deadline=srowforeach("SELECT deadline from `buli-paarungen` where spieltag=?;",[$spieltag])[0][0];
-    date_default_timezone_set('Europe/Berlin');
-
-    return strtotime($deadline)<time();
-}
 
 if(deadline($spieltag)) die("Deadline überschritten!");
 

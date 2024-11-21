@@ -46,8 +46,8 @@
         <!-- Richtiges Passwort, weitermachen -->
         <div>
             <?php
-            include("getTipp.php");
-            if (count($tippQueryResult) > 0) {
+            include("buli-inc.php");
+            if (count(srowforeach("SELECT `id` from `buli-tipp` where user=? AND spieltag=?;",[$user,$spieltag])) > 0) {
                 // Benutzer hat bereits getippt
                 ?>
 

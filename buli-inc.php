@@ -70,3 +70,11 @@ function getTipp($name,$spieltag,$paarungid){
         }
         return $maxspieltag;
     }
+
+    
+function deadline($spieltag){ // Gibt true zurück, wenn die Deadline überschritten ist.
+    $deadline=srowforeach("SELECT deadline from `buli-paarungen` where spieltag=?;",[$spieltag])[0][0];
+    date_default_timezone_set('Europe/Berlin');
+
+    return strtotime($deadline)<time();
+}
