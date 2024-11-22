@@ -60,7 +60,8 @@ function ps($name, $spieltag, $paarungid)
 function ts($name, $spieltag)
 {
     $punkte = 0;
-    foreach (srowforeach("SELECT `id` from `buli-paarungen` where spieltag=?;", [$spieltag]) as $key => $value) {
+    
+    foreach (srowforeach("SELECT `paarung` from `buli-results` where spieltag=?;", [$spieltag]) as $key => $value) {
         $punkte += ps($name, $spieltag, $value[0]);
     }
     return $punkte;
@@ -71,7 +72,7 @@ function gs($name, $spieltagmax)
     $punkte = 0;
 
     for ($i = 0; $i < $spieltagmax; $i++) {
-        $punkte += ts($name, $i + 1);
+        $punkte += ts($name, $i+1);
     }
 
     return $punkte;

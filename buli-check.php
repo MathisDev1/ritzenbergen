@@ -18,13 +18,18 @@ if ($response === false) {
 $responseData = json_decode($response, true); // Response auswerten
 if ($responseData) {
     // Response-Data ist ok
+    $spieltag=getmaxspieltag()+1;
     foreach ($responseData as $key => $match) {
         if ($match["matchIsFinished"]) {
             // Spiel beendet, Ergebnisse in die Datenbank eintragen
             //TODO
-            $paarungsid;
-            $score1;
-            $score2;
+            $heim=$match["team1"]["shortName"];
+            $gast=$match["team2"]["shortName"];
+            $paarungsid=srowforeach("SELECT `id` from `buli-paarungen` where spieltag=? AND heim=? AND gast=?;",[$spieltag,$heim,$gast])[0][0];
+            $score1=$match["matchResults"][1]["pointsTeam1"];
+            $score2=$match["matchResults"][1]["pointsTeam2"];
+            mysqli_execute_query($db_id,"INSERT INTO `buli-results` (paarung, score1,score2, spieltag) VALUES (?,?,?,?);",[$paarungsid,$score1,$score2,$spieltag]);
+            echo "<script>window.location.reload();</script>"; // Reload Clientseitig anstoßen
         }
     }
 } else {
