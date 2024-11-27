@@ -6,40 +6,6 @@ include("buli-inc.php");
 $bundesliga = 1; //TODO aus Datei holen
 $year = date("Y");
 
-// HTTP-Request ausführen
-// Ergebnisse holen
-$response = file_get_contents("https://api.openligadb.de/getmatchdata/bl".$bundesliga."/".$year."/".getmaxspieltag()+1, false);
-
-
-if ($response === false) {
-    echo "<script>window.alert(`Fehler beim HTTP-Request (Z.15)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
-}
-
-$responseData = json_decode($response, true); // Response auswerten
-if ($responseData) {
-    // Response-Data ist ok
-    $spieltag=getmaxspieltag()+1;
-    foreach ($responseData as $key => $match) {
-        if ($match["matchIsFinished"]) {
-            // Spiel beendet, Ergebnisse in die Datenbank eintragen
-            //TODO
-            $heim=$match["team1"]["shortName"];
-            $gast=$match["team2"]["shortName"];
-            $paarungsid=srowforeach("SELECT `id` from `buli-paarungen` where spieltag=? AND heim=? AND gast=?;",[$spieltag,$heim,$gast])[0][0];
-            $score1=$match["matchResults"][1]["pointsTeam1"];
-            $score2=$match["matchResults"][1]["pointsTeam2"];
-            mysqli_execute_query($db_id,"INSERT INTO `buli-results` (paarung, score1,score2, spieltag) VALUES (?,?,?,?);",[$paarungsid,$score1,$score2,$spieltag]);
-            echo "<script>window.location.reload();</script>"; // Reload Clientseitig anstoßen
-        }
-    }
-} else {
-    // Response ist kein JSON
-    echo "<script>window.alert(`JSON-Response ungültig (Z.29)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
-}
-
-
-
-
 
 // Paarungen holen
 // HTTP-Request ausführen
@@ -93,3 +59,31 @@ if ($responseData!=null) {
     echo "<script>window.alert(`JSON-Response ungültig (Z.84)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
 }
 
+$response = file_get_contents("https://api.openligadb.de/getmatchdata/bl".$bundesliga."/".$year."/".getmaxspieltag()+1, false);
+
+
+if ($response === false) {
+    echo "<script>window.alert(`Fehler beim HTTP-Request (Z.15)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
+}
+
+$responseData = json_decode($response, true); // Response auswerten
+if ($responseData) {
+    // Response-Data ist ok
+    $spieltag=getmaxspieltag()+1;
+    foreach ($responseData as $key => $match) {
+        if ($match["matchIsFinished"]) {
+            // Spiel beendet, Ergebnisse in die Datenbank eintragen
+            //TODO
+            $heim=$match["team1"]["shortName"];
+            $gast=$match["team2"]["shortName"];
+            $paarungsid=srowforeach("SELECT `id` from `buli-paarungen` where spieltag=? AND heim=? AND gast=?;",[$spieltag,$heim,$gast])[0][0];
+            $score1=$match["matchResults"][1]["pointsTeam1"];
+            $score2=$match["matchResults"][1]["pointsTeam2"];
+            mysqli_execute_query($db_id,"INSERT INTO `buli-results` (paarung, score1,score2, spieltag) VALUES (?,?,?,?);",[$paarungsid,$score1,$score2,$spieltag]);
+            echo "<script>window.location.reload();</script>"; // Reload Clientseitig anstoßen
+        }
+    }
+} else {
+    // Response ist kein JSON
+    echo "<script>window.alert(`JSON-Response ungültig (Z.29)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
+}
