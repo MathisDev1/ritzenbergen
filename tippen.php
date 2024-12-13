@@ -47,7 +47,7 @@
         <div>
             <?php
             include("buli-inc.php");
-            if (count(srowforeach("SELECT `id` from `buli-tipp` where user=? AND spieltag=?;",[$user,$spieltag])) > 0) {
+            if (count(srowforeach("SELECT `id` from `buli-tipps` where user=? AND spieltag=?;",[$user,$spieltag])) > 0) {
                 // Benutzer hat bereits getippt
                 ?>
 
@@ -56,8 +56,6 @@
                     <h1>Du hast bereits getippt. Das sind deine Tipps:</h1>
                     <table>
                         <?php
-                        
-                                                    
                         foreach (json_decode(srowforeach("SELECT tipp from `buli-tipp` where `user`=? AND spieltag=?;",[$user,$spieltag])[0][0],true) as $key => $value) {
                             $heim=array_keys($value)[0];
                             $gast=array_keys($value)[1];
@@ -73,6 +71,7 @@
                                 <td><?php echo $gastscore; ?></td>
                             </tr>
                             <?php
+                            
                         }
                         ?>
                     </table>
