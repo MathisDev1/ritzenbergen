@@ -1,44 +1,48 @@
-<?php 
+<?php
 include("../../../../mysqlverbinden.php");
 include("../../../rowforeach.php");
-include("../header.php"); if($valid){ ?>
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ritzenbergen.de AdminPanel</title>
-    <link rel="stylesheet" href="../adminpanel.css">
-</head>
-<body>
-    <h1>Termine & Neuigkeiten</h1>
-    <form action="eintragen.php" method="post">
-        <select name="box" id="box" size="5">
-            <option value="html">PHP- oder HTML-Datei</option>
-            <option value="text">Text</option>
-            <option value="link">Link</option>
-            <option value="dlink">Link (Download)</option>
-            <option value="fotos">Fotos</option>
-        </select><br><br>
-        
-        <label for="ueberschrift">Überschrift:</label>
-        <input type="text" name="ueberschrift" id="ueberschrift" placeholder="Überschrift eingeben" required><br><br>
-        <label for="datum">Datum:</label>
-        <input type="date" name="datum" id="datum" required><br><br>
-        <label for="inhalt">Inhalt, Vorschau oder Pfad zur HTML- oder PHP-Datei:</label>
+include("../header.php");
+if ($valid) { ?>
+    <!DOCTYPE html>
+    <html lang="en">
 
-        <div class="buttonArea">
-            <textarea name="inhalt" id="inhalt" rows="20" cols="43" placeholder="Inhalt eingeben" required></textarea><br><br>
-            <input class="linkinput" type="text" name="link" id="link" placeholder="Link"><br><br>
-            <input type="text" name="foto" id="fotoinput" placeholder="Pfad zum Foto (vom Ordner bilder aus)">
-        </div>
-        <input type="hidden" name="username" value="<?php echo $_POST["username"]; ?>">
-        <input type="hidden" name="password" value="<?php echo $_POST["password"]; ?>">
-        
-        <input type="submit" id="submit-btn"/>    
-    </form>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Termine & Neuigkeiten</title>
+    </head>
 
+    <body>
+        <script>
+            function openWithPassword(url) {
+                var password = `<?php echo $_POST["password"]; ?>`;
+                var username = `<?php echo $_POST["username"]; ?>`;
+                var formTag = document.createElement("form");
+                formTag.action = url;
+                formTag.method = "post";
+                var usernameTag = document.createElement("input");
+                var passwordTag = document.createElement("input");
+                usernameTag.type = "hidden";
+                passwordTag.type = "hidden";
+                usernameTag.value = username;
+                passwordTag.value = password;
+                usernameTag.name = "username";
+                passwordTag.name = "password";
+                formTag.appendChild(usernameTag);
+                formTag.appendChild(passwordTag);
+                document.body.appendChild(formTag);
+                formTag.submit();
+            }
+        </script>
 
-</body>
-</html>
-<?php } include("../footer.php"); ?>
+        <a href="#" onclick="openWithPassword('add.php');">Hinzufügen</a><br>
+        <a href="#" onclick="openWithPassword('edit.php');">Bearbeiten</a><br>
+        <a href="#" onclick="openWithPassword('remove.php');">Löschen</a>
+
+    </body>
+
+    </html>
+    <?php
+}
+include("../footer.php");
+?>
