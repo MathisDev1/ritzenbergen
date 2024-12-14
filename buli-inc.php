@@ -1,17 +1,18 @@
 <?php
 function getTipp($name, $spieltag, $paarungid)
 {
-    $tippQueryResult = srowforeach("SELECT `tipp1`,`tipp2`,`tipp3`,`tipp4`,`tipp5`,`tipp6`,`tipp7`,`tipp8`,`tipp9` from `buli-tipps` where user=? AND spieltag=?;", [$name, $spieltag]);
+    $userid=srowforeach("SELECT `id` from `buli-user` where username=?;",[$name])[0][0];
+    $tippQueryResult = srowforeach("SELECT `tipp1`,`tipp2`,`tipp3`,`tipp4`,`tipp5`,`tipp6`,`tipp7`,`tipp8`,`tipp9` from `buli-tipps` where user=? AND spieltag=?;", [$userid, $spieltag]);
     if (count($tippQueryResult) == 0)
         return null;
-
+    
     $tippids=$tippQueryResult[0];
-    $paarungen=srowforeach("SELECT `id` from `buli-paarungen` where `spieltag`=? SORT BY `id` ASC;",[$spieltag]);
+    $paarungen=srowforeach("SELECT `id` from `buli-paarungen` where `spieltag`=?;",[$spieltag]);
     
     $i=0;
     foreach($tippids as $key => $value){
-        if($paarungid==$paarungen[$i]){
-            // return [0] heim, [1] gast	        
+        if($paarungid==$paarungen[$i][0]){
+            // return [0] heim, [1] gast
             return srowforeach("SELECT `score1`,`score2` from `buli-tipp` where `id`=?;",[$value])[0];
         }
         $i++;
