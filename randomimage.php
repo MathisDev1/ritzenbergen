@@ -12,15 +12,22 @@ error_reporting(-1);
  *      whitelist: Pfad zur Whitelist-Datei
  *      size: Die Schriftgröße
  */
+function lineEnding($str) {
+    if (strpos($str, "\r\n") !== false) return "\r\n";
+    if (strpos($str, "\n") !== false) return "\n";
+    return null;
+  }
 include("colorstringconvert.php");
 if (!isset($_GET["path"]))
     die("Bitte gebe path an!");
 if (!isset($_GET["recursive"]))
     die("Bitte gebe recursive an!");
+
 if (!isset($_GET["whitelist"]))
-    $whitelist = null;
-else
-    $whitelist = explode("\r\n", file_get_contents($_GET["whitelist"]));
+    $whitelistpath = $_GET["path"]."/whitelist.txt";
+
+if(!empty(file_get_contents($whitelistpath))) $whitelist = explode(lineEnding(file_get_contents($whitelistpath)), file_get_contents($whitelistpath));
+else $whitelist=[];
 if (isset($_GET["tn"])) {
     if (!isset($_GET["text"]))
         die("Bitte gebe text an!");

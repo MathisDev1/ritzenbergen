@@ -30,7 +30,8 @@ if ($valid) { ?>
         if(!isset($_POST["images"])) die("POST images fehlt");
         $imagepath = $_POST["images"];
         $whitelistpath = $imagepath."/whitelist.txt";
-        $whitelist = explode(lineEnding(file_get_contents($whitelistpath)), file_get_contents($whitelistpath));
+        if(empty(file_get_contents($whitelistpath))) $whitelist=[];
+        else $whitelist = explode(lineEnding(file_get_contents($whitelistpath)), file_get_contents($whitelistpath));
         $images = [];
         function recursiveDir($dir, &$results = array())
         {
