@@ -649,7 +649,15 @@ include ("addhit.php");
     </div>
   </section>
 
-
+  <div class="modal-container">
+      <div class="modal">
+        <div class="modal-content">
+          <span class="closeBtn">x</span>
+          <h1>ModalTest</h1>
+        </div>
+      </div>
+      <button class="openBtn">Modal öffnen</button>
+  </div>
 
 
   <section class="gallery10 cid-u6k7q0zbuN" id="features-61-u6k7q0zbuN">
@@ -783,9 +791,6 @@ include ("addhit.php");
 
 
 
-
-
-
   <!--Kontaktformular Vorlage Anfang-->
   <?php
   $texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo`,`id`,`link` from `ritzenbergen-formulare`", []);
@@ -902,24 +907,6 @@ include ("addhit.php");
 
 
 
-
-  <script>
-    const modalEntdecken = document.getElementById("modalEntdecken");
-    const openButtonEntdecken = document.querySelector(".btn-entdecken");
-    const closeButtonEntdecken = document.querySelector(".close-button");
-
-    function openEntdeckenModal() {
-      modalEntdecken.style.display = "block";
-    }
-
-    function closeEntdeckenModal() {
-      modalEntdecken.style.display = "none";
-    }
-
-    openButtonEntdecken.addEventListener("click", openEntdeckenModal);
-
-    closeButtonEntdecken.addEventListener("click", closeEntdeckenModal);
-  </script>
   </div>
 
 
@@ -1097,6 +1084,7 @@ include ("addhit.php");
   <script src="assets/ytplayer/index.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
+  <script src="modal.js"></script>
   <script>
 
     (function () {
