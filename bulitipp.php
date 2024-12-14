@@ -31,6 +31,7 @@ include("buli-check.php");
   <link rel="preload" as="style" href="assets/mobirise/css/additional.css">
   <link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
   <link rel="stylesheet" href="./assets/css/bulitipp.css">
+  <link rel="stylesheet" href="./assets/css/bulitipp2.css">
 
 
 
@@ -99,7 +100,7 @@ include("buli-check.php");
 
 
 
-  <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
+  <!-- <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
     <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
     <div class="container-fluid">
       <div class="row">
@@ -114,7 +115,7 @@ include("buli-check.php");
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
 
