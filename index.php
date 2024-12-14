@@ -855,59 +855,39 @@ include ("addhit.php");
 
 
 
-  <!--Modal-Entdecken-->
-  <div id="modalEntdecken" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeEntdeckenModal()">×</span>
-      <h1>Entdecke unsere Umgebung</h1>
-      <h5>An dieser Stelle finden Sie einige Verbindungen zu anderen Stellen im WWW. Beim Anwählen verlassen Sie den
-        Bereich der Homepage von Amedorf und Ritzenbergen. Dementsprechend übernehmen wir (selbstverständlicherweise)
-        keine Haftung für die Folgen des Konsums verlinkter Inhalte.</h5><br><br>
-      <ul>
-        <b>
-          <li><a href="https://alt-blender.de" target="_blank">alt-blender.de - Historische Fotos und Dokumente aus
-              Blender und umzu</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.verden.de/" target="_blank">Verden/Aller</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.langwedel.de/" target="_blank">Flecken Langwedel</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.feuerwehr-blender.de/" target="_blank">Freiwillige Feuerwehr Blender</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.browiede.de/" target="_blank">Landgasthaus Browiede</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.mittelweserverband.de/" target="_blank">Mittelweserverband</a></li>
-        </b>
-        <b>
-          <li><a href="http://angelverein-doerverden.de/" target="_blank">Angelverein Dörverden</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.theater-holtum.de/" target="_blank">Theatergruppe des gemischten Chores "Polyhymnia"
-              Holtum Marsch</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
-        </b>
-        <b>
-          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
-        </b>
-
-      </ul>
-    </div>
+ 
+<div class="modal-container">
+      <div class="modal">
+        <div class="modal-content">
+          <span class="closeBtn" style="cursor: pointer;">x</span>
+          <h1>Anmeldungen</h1> <!--Die Überschrift soll anpassbar sein-->
+          <table class="container">
+            <thead>
+              <tr>
+                <th><h1>Name</h1></th>
+                <th><h1>E-Mail</h1></th>
+                <th><h1>Datum</h1></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Mathis Kuhlenkamp</td>
+                <td>mathis.kmp@gmail.com</td>
+                <td>14.12.24</td>
+              </tr>
+              <tr>
+                <td>Jonas Kuhlenkamp</td>
+                <td>jonas.kuhlenkamp@gmail.com</td>
+                <td>14.12.24</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <button class="openBtn">Modal öffnen</button>
   </div>
 
 
-
-
-  </div>
 
 
 
