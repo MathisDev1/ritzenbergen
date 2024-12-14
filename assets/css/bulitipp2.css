@@ -37,3 +37,70 @@
   input[type="submit"]:hover {
     background-color: #3e8e41;
   }
+
+  
+
+
+
+
+
+
+
+
+
+
+/* Paarungsergebnisse */
+
+
+
+  .buli-results table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .buli-results th, .buli-results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .buli-results th {
+    background-color: #f2f2f2;
+  }
+  
+  .buli-results a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  .buli-results a:hover {
+    text-decoration: underline;
+  }
+
+
+
+/* Rangliste */
+  
+  .buli-table table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .buli-table th, .buli-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .buli-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .buli-table a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  .buli-table a:hover {
+    text-decoration: underline;
+  }

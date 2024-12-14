@@ -89,6 +89,9 @@ include("buli-check.php");
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#bl-tabelle">Tabelle</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="#buliresults-section">Ergebnisse</a>
+            </li>
           </ul>
           <div class="navbar-buttons mbr-section-btn">
             <a class="btn btn-primary display-4" href="#contact-form-2-u6k7q0BfGa">Registrieren</a>
@@ -96,7 +99,8 @@ include("buli-check.php");
         </div>
       </div>
     </nav>
-  </section>
+  </section>              
+
 
 
 
@@ -118,6 +122,7 @@ include("buli-check.php");
   </section> -->
 
 
+  <h1>Willkommen im Ritzenberger Bundesliga Tippspiel!</h1>
 
 
   <section class="features023 cid-u6k7q0xclF" id="metrics-1-u6k7q0xclF">
@@ -150,7 +155,8 @@ include("buli-check.php");
     </form>
   </section>
 
-  <section class="buli-results">
+  <section class="buli-results" id="buliresults-section">
+    <h1>Paarungsergebnisse</h1>
     <table>
       <tr>
         <td>Paarung</td>
