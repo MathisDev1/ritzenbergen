@@ -849,6 +849,85 @@ include ("addhit.php");
   ?>
 
 
+
+  <!--Modal-Entdecken-->
+  <div id="modalEntdecken" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeEntdeckenModal()">×</span>
+      <h1>Entdecke unsere Umgebung</h1>
+      <h5>An dieser Stelle finden Sie einige Verbindungen zu anderen Stellen im WWW. Beim Anwählen verlassen Sie den
+        Bereich der Homepage von Amedorf und Ritzenbergen. Dementsprechend übernehmen wir (selbstverständlicherweise)
+        keine Haftung für die Folgen des Konsums verlinkter Inhalte.</h5><br><br>
+      <ul>
+        <b>
+          <li><a href="https://alt-blender.de" target="_blank">alt-blender.de - Historische Fotos und Dokumente aus
+              Blender und umzu</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.verden.de/" target="_blank">Verden/Aller</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.langwedel.de/" target="_blank">Flecken Langwedel</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.feuerwehr-blender.de/" target="_blank">Freiwillige Feuerwehr Blender</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.browiede.de/" target="_blank">Landgasthaus Browiede</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.mittelweserverband.de/" target="_blank">Mittelweserverband</a></li>
+        </b>
+        <b>
+          <li><a href="http://angelverein-doerverden.de/" target="_blank">Angelverein Dörverden</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.theater-holtum.de/" target="_blank">Theatergruppe des gemischten Chores "Polyhymnia"
+              Holtum Marsch</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
+        </b>
+        <b>
+          <li><a href="https://www.thedinghausen.de/" target="_blank">Samtgemeinde Thedinghausen</a></li>
+        </b>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    const modalEntdecken = document.getElementById("modalEntdecken");
+    const openButtonEntdecken = document.querySelector(".btn-entdecken");
+    const closeButtonEntdecken = document.querySelector(".close-button");
+
+    function openEntdeckenModal() {
+      modalEntdecken.style.display = "block";
+    }
+
+    function closeEntdeckenModal() {
+      modalEntdecken.style.display = "none";
+    }
+
+    openButtonEntdecken.addEventListener("click", openEntdeckenModal);
+
+    closeButtonEntdecken.addEventListener("click", closeEntdeckenModal);
+  </script>
+  </div>
+
+
+
+
+
+
+
   <!--Kontaktformular Vorlage Ende-->
 
 
