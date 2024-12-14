@@ -345,7 +345,7 @@ include("addhit.php");
 						    </h6>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . date("d.m.y", mktime(0, 0, 0, $date[1], $date[2], $date[0])) . "</p>
 						  <p class=\"mbr-text mbr-fonts-style mb-3 display-7\">" . $value[3] . "</p>
-						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"bildschau?path=" . $value[4] . "\">Fotos ansehen</a></div>
+						  <div class=\"mbr-section-btn item-footer\"><a class=\"btn item-btn btn-primary display-7\" href=\"bildschau.php?path=" . $value[4] . "&bild=0\">Fotos ansehen</a></div>
 					  </div>
 				  </div>
 			  </div>
