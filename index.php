@@ -649,15 +649,7 @@ include("addhit.php");
     </div>
   </section>
 
-  <div class="modal-container">
-    <div class="modal">
-      <div class="modal-content">
-        <span class="closeBtn">x</span>
-        <h1>ModalTest</h1>
-      </div>
-    </div>
-    <button class="openBtn">Modal öffnen</button>
-  </div>
+  
 
 
   <section class="gallery10 cid-u6k7q0zbuN" id="features-61-u6k7q0zbuN">
@@ -865,46 +857,6 @@ include("addhit.php");
   }
   ?>
 
-
-
-
-  <div class="modal-container">
-    <div class="modal">
-      <div class="modal-content">
-        <span class="closeBtn" style="cursor: pointer;">x</span>
-        <h1>Anmeldungen</h1> <!--Die Überschrift soll anpassbar sein-->
-        <table class="container">
-
-          <thead>
-            <tr>
-              <th>
-                <h1>Name</h1>
-              </th>
-              <th>
-                <h1>E-Mail</h1>
-              </th>
-              <th>
-                <h1>Datum</h1>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Mathis Kuhlenkamp</td>
-              <td>mathis.kmp@gmail.com</td>
-              <td>14.12.24</td>
-            </tr>
-            <tr>
-              <td>Jonas Kuhlenkamp</td>
-              <td>jonas.kuhlenkamp@gmail.com</td>
-              <td>14.12.24</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <button class="openBtn">Modal öffnen</button>
-  </div>
 
 
 
