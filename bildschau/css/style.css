@@ -1,58 +1,5 @@
 
 
-
-
-
-
-
-
-.flex-card-wrapper {
-	width: 80rem;
-    max-width: 160rem;
-    height: 40rem;
-    max-height: 50rem;
-    display: flex;
-    justify-content: center; /* Ändere hier von space-between zu center */
-    justify-items: center; 
-    margin: 0 auto;
-    flex-direction: center;
-    align-content: center;
-
-    padding-top: 10px;
-
-
-}
-.flex-card-wrapper .flex-card-container {
-	padding: 0 0 0 0;
-	height: 100%;
-	transition: 500ms all ease-in-out;
-	border-radius: 20px;
-	cursor: pointer;
-	overflow: hidden;
-	position: relative;
-	background-position: center center;
-	background-size: cover;
-	background-repeat: no-repeat;
-	margin: 0 0 0 0;
-	display: none;
-}
-.flex-card-wrapper .flex-card-container:last-child {
-	margin: 0 0 0 0;
-}
-.flex-card-wrapper .flex-card-container.active {
-	width: 88%;
-	margin-left: 1%;
-	margin-right: 1%;
-	display: block;
-}
-.flex-card-wrapper .flex-card-container.unactive {
-	width: 5%;
-	display: block;
-}
-.main {
-	flex-direction: column;
-}
-
 #info {
 	visibility: hidden;
 }

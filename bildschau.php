@@ -24,6 +24,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/additional.css"><link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
   <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./bildschau/css/style.min.css">
   <?php
     // Fehler anzeigen lassen
     error_reporting(-1);
@@ -207,7 +208,7 @@
                 if ($value == "." || $value == ".." || $value == "@eaDir" || pathinfo($value, PATHINFO_EXTENSION) == "txt") {
                     continue;
                 }
-                array_push($bilder2, $value);
+                array_push($bilder2,  $value);
             }
             $kommentare = array();
             foreach (rowforeach("SELECT * from fotoscomments") as $j => $row) {
@@ -245,8 +246,13 @@
                  * data-name: Kommentare
                  * data-src: Pfad zu den Bildern
                  */
-                echo "<article class=\"flex-card-container lazy-loading" . (($i==$_GET["bild"]) ? " active" : "") . ((($i == $_GET["bild"] - 1) || ($i == $_GET["bild"] + 1)) ? " unactive" : "") . "\" data-title=\"" . $i . "\" data-id=\"" . $datastring . "\" data-name=\"" . htmlentities($kommentar) . "\" data-src=\"" . $bilderpath . "/" . $filename . "\"></article>";
+                echo "<article class=\"flex-card-container lazy-loading". ((isHochformat($filename))?" hochformat":"") . (($i==$_GET["bild"]) ? " active" : "") . ((($i == $_GET["bild"] - 1) || ($i == $_GET["bild"] + 1)) ? " unactive" : "") . "\" data-title=\"" . $i . "\" data-id=\"" . $datastring . "\" data-name=\"" . htmlentities($kommentar) . "\" data-src=\"" . $bilderpath . "/" . $filename . "\"></article>";
                 $i++;
+            }
+            function isHochformat($bildpfad): bool{
+              global $bilderpath;
+              list($width, $height) = getimagesize($bilderpath."/".$bildpfad);
+              return $height > $width;
             }
             ?>
         </section>
