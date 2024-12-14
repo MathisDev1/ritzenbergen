@@ -177,28 +177,28 @@ include("buli-check.php");
   </section>
 
   <section class="buli-table">
-  <?php /*
-  <!-- <table>
+  
+  <table>
       <tr>
-        <td>Tag</td> -->
+        <td>Tag</td>
         <?php
-        //foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
+        foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
           ?>
-          <!-- <td><?php //echo $value[0]; ?></td> -->
+          <td><?php echo $value[0]; ?></td>
           <?php
-        //}
+        }
         ?>
-      <!-- </tr> -->
+      </tr>
       <?php
       for ($i = 0; $i < getmaxspieltag(); $i++) {
 
         ?>
-        <!-- <tr> -->
+        <tr>
 
-          <!-- <td><?php echo $i + 1; ?></td> -->
+          <td><?php echo $i + 1; ?></td>
 
           <?php
-          /*foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
+          foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
             if (srowforeach("SELECT count(`paarung`) from `buli-results` where spieltag=?;", [$i + 1])[0][0] < 9) {
               $punkte = ts($value[0], $i);
             }else{
@@ -206,15 +206,15 @@ include("buli-check.php");
             }
             ?>
 
-            <!-- <td><?php // echo $punkte; ?></td> -->
+            <td><?php echo $punkte; ?></td>
 
-          <?php //} ?>
-        <!-- </tr> -->
+          <?php } ?>
+        </tr>
         <?php
       }
       ?>
-      <!-- <tr> -->
-        <!-- <td>Summe</td> -->
+      <tr>
+        <td>Summe</td>
         <?php
         foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
           $punkte = gs($value[0], getmaxspieltag());
@@ -257,7 +257,7 @@ include("buli-check.php");
       }
       ?>
     </table>
-    */ ?>
+    
   </section>
 
   <section class="tipperdetails">
