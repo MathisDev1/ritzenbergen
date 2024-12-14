@@ -1,0 +1,106 @@
+.buli-container {
+    width: 300px; /* Passe die Breite an deine Bedürfnisse an */
+    margin: 0 auto; /* Zentriert den Container */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="number"],
+  input[type="text"],
+  input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50; /* Grün für einen positiven Button */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+/* Paarungsergebnisse */
+
+
+
+  .buli-results table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .buli-results th, .buli-results td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .buli-results th {
+    background-color: #f2f2f2;
+  }
+  
+  .buli-results a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  .buli-results a:hover {
+    text-decoration: underline;
+  }
+
+
+
+/* Rangliste */
+  
+  .buli-table table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .buli-table th, .buli-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .buli-table th {
+    background-color: #f2f2f2;
+  }
+  
+  .buli-table a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  .buli-table a:hover {
+    text-decoration: underline;
+  }

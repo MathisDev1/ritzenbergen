@@ -31,6 +31,7 @@ include("buli-check.php");
   <link rel="preload" as="style" href="assets/mobirise/css/additional.css">
   <link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
   <link rel="stylesheet" href="./assets/css/bulitipp.css">
+  <link rel="stylesheet" href="./assets/css/bulitipp2.css">
 
 
 
@@ -88,6 +89,9 @@ include("buli-check.php");
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#bl-tabelle">Tabelle</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="#buliresults-section">Ergebnisse</a>
+            </li>
           </ul>
           <div class="navbar-buttons mbr-section-btn">
             <a class="btn btn-primary display-4" href="#contact-form-2-u6k7q0BfGa">Registrieren</a>
@@ -95,11 +99,12 @@ include("buli-check.php");
         </div>
       </div>
     </nav>
-  </section>
+  </section>              
 
 
 
-  <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
+
+  <!-- <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
     <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
     <div class="container-fluid">
       <div class="row">
@@ -114,9 +119,10 @@ include("buli-check.php");
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
+  <h1>Willkommen im Ritzenberger Bundesliga Tippspiel!</h1>
 
 
   <section class="features023 cid-u6k7q0xclF" id="metrics-1-u6k7q0xclF">
@@ -149,7 +155,8 @@ include("buli-check.php");
     </form>
   </section>
 
-  <section class="buli-results">
+  <section class="buli-results" id="buliresults-section">
+    <h1>Paarungsergebnisse</h1>
     <table>
       <tr>
         <td>Paarung</td>
