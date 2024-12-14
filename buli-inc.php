@@ -18,10 +18,13 @@ function getTipp($name, $spieltag, $paarungid)
         $i++;
     }
 }
+function getResult($paarungid,$spieltag){
+    return srowforeach("SELECT score1, score2 from `buli-results` where `paarung`=? AND spieltag=?;", [$paarungid, $spieltag])[0];
+}
 
 function ps($name, $spieltag, $paarungid)
 {
-    $punkte = srowforeach("SELECT score1, score2 from `buli-results` where `paarung`=? AND spieltag=?;", [$paarungid, $spieltag])[0];
+    $punkte = getResult($paarungid,$spieltag);
     $punktetipp = getTipp($name, $spieltag, $paarungid);
 
     if ($punktetipp == null){
