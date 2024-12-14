@@ -1,18 +1,18 @@
 <?php
 
-include ("../mysqlverbinden.php");
-include ("rowforeach.php");
+// include ("../mysqlverbinden.php");
+// include ("rowforeach.php");
 
-if (!isset($_GET["id"]))
-    die("GET id fehlt");
-else
-    $id = $_GET["id"];
+// if (!isset($_GET["id"]))
+//     die("GET id fehlt");
+// else
+//     $id = $_GET["id"];
 
 $labels=srowforeach("SELECT `labelone`, `labeltwo`,`link` FROM `ritzenbergen-formulare` where id=?;",[$id])[0];
 $labelone = $labels[0];
 $labeltwo = $labels[1];
 $link=$labels[2];
-if($link==null) die("PermissionError");
+// if($link==null) die("PermissionError");
 
 echo "
     <table>
@@ -32,4 +32,3 @@ foreach (srowforeach("SELECT `labelone`,`labeltwo`,`timestamp` from `ritzenberge
             </tr>";
 }
 echo "</table>";
-?>

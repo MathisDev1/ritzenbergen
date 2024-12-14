@@ -33,16 +33,22 @@ if ($type == "add") {
     if(!isset($_POST["link"])) 
         die("POST link fehlt");
     $link=$_POST["link"];
+
+    if(!isset($_POST["modal"])) 
+        die("POST modal fehlt");
+    $modal=$_POST["modal"];
     
     $link=($link=="")?null:$link;
+    $modal=($modal=="")?null:$modal;
 
     echo "Überschrift: ".$ueberschrift."<br>";
     echo "Minitext: ".$minitext."<br>";
     echo "Label 1: ".$labelone."<br>";
     echo "Label 2: ".$labeltwo."<br>";
     echo "Inhalt: ".$inhalt."<br>";
-    echo "Link: ".$link;
+    echo "Link: ".$link."<br>";
+    echo "Modal-Überschrift: ".$modal;
 
-    mysqli_execute_query($db_id,"INSERT INTO `ritzenbergen-formulare` (ueberschrift,minitext,inhalt,labelone,labeltwo,`link`) VALUES (?,?,?,?,?,?);",[$ueberschrift,$minitext,$inhalt,$labelone,$labeltwo,$link]);
+    mysqli_execute_query($db_id,"INSERT INTO `ritzenbergen-formulare` (ueberschrift,minitext,inhalt,labelone,labeltwo,`link`,modalueberschrift) VALUES (?,?,?,?,?,?,?);",[$ueberschrift,$minitext,$inhalt,$labelone,$labeltwo,$link,$modal]);
 }
 ?>

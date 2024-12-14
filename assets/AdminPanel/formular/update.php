@@ -6,6 +6,9 @@ if ($valid) { ?>
 
 <?php
 
+if(isset($_POST["id"])) $id=$_POST["id"];
+else die("POST id fehlt");
+
 if(isset($_POST["ueberschrift"])) $ueberschrift=$_POST["ueberschrift"];
 else die("POST ueberschrift fehlt");
 
@@ -24,8 +27,13 @@ else die("POST labeltwo fehlt");
 if(isset($_POST["link"])) $link=$_POST["link"];
 else die("POST link fehlt");
 
-if(isset($_POST["id"])) $id=$_POST["id"];
-else die("POST id fehlt");
+if(!isset($_POST["modal"])) 
+die("POST modal fehlt");
+$modal=$_POST["modal"];
+
+$link=($link=="")?null:$link;
+$modal=($modal=="")?null:$modal;
+
 
 echo "Überschrift: ".$ueberschrift."<br>";
 echo "Text 1: ".$labelone."<br>";
@@ -33,8 +41,9 @@ echo "Text 2: ".$labeltwo."<br>";
 echo "Minitext: ".$minitext."<br>";
 echo "Beschreibung: ".$inhalt."<br>";
 echo "Link: ".$link."<br>";
+echo "Modal-Überschrift: ".$modal;
 
-mysqli_execute_query($db_id,"UPDATE `ritzenbergen-formulare` SET `ueberschrift`=?, `link`=?, `minitext`=?, `inhalt`=?, `labelone`=?, `labeltwo`=? where `id`=?;",[$ueberschrift,$link,$minitext,$inhalt,$labelone,$labeltwo,$id]);
+mysqli_execute_query($db_id,"UPDATE `ritzenbergen-formulare` SET `ueberschrift`=?, `link`=?, `minitext`=?, `inhalt`=?, `labelone`=?, `labeltwo`=?, `modalueberschrift`=? where `id`=?;",[$ueberschrift,$link,$minitext,$inhalt,$labelone,$labeltwo,$modal,$id]);
 
 ?>
 <?php

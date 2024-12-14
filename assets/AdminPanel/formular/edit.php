@@ -24,7 +24,8 @@ if ($valid) { ?>
         ?>
     </select>
     <?php
-    foreach (srowforeach("SELECT `id`,`labelone`,`labeltwo`,`ueberschrift`,`link`,`minitext`,`inhalt` from `ritzenbergen-formulare`;", []) as $key => $value) {
+    error_reporting(-1);
+    foreach (srowforeach("SELECT `id`,`labelone`,`labeltwo`,`ueberschrift`,`link`,`minitext`,`inhalt`,`modalueberschrift` from `ritzenbergen-formulare`;", []) as $key => $value) {
         $id=$value[0];
         $labelone=$value[1];
         $labeltwo=$value[2];
@@ -32,6 +33,7 @@ if ($valid) { ?>
         $link=$value[4];
         $minitext=$value[5];
         $inhalt=$value[6];
+        $modal=$value[7];
         echo "
         <form action=\"update.php\" method=\"post\" id=\"table$id\" style=\"display: ".(($key!=0)?"none":"block").";\">
             <label for=\"ueberschrift\">Überschrift:</label>
@@ -49,6 +51,9 @@ if ($valid) { ?>
             
             <label for=\"link\">Link</label>
             <input type=\"text\" name=\"link\" value=\"$link\" id=\"link\" placeholder=\"Link, der zu den Ergebnissen führt. Leer lassen, um keinen Link zu erstellen\">
+            
+            <label for=\"modal\">Modal-Überschrift</label>
+            <input type=\"text\" name=\"modal\" value=\"$modal\" id=\"modal\" placeholder=\"Modal-Überschrift\">
 
             <div class=\"buttonArea\">
             </div>

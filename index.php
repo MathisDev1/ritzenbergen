@@ -1,5 +1,5 @@
 <?php
-include ("addhit.php");
+include("addhit.php");
 
 ?>
 <!DOCTYPE html>
@@ -101,8 +101,8 @@ include ("addhit.php");
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#contacts-2-u6k7q0Bejh">Kontakt</a>
             </li>
-            
-            
+
+
           </ul>
           <div class="navbar-buttons mbr-section-btn">
             <a class="btn btn-primary display-4" href="#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>
@@ -364,7 +364,7 @@ include ("addhit.php");
       <div class=\"modal-content\">
         <span class=\"close modal-close-btn\">×</span>
         ";
-      include ($value[3]);
+      include($value[3]);
       echo "
       </div>
     </div>";
@@ -650,13 +650,13 @@ include ("addhit.php");
   </section>
 
   <div class="modal-container">
-      <div class="modal">
-        <div class="modal-content">
-          <span class="closeBtn">x</span>
-          <h1>ModalTest</h1>
-        </div>
+    <div class="modal">
+      <div class="modal-content">
+        <span class="closeBtn">x</span>
+        <h1>ModalTest</h1>
       </div>
-      <button class="openBtn">Modal öffnen</button>
+    </div>
+    <button class="openBtn">Modal öffnen</button>
   </div>
 
 
@@ -792,8 +792,8 @@ include ("addhit.php");
 
 
   <!--Kontaktformular Vorlage Anfang-->
-  <?php
-  $texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo`,`id`,`link` from `ritzenbergen-formulare`", []);
+  <?php 
+  $texte = srowforeach("SELECT `ueberschrift`,`minitext`,`inhalt`,`labelone`,`labeltwo`,`id`,`link`, `modalueberschrift` from `ritzenbergen-formulare`", []);
   foreach ($texte as $key => $value) {
     $ueberschrift = $value[0];
     $minitext = $value[1];
@@ -802,89 +802,108 @@ include ("addhit.php");
     $labeltwo = $value[4];
     $id = $value[5];
     $link = $value[6];
+    $modalueberschrift=$value[7];
+    $modalueberschrift=($modalueberschrift==null)?"":$modalueberschrift;
     $minitext = str_replace("{0}", srowforeach("SELECT COUNT(`id`) from `ritzenbergen-formular-ergebnisse` where formularid=?;", [$id])[0][0], $minitext);
-    $linkhtml = ($link == null) ? "" : "<a href=\"showResults.php?id=" . $id . "\">" . $link . "</a>";
-    echo "
-  <section class=\"form5 cid-u6k7q0BfGa\" id=\"contact-form-2-u6k7q0BfGa\">
-    <div class=\"container\">
-      <div class=\"row justify-content-center\">
-        <div class=\"col-12 content-head\">
-          <div class=\"mbr-section-head mb-5\">
-            <h3 class=\"mbr-section-title mbr-fonts-style align-center mb-0 display-2\">
-              <strong>" . $ueberschrift . "</strong>
-            </h3><br>
-            <h5 style=\"text-align: center;\"><b></b> <br>
-              " . $inhalt . "</h5><br>
-            <p style=\"text-align: center;\">" . $minitext . "<br><br>" . $linkhtml . "</p>
+    ?>
+    <section class="form5 cid-u6k7q0BfGa">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 content-head">
+            <div class="mbr-section-head mb-5">
+              <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
+                <strong><?php echo $ueberschrift; ?></strong>
+              </h3><br>
+              <h5 style="text-align: center;"><b></b> <br>
+                <?php echo $inhalt; ?></h5><br>
+              <p style="text-align: center;"><?php echo $minitext; ?><br><br>
+
+              <div class="modal-container">
+                <div class="modal">
+
+                  <div class="modal-content">
+                  <span class="closeBtn" style="cursor: pointer;">x</span>
+                    <h1><?php echo $modalueberschrift; ?></h1>
+                    <?php
+                    include("showResults.php");
+                    
+                    ?>
+                  </div>
+                  
+                </div>
+                <span href="" class="openBtn"><?php echo ($link==null)?"":$link; ?></span>
+              </div>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+            <form action="formularergebnisse-eintragen.php" method="POST" class="mbr-form form-with-styler"
+              data-form-title="Form Name" onsubmit="return false;"><input type="hidden" name="email" data-form-email="true" value="">
+              <div class="dragArea row">
+                <div class="col-md col-sm-12 form-group mb-3" data-for="name">
+                  <input type="text" maxlength="128" name="name" placeholder="<?php echo $labelone; ?>"
+                    data-form-field="name" class="form-control" value="" id="name-form02-0">
+                </div>
+
+                <div class="col-12 form-group mb-3" data-for="textarea">
+                  <input type="text" name="textarea" maxlength="128" placeholder="<?php echo $labeltwo; ?>"
+                    data-form-field="textarea" class="form-control" id="textarea-form02-0">
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+                  <button type="submit" class="btn btn-primary display-7 formular-submit-button">Absenden</button>
+                </div>
+              </div>
+              <input type="hidden" value="<?php echo $id; ?>" name="id">
+            </form>
           </div>
         </div>
       </div>
-      <div class=\"row justify-content-center\">
-        <div class=\"col-lg-8 mx-auto mbr-form\" data-form-type=\"formoid\">
-          <form action=\"formularergebnisse-eintragen.php\" method=\"POST\" class=\"mbr-form form-with-styler\" data-form-title=\"Form Name\"><input
-              type=\"hidden\" name =\"email\" data-form-email=\"true\" value=\"\">
-            <div class=\"row\">
-              <div hidden=\"hidden\" data-form-alert=\"\" class=\"alert alert-success col-12\">Vielen dank für deine Spende 🍀</div>
-              <div hidden=\"hidden\" data-form-alert-danger=\"\" class=\"alert alert-danger col-12\">
-                Oh. Da hat etwas nicht richtig funktioniert.
-              </div>
-            </div>
-            <div class=\"dragArea row\">
-              <div class=\"col-md col-sm-12 form-group mb-3\" data-for=\"name\">
-                <input type=\"text\" maxlength=\"128\" name=\"name\" placeholder=\"" . $labelone . "\" data-form-field=\"name\" class=\"form-control\" value=\"\"
-                  id=\"name-form02-0\">
-              </div>
-
-              <div class=\"col-12 form-group mb-3\" data-for=\"textarea\">
-                <input type=\"text\" name=\"textarea\" maxlength=\"128\" placeholder=\"" . $labeltwo . "\" data-form-field=\"textarea\" class=\"form-control\"
-                  id=\"textarea-form02-0\"></textarea>
-              </div>
-              <div class=\"col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn\"><button type=\"submit\"
-                  class=\"btn btn-primary display-7 formular-submit-button\">Absenden</button></div>
-            </div>
-            <input type=\"hidden\" value=\"" . $id . "\" name=\"id\">
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-";
+    </section>
+    <?php
   }
   ?>
 
 
 
- 
-<div class="modal-container">
-      <div class="modal">
-        <div class="modal-content">
-          <span class="closeBtn" style="cursor: pointer;">x</span>
-          <h1>Anmeldungen</h1> <!--Die Überschrift soll anpassbar sein-->
-          <table class="container">
-            <thead>
-              <tr>
-                <th><h1>Name</h1></th>
-                <th><h1>E-Mail</h1></th>
-                <th><h1>Datum</h1></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mathis Kuhlenkamp</td>
-                <td>mathis.kmp@gmail.com</td>
-                <td>14.12.24</td>
-              </tr>
-              <tr>
-                <td>Jonas Kuhlenkamp</td>
-                <td>jonas.kuhlenkamp@gmail.com</td>
-                <td>14.12.24</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+
+  <div class="modal-container">
+    <div class="modal">
+      <div class="modal-content">
+        <span class="closeBtn" style="cursor: pointer;">x</span>
+        <h1>Anmeldungen</h1> <!--Die Überschrift soll anpassbar sein-->
+        <table class="container">
+
+          <thead>
+            <tr>
+              <th>
+                <h1>Name</h1>
+              </th>
+              <th>
+                <h1>E-Mail</h1>
+              </th>
+              <th>
+                <h1>Datum</h1>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mathis Kuhlenkamp</td>
+              <td>mathis.kmp@gmail.com</td>
+              <td>14.12.24</td>
+            </tr>
+            <tr>
+              <td>Jonas Kuhlenkamp</td>
+              <td>jonas.kuhlenkamp@gmail.com</td>
+              <td>14.12.24</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <button class="openBtn">Modal öffnen</button>
+    </div>
+    <button class="openBtn">Modal öffnen</button>
   </div>
 
 
@@ -1084,7 +1103,7 @@ include ("addhit.php");
 
   <button class="material-symbols-outlined" id="chatbox-button">chat</button>
 
-  <div id="modalbox" <?php echo (isset($_GET["newMessage"]))?"style=\"display:block;\"":""; ?>>
+  <div id="modalbox" <?php echo (isset($_GET["newMessage"])) ? "style=\"display:block;\"" : ""; ?>>
     <div id="modalbox-header">
       <span class="material-symbols-outlined">chat</span>
       <h3 id="modalbox-title">Klönkasten</h3>
@@ -1094,10 +1113,10 @@ include ("addhit.php");
     <div id="chat-messages">
       <?php
       foreach (srowforeach("SELECT `name`,`email`,`timestamp`,`message` from `ritzenbergen-kloenkasten`", []) as $key => $value) {
-        $sender=$value[0];
-        $email=$value[1];
-        $timestamp=$value[2];
-        $msg=$value[3];
+        $sender = $value[0];
+        $email = $value[1];
+        $timestamp = $value[2];
+        $msg = $value[3];
         if ($email != null) {
           $sender = "<a href=\"mailto:$email\">$sender</a>";
         }

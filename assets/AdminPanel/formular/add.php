@@ -20,7 +20,7 @@ include("../header.php"); if($valid){ ?>
         <input type="text" name="ueberschrift" id="ueberschrift" placeholder="Überschrift eingeben" required><br><br>
         <label for="datum">Beschreibung</label>
         <textarea name="inhalt" id="Beschreibung" rows="20" cols="43" placeholder="Beschreibung eingeben" required></textarea><br><br>
-        <label for="datum">Minitext <i>bsp: Bisherige Anmeldungen: 0</i></label>
+        <label for="datum">Minitext <i>bsp: Bisherige Anmeldungen: {0}</i></label>
         <input type="text" name="minitext" id="minitext" placeholder="Minitext eingeben" required><br><br>
 
         <label for="datum">Text-Label 1</label>
@@ -31,6 +31,9 @@ include("../header.php"); if($valid){ ?>
 
         <label for="link">Link</label>
         <input type="text" name="link" id="link" placeholder="Link, der zu den Ergebnissen führt. Leer lassen, um keinen Link zu erstellen">
+
+        <label for="modal">Modal-Überschrift</label>
+        <input type="text" name="modal" id="modal" placeholder="Modal-Überschrift">
 
         <div class="buttonArea">
         </div>

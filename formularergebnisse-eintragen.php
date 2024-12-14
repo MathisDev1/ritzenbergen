@@ -8,3 +8,4 @@ if(isset($_POST["id"])) $id=$_POST["id"];
 else die("POST id fehlt");
 mysqli_execute_query($db_id,"INSERT INTO `ritzenbergen-formular-ergebnisse` (`formularid`,`labelone`,`labeltwo`) VALUES (?,?,?);",[$id,$labelone,$labeltwo]);
 ?>
+<script>window.location.href=".";</script>
