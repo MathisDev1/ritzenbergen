@@ -21,10 +21,16 @@ if ($valid) { ?>
     <table>
 
         <?php
+
+        function lineEnding($str) {
+          if (strpos($str, "\r\n") !== false) return "\r\n";
+          if (strpos($str, "\n") !== false) return "\n";
+          return null;
+        }
         if(!isset($_POST["images"])) die("POST images fehlt");
         $imagepath = $_POST["images"];
         $whitelistpath = $imagepath."/whitelist.txt";
-        $whitelist = explode("\r\n", file_get_contents($whitelistpath));
+        $whitelist = explode(lineEnding(file_get_contents($whitelistpath)), file_get_contents($whitelistpath));
         $images = [];
         function recursiveDir($dir, &$results = array())
         {

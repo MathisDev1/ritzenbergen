@@ -22,6 +22,7 @@ include("addhit.php");
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/animatecss/animate.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="modal.css">
   <link rel="manifest" href="./manifest.json">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
@@ -402,67 +403,6 @@ include("addhit.php");
         </h4>
       </div>
     </div> -->
-  <style>
-    .modal {
-      margin: auto;
-      justify-content: center;
-      text-align: center;
-      width: 100ch;
-      height: 600px;
-      top: 0;
-      /* Positioniert das Modal oben im Viewport */
-      left: 0;
-      /* Positioniert das Modal links im Viewport */
-      right: 0;
-      /* Erweitert das Modal auf die gesamte Breite */
-      bottom: 0;
-      /* Erweitert das Modal auf die gesamte Höhe */
-      z-index: 3000;
-      /* Bringt das Modal in den Vordergrund */
-    }
-
-    .modal-content {
-      background-color: #ffffff;
-      /* Hintergrundfarbe des Inhalts */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-      /* Schatten */
-      border: none;
-      /* Entferne den Rahmen */
-      margin: 15% auto;
-      height: auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-    }
-
-    .close {
-      color: #4CAF50;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: red;
-      cursor: pointer;
-    }
-
-
-    @media (max-width: 768px) {
-
-      /* Anpassungen für Smartphones */
-      .modal {
-        max-width: 100vw;
-      }
-
-      .modal-content {
-        max-width: 100vw;
-        /* 100% Breite auf Smartphones */
-        text-align: left;
-      }
-    }
-  </style>
 
 
   <!-- <script>
@@ -823,7 +763,7 @@ include("addhit.php");
                   </div>
                   
                 </div>
-                <span href="" class="openBtn"><?php echo ($link==null)?"":$link; ?></span>
+                <span class="openBtn"><?php echo ($link==null)?"":$link; ?></span>
               </div>
               </p>
             </div>

@@ -22,6 +22,10 @@ include("buli-check.php");
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/animatecss/animate.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="modal.css">
   <link rel="manifest" href="./manifest.json">
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
@@ -99,7 +103,7 @@ include("buli-check.php");
         </div>
       </div>
     </nav>
-  </section>              
+  </section>
 
 
 
@@ -165,17 +169,41 @@ include("buli-check.php");
       <?php
 
       $spieltag = getmaxspieltag();
-      if (srowforeach("SELECT count(`paarung`) from `buli-results` where spieltag=?;", [$spieltag])[0][0] < 9) $spieltag--;
+      if (srowforeach("SELECT count(`paarung`) from `buli-results` where spieltag=?;", [$spieltag])[0][0] < 9)
+        $spieltag--;
       foreach (srowforeach("SELECT paarung, score1, score2 from `buli-results` where spieltag=?;", [$spieltag]) as $key => $value) {
         $paarung = srowforeach("SELECT heim, gast from `buli-paarungen` where `id`=?;", [$value[0]])[0];
         $score1 = $value[1];
         $score2 = $value[2];
+        $paarungid = $value[0];
         $url = "buli-punkte.php?name=null&detail=spiel&spieltag=" . $spieltag . "&paarung=" . $value[0];
         ?>
 
         <tr>
-          <td><a href="<?php echo $url; ?>"><?php echo $paarung[0]; ?> - <?php echo $paarung[1]; ?></a></td>
-          <td><a href="<?php echo $url; ?>"><?php echo $score1; ?> - <?php echo $score2; ?></a></td>
+
+          <td>
+            <div class="modal-container">
+              <div class="modal">
+                <div class="modal-content">
+                  <span class="closeBtn" style="cursor: pointer;">x</span>
+
+                  <?php
+                  $detail = "spiel";
+
+                  // include("buli-punkte.php");
+                  ?>
+                  <iframe src="<?php echo $url; ?>" frameborder="0"></iframe>
+                </div>
+              </div>
+              <span class="openBtn"><?php echo $paarung[0]; ?> - <?php echo $paarung[1]; ?></span>
+
+            </div>
+          </td>
+          <td>
+            <p><?php echo $score1; ?> - <?php echo $score2; ?></p>
+          </td>
+
+
         </tr>
         <?php
       }
@@ -184,8 +212,8 @@ include("buli-check.php");
   </section>
 
   <section class="buli-table">
-  
-  <table>
+
+    <table>
       <tr>
         <td>Tag</td>
         <?php
@@ -208,8 +236,8 @@ include("buli-check.php");
           foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
             if (srowforeach("SELECT count(`paarung`) from `buli-results` where spieltag=?;", [$i + 1])[0][0] < 9) {
               $punkte = ts($value[0], $i);
-            }else{
-              $punkte = ts($value[0], $i+1);
+            } else {
+              $punkte = ts($value[0], $i + 1);
             }
             ?>
 
@@ -232,7 +260,7 @@ include("buli-check.php");
         ?>
       </tr>
     </table>
-   
+
   </section>
 
   <section class="rangliste">
@@ -256,7 +284,19 @@ include("buli-check.php");
         ?>
         <tr>
           <td><?php echo $i; ?></td>
-          <td><?php echo $key; ?></td>
+          <td>
+            <div class="modal-container">
+              <div class="modal">
+                <div class="modal-content">
+                  <span class="closeBtn" style="cursor: pointer;">x</span>
+                  <iframe
+                    src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $key; ?>"><?php echo $key; ?></iframe>
+
+                </div>
+              </div>
+              <span class="openBtn"><?php echo $key; ?></span>
+            </div>
+          </td>
           <td><?php echo $value; ?></td>
         </tr>
 
@@ -264,23 +304,32 @@ include("buli-check.php");
       }
       ?>
     </table>
-    
-  </section>
 
+  </section>
+<?php /*
   <section class="tipperdetails">
     <?php
     foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
       $username = $value[0];
       ?>
-      <a
-        href="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $username; ?>"><?php echo $username; ?></a>
+      <div class="modal-container">
+        <div class="modal">
+          <div class="modal-content">
+            <span class="closeBtn" style="cursor: pointer;">x</span>
+            <iframe
+              src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $username; ?>"><?php echo $username; ?></iframe>
+
+          </div>
+        </div>
+        <span class="openBtn"><?php echo $username; ?></span>
+      </div>
 
       <?php
     }
 
     ?>
   </section>
-
+*/  ?>
   <section class="contacts02 map1 cid-u6k7q0Bejh" id="contacts-2-u6k7q0Bejh">
     <div class="container">
       <div class="row justify-content-center">
@@ -426,6 +475,7 @@ include("buli-check.php");
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
   <script src="main.js"></script>
+  <script src="modal.js"></script>
   <script>
 
     (function () {

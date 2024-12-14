@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1, initial-scale=1.0">
-    <title>BuLi-Punkte</title>
-</head>
-<body>
+
     <?php
     include("../mysqlverbinden.php");
     include("./rowforeach.php");
@@ -85,7 +78,7 @@
                 <td><?php echo $score1; ?> - <?php echo $score2; ?></td>
                 <td><?php echo $tippstr; ?></td>
                 <td><?php echo $punkte; ?></td>
-            </tr>    
+            </tr>
                 
             <?php
             }
@@ -95,5 +88,3 @@
     <?php
     }
     ?>
-</body>
-</html>
