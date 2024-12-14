@@ -106,7 +106,17 @@
 
 <section>
     <div class="galerie-container">
-        <b><h2><?php echo explode("\r\n",file_get_contents("bilder/".$_GET["ev"]."/info.txt"))[1]; ?></h2><p>Vorschaubilder</p></b>
+      
+      <?php
+      
+      function lineEnding($str) {
+        if (strpos($str, "\r\n") !== false) return "\r\n";
+        if (strpos($str, "\n") !== false) return "\n";
+        return null;
+      }
+      
+      ?>
+        <b><h2><?php echo explode(lineEnding(file_get_contents("bilder/".$_GET["ev"]."/info.txt")),file_get_contents("bilder/".$_GET["ev"]."/info.txt"))[1]; ?></h2><p>Vorschaubilder</p></b>
         <?php echo count(glob("bilder/".$_GET["ev"]."/*.jpg")); ?> Bilder
         <table>
           
