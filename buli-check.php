@@ -3,13 +3,14 @@ include("../mysqlverbinden.php");
 include("./rowforeach.php");
 include("buli-inc.php");
 
-$bundesliga = 1; //TODO aus Datei holen
-$year = date("Y");
+$bundesliga = file_get_contents("liga.txt"); 
+$year = file_get_contents("saison.txt");
 
 
 // Paarungen holen
 // HTTP-Request ausführen
-$response = file_get_contents("https://api.openligadb.de/getmatchdata/bl".$bundesliga."/".$year."/".getmaxtippspieltag()+1, false);
+$spieltag=getmaxtippspieltag()+1;
+$response = file_get_contents("https://api.openligadb.de/getmatchdata/bl".$bundesliga."/".$year."/".$spieltag, false);
 
 if ($response === false) {
     echo "<script>window.alert(`Fehler beim HTTP-Request(Z.41)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
@@ -29,10 +30,16 @@ if ($responseData!=null) {
         // In die Zeitzone Berlin konvertieren
         $date->setTimezone(new DateTimeZone('Europe/Berlin'));
 
-
-        if (!($date->format('l') === 'Saturday' && $date->format('H:i') === '15:30')) {
+        if($spieltag==33||$spieltag==34){
+            
+            $diff = abs($date->getTimestamp()-time());
+            
+            if ($diff <= 60 * 60 * 24*2) {
+                $aktuell = true;
+            }
+        } else if (!($date->format('l') === 'Saturday' && $date->format('H:i') === '15:30')) {
             // Das Spiel findet nicht Samstags, 15:30 Uhr statt, also sind die Daten aktuell genug.
-            $aktuell = true;
+            $aktuell=true;
         }
 
     }
@@ -56,14 +63,14 @@ if ($responseData!=null) {
     }
 } else {
     // Response ist kein JSON
-    echo "<script>window.alert(`JSON-Response ungültig (Z.84)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
+    // echo "<script>window.alert(`JSON-Response ungültig (Z.84)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
 }
 
 $response = file_get_contents("https://api.openligadb.de/getmatchdata/bl".$bundesliga."/".$year."/".getmaxspieltag()+1, false);
 
 
 if ($response === false) {
-    echo "<script>window.alert(`Fehler beim HTTP-Request (Z.15)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
+    // echo "<script>window.alert(`Fehler beim HTTP-Request (Z.15)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
 }
 
 $responseData = json_decode($response, true); // Response auswerten
@@ -85,5 +92,5 @@ if ($responseData) {
     }
 } else {
     // Response ist kein JSON
-    echo "<script>window.alert(`JSON-Response ungültig (Z.29)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
+    // echo "<script>window.alert(`JSON-Response ungültig (Z.29)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
 }
