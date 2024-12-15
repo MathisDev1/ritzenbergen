@@ -37,7 +37,6 @@ include("addhit.php");
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-
   <style>
     :root {
       --background: #FCFCF8;
@@ -103,6 +102,9 @@ include("addhit.php");
               <a class="nav-link link text-black display-4" href="#contacts-2-u6k7q0Bejh">Kontakt</a>
             </li>
 
+            <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="bulitipp.php">BuLi-Tipp</a>
+            </li>
 
           </ul>
           <div class="navbar-buttons mbr-section-btn">

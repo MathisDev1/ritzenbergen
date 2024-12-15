@@ -38,7 +38,6 @@ include("buli-check.php");
   <link rel="stylesheet" href="./assets/css/bulitipp2.css">
 
 
-
   <style>
     :root {
       --background: #FCFCF8;
@@ -70,7 +69,7 @@ include("buli-check.php");
       <div class="container">
         <div class="navbar-brand">
           <span class="navbar-logo">
-            <a href="index.html">
+            <a href="index.php">
               <img src="./Fotos/ortschild1.gif" style="height: 4.3rem;">
             </a>
           </span>
@@ -91,19 +90,29 @@ include("buli-check.php");
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
             <li class="nav-item">
-              <a class="nav-link link text-black display-4" href="#bl-tabelle">Tabelle</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#buliresults-section">Ergebnisse</a>
             </li>
           </ul>
+          <!-- <div class=""> -->
           <div class="navbar-buttons mbr-section-btn">
-            <a class="btn btn-primary display-4" href="#contact-form-2-u6k7q0BfGa">Registrieren</a>
+            <button class="btn btn-primary display-4" id="loginModalOpenBtn" data-id="loginModal">Einloggen</button>
           </div>
         </div>
       </div>
+      <!-- </div> -->
     </nav>
   </section>
+
+  <div class="modal-container" data-id="loginModalOpenBtn" id="loginModal">
+    <div class="modal">
+      <div class="modal-content">
+        <span class="closeBtn" style="cursor: pointer;">x</span>
+        <h1>BuliTipp Einloggen</h1>
+        <p>Hier kannst du dich mit deinem Benutzernamen und Passwort einloggen. <br>Falls du noch kein Konto hast, wende
+          dich an Tom Kuhlenkamp.</p>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -126,7 +135,7 @@ include("buli-check.php");
   </section> -->
 
 
-  <h1>Willkommen im Ritzenberger Bundesliga Tippspiel!</h1>
+  <!--   <h1>Willkommen im Ritzenberger Bundesliga Tippspiel!</h1> -->
 
 
   <section class="features023 cid-u6k7q0xclF" id="metrics-1-u6k7q0xclF">
@@ -158,8 +167,9 @@ include("buli-check.php");
 
     </form>
   </section>
-
   <section class="buli-results" id="buliresults-section">
+    <br><br>
+
     <h1>Paarungsergebnisse</h1>
     <table>
       <tr>
@@ -306,30 +316,30 @@ include("buli-check.php");
     </table>
 
   </section>
-<?php /*
-  <section class="tipperdetails">
-    <?php
-    foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
-      $username = $value[0];
-      ?>
-      <div class="modal-container">
-        <div class="modal">
-          <div class="modal-content">
-            <span class="closeBtn" style="cursor: pointer;">x</span>
-            <iframe
-              src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $username; ?>"><?php echo $username; ?></iframe>
+  <?php /*
+<section class="tipperdetails">
+<?php
+foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
+ $username = $value[0];
+ ?>
+ <div class="modal-container">
+   <div class="modal">
+     <div class="modal-content">
+       <span class="closeBtn" style="cursor: pointer;">x</span>
+       <iframe
+         src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $username; ?>"><?php echo $username; ?></iframe>
 
-          </div>
-        </div>
-        <span class="openBtn"><?php echo $username; ?></span>
-      </div>
+     </div>
+   </div>
+   <span class="openBtn"><?php echo $username; ?></span>
+ </div>
 
-      <?php
-    }
+ <?php
+}
 
-    ?>
-  </section>
-*/  ?>
+?>
+</section>
+*/ ?>
   <section class="contacts02 map1 cid-u6k7q0Bejh" id="contacts-2-u6k7q0Bejh">
     <div class="container">
       <div class="row justify-content-center">
@@ -487,6 +497,8 @@ include("buli-check.php");
 
   </script>
   <script src="encodeBuLiLogin.js"></script>
+  <script src="./modal.js"></script>
+
 </body>
 
 </html>
