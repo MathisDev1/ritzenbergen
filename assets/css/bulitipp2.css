@@ -51,7 +51,8 @@
 
   .buli-results table {
     border-collapse: collapse;
-    width: 100%;
+    width: 60%;
+    margin: 0 auto;
   }
   
   .buli-results th, .buli-results td {
@@ -73,13 +74,18 @@
     text-decoration: underline;
   }
 
+  .buli-results h2 {
+    text-align: center;
+  }
 
 
-/* Rangliste */
+
+/* Punkterangliste */
   
   .buli-table table {
     border-collapse: collapse;
-    width: 100%;
+    width: 60%;
+    margin: 0 auto;
   }
   
   .buli-table th, .buli-table td {
@@ -100,6 +106,47 @@
   .buli-table a:hover {
     text-decoration: underline;
   }
+
+  .buli-table h2 {
+    text-align: center;
+  }
+
+
+
+
+
+
+
+/* Rangliste */
+  
+.rangliste table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.rangliste th, .rangliste td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.rangliste th {
+  background-color: #f2f2f2;
+}
+
+.rangliste a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.rangliste a:hover {
+  text-decoration: underline;
+}
+
+.rangliste h2 {
+  text-align: center;
+}
 
 
 

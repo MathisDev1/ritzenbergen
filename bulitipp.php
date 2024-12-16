@@ -92,6 +92,12 @@ include("buli-check.php");
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#buliresults-section">Ergebnisse</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="#buli-table">Punktetabelle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="#rangliste-sektion">Rangliste</a>
+            </li>
           </ul>
           <!-- <div class=""> -->
           <div class="navbar-buttons mbr-section-btn">
@@ -175,10 +181,12 @@ include("buli-check.php");
 
 
 
+  <!-- Paarungsergebnisse -->
+
   <section class="buli-results" id="buliresults-section">
     <br><br>
 
-    <h1>Paarungsergebnisse</h1>
+    <h2>Paarungsergebnisse</h2>
     <table>
       <tr>
         <td>Paarung</td>
@@ -229,8 +237,12 @@ include("buli-check.php");
     </table>
   </section>
 
-  <section class="buli-table">
 
+<!-- Punktetabelle -->
+  <section class="buli-table" id="buli-table">
+  <br><br>
+
+      <h2>Punktetabelle</h2>
     <table>
       <tr>
         <td>Tag</td>
@@ -281,7 +293,13 @@ include("buli-check.php");
 
   </section>
 
-  <section class="rangliste">
+
+<!-- Rangliste -->
+
+  <section class="rangliste" id="rangliste-sektion">
+  <br><br>
+
+    <h2>Rangliste</h2>
     <table>
       <tr>
         <td>Platz</td>
