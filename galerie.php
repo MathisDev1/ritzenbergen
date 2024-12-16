@@ -238,10 +238,11 @@
           data-align="center"
           data-contain-scroll="trimSnaps"
           data-loop="true"
-          data-auto-play="true"
+          data-autoPlay="true"
           data-auto-play-interval="2"
           data-draggable="true"
-        >
+        > <!--  auto-play = autoplay aus, 
+                autoPlay="irgendeinwert" = autoplay an -->
           <div class="embla__viewport">
             <div class="embla__container">
             <?php
