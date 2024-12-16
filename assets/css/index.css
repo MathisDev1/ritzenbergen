@@ -1307,7 +1307,7 @@
 
 
 
-  .container th h1 {
+  /* .container th h1 {
     font-weight: bold;
     font-size: 1em;
     text-align: left;
@@ -1341,13 +1341,13 @@
     }
 
 
-    /* Background-color of the odd rows */
+    /* Background-color of the odd rows 
     .container tr:nth-child(odd) {
         background-color: #ffff;
     }
 
 
-    /* Background-color of the even rows */
+    /* Background-color of the even rows 
     .container tr:nth-child(even) {
         background-color: #ffff;
     }
@@ -1367,4 +1367,4 @@
     @media (max-width: 800px) {
     .container td:nth-child(4),
     .container th:nth-child(4) { display: none; }
-    }
+    } */
