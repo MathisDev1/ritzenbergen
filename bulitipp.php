@@ -141,7 +141,7 @@ include("buli-check.php");
 
 
 
-  <!-- <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
+ <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
     <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
     <div class="container-fluid">
       <div class="row">
@@ -149,14 +149,12 @@ include("buli-check.php");
           <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
             <strong>Willkommen im Bundesliga Tippspiel</strong>
           </h1>
-          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Das Tippspiel befindet sich noch in der
-            Entwicklung. Es können auf dieser Seite bisher nur Tabellen und Spieltage angeschaut werden.</p>
-          <div class="mbr-section-btn"><a class="btn btn-white-outline display-7"
-              href="#gallery-9-u6k7q0xbqP">Erkunden</a></div>
+          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Saison 2024/2025</p>
+          <br><br>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
 
   <!--   <h1>Willkommen im Ritzenberger Bundesliga Tippspiel!</h1> -->
