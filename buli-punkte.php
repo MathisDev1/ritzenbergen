@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./assets/css/bulitipp2.css">
 
     <?php
     include("../mysqlverbinden.php");
@@ -22,12 +23,12 @@
     include("./buli-inc.php");
     if($detail=="spiel"){
     ?>
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>Tipp</td>
-            <td>Punkte</td>
-            <td>Gesamtpunkte</td>
+    <table class="paarungPunkte">
+        <tr class="paarungPunkte">
+            <td  class="paarungPunkte">Name</td>
+            <td  class="paarungPunkte">Tipp</td>
+            <td class="paarungPunkte">Punkte</td>
+            <td class="paarungPunkte">Gesamtpunkte</td>
         </tr>
         <?php
         foreach (rowforeach("SELECT `username` from `buli-user`;") as $key => $value) {
@@ -38,11 +39,11 @@
             $tippstr=($tipp==null)?"-":$tipp[0]." - ".$tipp[1];
             ?>
             
-        <tr>
-            <td><?php echo $name; ?></td>
-            <td><?php echo $tippstr; ?></td>
-            <td><?php echo $punkte; ?></td>
-            <td><?php echo $gesamtpunkte; ?></td>
+        <tr class="paarungPunkte">
+            <td class="paarungPunkte"><?php echo $name; ?></td>
+            <td class="paarungPunkte"><?php echo $tippstr; ?></td>
+            <td class="paarungPunkte"><?php echo $punkte; ?></td>
+            <td class="paarungPunkte"><?php echo $gesamtpunkte; ?></td>
         </tr>
         
     </table>    

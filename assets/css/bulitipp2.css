@@ -1,5 +1,5 @@
 .buli-container {
-    width: 500px; /* Passe die Breite an deine Bedürfnisse an */
+    width: 100%; /* Passe die Breite an deine Bedürfnisse an */
     margin: 0 auto; /* Zentriert den Container */
     padding: 20px;
  
@@ -150,6 +150,41 @@
 
 
 
+
+
+
+/* Parungs Nutzer Punkte */
+
+
+
+.paarungPunkte table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.paarungPunkte tr, .paarungPunkte td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.paarungPunkte tr {
+  background-color: #f2f2f2;
+}
+
+.paarungPunkte a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.paarungPunkte a:hover {
+  text-decoration: underline;
+}
+
+.paarungPunkte h2 {
+  text-align: center;
+}
 
 
 

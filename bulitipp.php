@@ -110,7 +110,7 @@ include("buli-check.php");
   </section>
 
   <div class="modal-container" data-id="loginModalOpenBtn" id="loginModal">
-    <div class="modal">
+    <div class="modal modalNichtScrollbar">
       <div class="modal-content">
         <span class="closeBtn" style="cursor: pointer;">x</span>
         <h1>Tippen</h1>
@@ -324,7 +324,7 @@ include("buli-check.php");
                 <div class="modal-content">
                   <span class="closeBtn" style="cursor: pointer;">x</span>
                   <iframe
-                    src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $key; ?>"><?php echo $key; ?></iframe>
+                   class="iframeRanglisteDetailansicht" src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $key; ?>"><?php echo $key; ?></iframe>
 
                 </div>
               </div>

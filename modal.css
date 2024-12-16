@@ -14,7 +14,9 @@
     /* Erweitert das Modal auf die gesamte Höhe */
     z-index: 3000;
     /* Bringt das Modal in den Vordergrund */
+    overflow-y: scroll;
   }
+
 
   .modal-content {
     background-color: #ffffff;
@@ -23,7 +25,8 @@
     /* Schatten */
     border: none;
     /* Entferne den Rahmen */
-    margin: 15% auto;
+    /* margin: 15% auto; */
+    margin-left: 10%;
     height: auto;
     padding: 20px;
     border-radius: 10px;
@@ -56,4 +59,20 @@
       /* 100% Breite auf Smartphones */
       text-align: left;
     }
+  }
+
+
+
+
+  #tippenIframe {
+    height: 300px;
+  }
+
+  .iframeRanglisteDetailansicht {
+    height: 300px;
+  }
+
+
+  .modalNichtScrollbar {
+    overflow-y: hidden;
   }
