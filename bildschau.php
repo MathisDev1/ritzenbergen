@@ -89,22 +89,22 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="index.html#news-1-u6k7q0xyDG">Termine</a>
+            <a class="nav-link link text-black display-4" href="index.php#news-1-u6k7q0xyDG">Termine</a>
           </li>
           <li class="nav-item">
             <a class="nav-link link text-black display-4" href="galerie.php"
               aria-expanded="false">Galerie</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="index.html#call-to-action-9-u6k7q0zosO">Umgebung</a>
+            <a class="nav-link link text-black display-4" href="index.php#call-to-action-9-u6k7q0zosO">Umgebung</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="index.html#contacts-2-u6k7q0Bejh">Kontakt</a>
+            <a class="nav-link link text-black display-4" href="index.php#contacts-2-u6k7q0Bejh">Kontakt</a>
           </li>
         </ul>
         <div class="navbar-buttons mbr-section-btn">
-          <a class="btn btn-primary display-4" href="index.html#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>
+          <a class="btn btn-primary display-4" href="index.php#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>
         </div>
       </div>
     </div>

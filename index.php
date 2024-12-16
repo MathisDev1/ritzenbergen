@@ -68,7 +68,7 @@ include("addhit.php");
       <div class="container">
         <div class="navbar-brand">
           <span class="navbar-logo">
-            <a href="index.html">
+            <a href="index.php">
               <img src="./Fotos/ortschild1.gif" style="height: 4.3rem;">
             </a>
           </span>
@@ -123,7 +123,7 @@ include("addhit.php");
       <div class="row">
         <div class="content-wrap col-12 col-md-10">
           <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
-            <strong>Willkommen Ritzenbergen</strong>
+            <strong>Willkommen auf ritzenbergen.de</strong>
           </h1>
           <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Dies ist eine Private Homepage für die Bewohner
             der Dorfgemeinschaft Amedorf & Ritzenbergen</p>
@@ -625,7 +625,7 @@ include("addhit.php");
                 <strong>Entdecke die Umgebung</strong>
               </h1>
               <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                Mit klicken auf den Button findest du nützliche Links aus der Umgebung
+                Hier findest du nützliche Links aus der Umgebung
               </p>
               <div class="mbr-section-btn mt-4">
                 <button class="btn btn-primary display-7 btn-entdecken" id="myBtn">Jetzt Entdecken</button>
@@ -811,7 +811,7 @@ include("addhit.php");
   <!--Kontaktformular Vorlage Ende-->
 
 
-  <section class="social05 cid-u6k7q0AfD5" id="follow-us-2-u6k7q0AfD5">
+  <!-- <section class="social05 cid-u6k7q0AfD5" id="follow-us-2-u6k7q0AfD5">
     <div class="container">
       <div class="row">
         <h3 class="mbr-section-title align-center mb-5 mbr-fonts-style display-2">
@@ -829,7 +829,7 @@ include("addhit.php");
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
 
 
@@ -849,7 +849,7 @@ include("addhit.php");
           <div class="card-wrapper">
             <div class="text-wrapper">
               <ul class="list mbr-fonts-style display-7">
-                <li class="mbr-text item-wrap">Name: <a href="tel:123-456-789" class="text-black">Tom Kuhlenkamp</a>
+                <li class="mbr-text item-wrap">Name: <p class="text-black">Tom Kuhlenkamp</p>
                 </li>
                 <li class="mbr-text item-wrap">E-Mail: <a href="mailto:tom@ritzenbergen.de"
                     class="text-black">tom@ritzenbergen.de</a></li>
