@@ -35,7 +35,7 @@
       top: 50%; /* Positionierung vertikal mittig */
       left: 50%; /* Positionierung horizontal mittig */
       transform: translate(-50%, -50%); /* Verschieben von der Mitte */
-      width: 350px; /* Breite der Modalbox */
+      width: 550px; /* Breite der Modalbox */
       max-width: 90%; /* Maximale Breite für Responsiveness */
       background-color: white;
       padding: 20px;
