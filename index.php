@@ -713,7 +713,7 @@ include("addhit.php");
 
     openButtonEntdecken.addEventListener("click", openEntdeckenModal);
 
-    closeButtonEntdecken.addEventListener("click", closeEntdeckenModal);
+    // closeButtonEntdecken.addEventListener("click", closeEntdeckenModal);
   </script>
   </div>
 
@@ -934,7 +934,7 @@ include("addhit.php");
 
       openButtonUeber.addEventListener("click", openUeberModal);
 
-      closeButtonUeber.addEventListener("click", closeUeberModal);
+      // closeButtonUeber.addEventListener("click", closeUeberModal);
 
     </script>
   </div>
@@ -967,7 +967,7 @@ include("addhit.php");
 
       openButtonKontaktFormular.addEventListener("click", openKontaktFormularModal);
 
-      closeButtonKontaktFormular.addEventListener("click", closeKontaktFormularModal);
+      // closeButtonKontaktFormular.addEventListener("click", closeKontaktFormularModal);
     </script>
   </div>
 
@@ -1045,44 +1045,14 @@ include("addhit.php");
 
       chatboxButton.addEventListener('click', () => {
         modalbox.style.display = 'block';
+        chatMessages.scrollTop=chatMessages.scrollHeight;
       });
 
       closeButton.addEventListener('click', () => {
         modalbox.style.display = 'none';
       });
-      chatMessages.scrollTop = chatMessages.scrollHeight;
-
-      // sendButton.addEventListener('click', () => {
-      //   const name = nameInput.value.trim();
-      //   const message = messageInput.value.trim();
-
-      //   if (name && message) {
-      //     const messageElement = document.createElement('div');
-      //     messageElement.classList.add('message');
-
-      //     const senderElement = document.createElement('span');
-      //     senderElement.classList.add('message-sender');
-      //     senderElement.textContent = name + ': ';
-
-      //     const contentElement = document.createElement('span');
-      //     contentElement.classList.add('message-content');
-      //     contentElement.textContent = message;
-
-      //     messageElement.appendChild(senderElement);
-      //     messageElement.appendChild(contentElement);
-
-      //     if (name === 'Max Mustermann') {
-      //       messageElement.classList.add('own-message');
-      //     } else {
-      //       messageElement.classList.add('other-message');
-      //     }
-
-      //     chatMessages.appendChild(messageElement);
-      //     messageInput.value = '';
-
-      //     chatMessages.scrollTop = chatMessages.scrollHeight; // Scrollen zum Ende der Nachrichten
-      //   }
-      // });
+      
+      chatMessages.scrollTop=chatMessages.scrollHeight;
     </script>
     <script src="main.js"></script>
 </body>
