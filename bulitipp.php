@@ -110,6 +110,23 @@ include("buli-check.php");
         <h1>BuliTipp Einloggen</h1>
         <p>Hier kannst du dich mit deinem Benutzernamen und Passwort einloggen. <br>Falls du noch kein Konto hast, wende
           dich an Tom Kuhlenkamp.</p>
+          <section class="buli-container">
+              <form target="tippenIframe" action="tippen.php" id="loginform" method="post" onsubmit="return false;" data-id="tippenIframe">
+
+                <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag" value="<?php echo getmaxspieltag()+1; ?>">
+                <input type="text" name="user" maxlength="64" placeholder="Benutzer">
+                <input type="password" name="pass" id="password-input" placeholder="Passwort">
+
+                <input type="submit" value="=> Tippen! <=">
+
+              </form>
+          <style>
+              #tippenIframe{
+                display: none;
+              }
+              </style>
+              <iframe id="tippenIframe" name="tippenIframe"></iframe>
+            </section>
       </div>
     </div>
   </div>
@@ -156,17 +173,7 @@ include("buli-check.php");
   </section>
 
 
-  <section class="buli-container">
-    <form action="tippen.php" id="loginform" method="post" onsubmit="return false;">
 
-      <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag">
-      <input type="text" name="user" maxlength="64" placeholder="Benutzer">
-      <input type="password" name="pass" id="password-input" placeholder="Passwort">
-
-      <input type="submit" value="=> Tippen! <=">
-
-    </form>
-  </section>
   <section class="buli-results" id="buliresults-section">
     <br><br>
 

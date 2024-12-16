@@ -88,9 +88,9 @@ include("addhit.php");
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-            <li class="nav-item">
+            <!--<li class="nav-item">
               <a class="nav-link link text-black display-4" href="#news-1-u6k7q0xyDG">Termine</a>
-            </li>
+            </li>-->
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="galerie.php" aria-expanded="false">Galerie</a>
             </li>

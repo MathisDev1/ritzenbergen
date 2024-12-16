@@ -25,7 +25,7 @@ if (!$valid)
 
 include("buli-inc.php");
 $userid=srowforeach("SELECT `id` from `buli-user` where `username`=?;",[$user])[0][0];
-if (count(srowforeach("SELECT `id` from `buli-tipps` where user=? AND spieltag=?;", [$user, $spieltag])) > 0)
+if (count(srowforeach("SELECT `id` from `buli-tipps` where user=? AND spieltag=?;", [$userid, $spieltag])) > 0)
     die("Du hast bereits getippt!");
 
 

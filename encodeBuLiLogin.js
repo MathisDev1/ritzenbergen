@@ -13,5 +13,7 @@ document.querySelector("#loginform").addEventListener("submit",(ev)=>{
     hash(ev.target.querySelector("#password-input").value).then((hashed)=>{
         ev.target.querySelector("#password-input").value=hashed;
         ev.target.submit();
+        ev.target.style.display="none";
+        document.getElementById(ev.target.dataset.id).style.display="block";
     });
 });

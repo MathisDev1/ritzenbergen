@@ -60,11 +60,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="index.php#news-1-u6k7q0xyDG">Termine</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="galerie.php"
-              aria-expanded="false">Galerie</a>
+            <a class="nav-link link text-black display-4" href="galerie.php" aria-expanded="false">Galerie</a>
           </li>
           <li class="nav-item">
             <a class="nav-link link text-black display-4" href="index.php#call-to-action-9-u6k7q0zosO">Umgebung</a>
@@ -73,6 +69,11 @@
           <li class="nav-item">
             <a class="nav-link link text-black display-4" href="index.php#contacts-2-u6k7q0Bejh">Kontakt</a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="bulitipp.php">BuLi-Tipp</a>
+          </li>
+
         </ul>
         <div class="navbar-buttons mbr-section-btn">
           <a class="btn btn-primary display-4" href="index.php#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>
@@ -195,7 +196,7 @@
     </div>
   </div>
 </section>
-<section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
+<!-- <section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-12 col-lg-10">
@@ -209,7 +210,7 @@
           </div>
       </div>
   </div>
-</section>
+</section> -->
 <!--Fotogalerie Erntefest Ende-->
 
 
@@ -291,7 +292,7 @@
     </div>
   </div>
 </section>
-<section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
+<!-- <section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-12 col-lg-10">
@@ -305,7 +306,7 @@
           </div>
       </div>
   </div>
-</section>
+</section> -->
 <!--Fotogalerie Osterfeuer Ende-->
 
 
@@ -384,7 +385,7 @@
     </div>
   </div>
 </section>
-<section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
+<!-- <section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-12 col-lg-10">
@@ -398,7 +399,7 @@
           </div>
       </div>
   </div>
-</section>
+</section> -->
 <!--Fotogalerie Fußballturnier Ende-->
 
 
@@ -476,7 +477,7 @@
     </div>
   </div>
 </section>
-<section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
+<!-- <section class="article12 cid-u6k7q0yKNv" id="about-us-12-u6k7q0yKNv">    
   <div class="container">
       <div class="row justify-content-center">
           <div class="col-md-12 col-lg-10">
@@ -490,7 +491,7 @@
           </div>
       </div>
   </div>
-</section>
+</section> -->
 <!--Fotogalerie Doppelkopf Ende-->
 
 

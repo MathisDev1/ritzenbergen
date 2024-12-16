@@ -47,7 +47,8 @@
         <div>
             <?php
             include("buli-inc.php");
-            if (count(srowforeach("SELECT `id` from `buli-tipps` where user=? AND spieltag=?;",[$user,$spieltag])) > 0) {
+            $userid=srowforeach("SELECT `id` from `buli-user` where `username`=?;",[$user])[0][0];
+            if (count(srowforeach("SELECT `id` from `buli-tipps` where user=? AND spieltag=?;",[$userid,$spieltag])) > 0) {
                 // Benutzer hat bereits getippt
                 ?>
 
@@ -56,11 +57,16 @@
                     <h1>Du hast bereits getippt. Das sind deine Tipps:</h1>
                     <table>
                         <?php
-                        foreach (json_decode(srowforeach("SELECT tipp from `buli-tipp` where `user`=? AND spieltag=?;",[$user,$spieltag])[0][0],true) as $key => $value) {
-                            $heim=array_keys($value)[0];
-                            $gast=array_keys($value)[1];
-                            $heimscore=$value[$heim];
-                            $gastscore=$value[$gast];
+                        $tippids=srowforeach("SELECT tipp1,tipp2,tipp3,tipp4,tipp5,tipp6,tipp7,tipp8,tipp9 from `buli-tipps` where `user`=? AND `spieltag`=?;",[$userid,$spieltag])[0];
+                        for ($i=0;$i<9;$i++) {
+                            $tippid=$tippids[$i];
+                            $sqlresult=srowforeach("SELECT `paarung`, `score1`, `score2` from `buli-tipp` where `id`=?;",[$tippid])[0];
+                            $paarungsid=$sqlresult[0];
+                            $heimscore=$sqlresult[1];
+                            $gastscore=$sqlresult[2];
+                            $paarung=srowforeach("SELECT `heim`, `gast` from `buli-paarungen` where `id`=?;",[$paarungsid])[0];
+                            $heim=$paarung[0];
+                            $gast=$paarung[1];
                             ?>
                             <tr>
                                 <td><?php echo $heim; ?></td>
