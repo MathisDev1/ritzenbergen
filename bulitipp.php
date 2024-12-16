@@ -92,10 +92,16 @@ include("buli-check.php");
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#buliresults-section">Ergebnisse</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="#buli-table">Punktetabelle</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="#rangliste-sektion">Rangliste</a>
+            </li>
           </ul>
           <!-- <div class=""> -->
           <div class="navbar-buttons mbr-section-btn">
-            <button class="btn btn-primary display-4" id="loginModalOpenBtn" data-id="loginModal">Einloggen</button>
+            <button class="btn btn-primary display-4" id="loginModalOpenBtn" data-id="loginModal">Tippen</button>
           </div>
         </div>
       </div>
@@ -107,12 +113,13 @@ include("buli-check.php");
     <div class="modal">
       <div class="modal-content">
         <span class="closeBtn" style="cursor: pointer;">x</span>
-        <h1>BuliTipp Einloggen</h1>
-        <p>Hier kannst du dich mit deinem Benutzernamen und Passwort einloggen. <br>Falls du noch kein Konto hast, wende
-          dich an Tom Kuhlenkamp.</p>
+        <h1>Tippen</h1>
+        <p>Bitte logge dich zuerst ein!</p><br>
+        <p>Noch kein Konto? <a href="mailto:mathis.kmp@gmail.com?subject=Benutzerantrag%20-%20Ritzenberger%20Bundesliga%20Tippspiel&body=**Persönliche%20Informationen:**%0AVorname%2C%20Name:%0AAdresse:%0ATelefonnummer:%0A%0A**Account%20Informationen:**%0AWunsch-Benutzername:%0AWunsch-Passwort:%0A%0A*Diese%20Mail%20wurde%20anhand%20der%20Vorlage%20auf%20ritzenbergen.de/bulitipp.php%20erstellt.*">Sende Benutzerantrag</a> </p>
           <section class="buli-container">
               <form target="tippenIframe" action="tippen.php" id="loginform" method="post" onsubmit="return false;" data-id="tippenIframe">
 
+                <p id="spieltagText">Spieltag:</p>
                 <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag" value="<?php echo getmaxspieltag()+1; ?>">
                 <input type="text" name="user" maxlength="64" placeholder="Benutzer">
                 <input type="password" name="pass" id="password-input" placeholder="Passwort">
@@ -134,7 +141,7 @@ include("buli-check.php");
 
 
 
-  <!-- <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
+ <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
     <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
     <div class="container-fluid">
       <div class="row">
@@ -142,14 +149,12 @@ include("buli-check.php");
           <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-4 display-1">
             <strong>Willkommen im Bundesliga Tippspiel</strong>
           </h1>
-          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Das Tippspiel befindet sich noch in der
-            Entwicklung. Es können auf dieser Seite bisher nur Tabellen und Spieltage angeschaut werden.</p>
-          <div class="mbr-section-btn"><a class="btn btn-white-outline display-7"
-              href="#gallery-9-u6k7q0xbqP">Erkunden</a></div>
+          <p class="mbr-fonts-style mbr-text mbr-white mb-4 display-7">Saison 2024/2025</p>
+          <br><br>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
 
   <!--   <h1>Willkommen im Ritzenberger Bundesliga Tippspiel!</h1> -->
@@ -174,10 +179,12 @@ include("buli-check.php");
 
 
 
+  <!-- Paarungsergebnisse -->
+
   <section class="buli-results" id="buliresults-section">
     <br><br>
 
-    <h1>Paarungsergebnisse</h1>
+    <h2>Paarungsergebnisse</h2>
     <table>
       <tr>
         <td>Paarung</td>
@@ -228,8 +235,12 @@ include("buli-check.php");
     </table>
   </section>
 
-  <section class="buli-table">
 
+<!-- Punktetabelle -->
+  <section class="buli-table" id="buli-table">
+  <br><br>
+
+      <h2>Punktetabelle</h2>
     <table>
       <tr>
         <td>Tag</td>
@@ -280,7 +291,13 @@ include("buli-check.php");
 
   </section>
 
-  <section class="rangliste">
+
+<!-- Rangliste -->
+
+  <section class="rangliste" id="rangliste-sektion">
+  <br><br>
+
+    <h2>Rangliste</h2>
     <table>
       <tr>
         <td>Platz</td>
