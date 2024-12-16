@@ -44,13 +44,13 @@
             <td class="paarungPunkte"><?php echo $tippstr; ?></td>
             <td class="paarungPunkte"><?php echo $punkte; ?></td>
             <td class="paarungPunkte"><?php echo $gesamtpunkte; ?></td>
-        </tr>
-        
-    </table>    
+        </tr>    
         <?php
         
         }
         ?>
+        
+    </table>
     <?php
     }else if($detail=="user"){
         ?>
