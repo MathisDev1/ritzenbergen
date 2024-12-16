@@ -95,7 +95,7 @@ include("buli-check.php");
           </ul>
           <!-- <div class=""> -->
           <div class="navbar-buttons mbr-section-btn">
-            <button class="btn btn-primary display-4" id="loginModalOpenBtn" data-id="loginModal">Einloggen</button>
+            <button class="btn btn-primary display-4" id="loginModalOpenBtn" data-id="loginModal">Tippen</button>
           </div>
         </div>
       </div>
@@ -107,12 +107,13 @@ include("buli-check.php");
     <div class="modal">
       <div class="modal-content">
         <span class="closeBtn" style="cursor: pointer;">x</span>
-        <h1>BuliTipp Einloggen</h1>
-        <p>Hier kannst du dich mit deinem Benutzernamen und Passwort einloggen. <br>Falls du noch kein Konto hast, wende
-          dich an Tom Kuhlenkamp.</p>
+        <h1>Tippen</h1>
+        <p>Bitte logge dich zuerst ein!</p><br>
+        <p>Noch kein Konto? <a href="mailto:mathis.kmp@gmail.com?subject=Benutzerantrag%20-%20Ritzenberger%20Bundesliga%20Tippspiel&body=**Persönliche%20Informationen:**%0AVorname%2C%20Name:%0AAdresse:%0ATelefonnummer:%0A%0A**Account%20Informationen:**%0AWunsch-Benutzername:%0AWunsch-Passwort:%0A%0A*Diese%20Mail%20wurde%20anhand%20der%20Vorlage%20auf%20ritzenbergen.de/bulitipp.php%20erstellt.*">Sende Benutzerantrag</a> </p>
           <section class="buli-container">
               <form target="tippenIframe" action="tippen.php" id="loginform" method="post" onsubmit="return false;" data-id="tippenIframe">
 
+                <p id="spieltagText">Spieltag:</p>
                 <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag" value="<?php echo getmaxspieltag()+1; ?>">
                 <input type="text" name="user" maxlength="64" placeholder="Benutzer">
                 <input type="password" name="pass" id="password-input" placeholder="Passwort">
