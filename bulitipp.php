@@ -117,6 +117,7 @@ include("buli-check.php");
       <div class="modal-content">
         <span class="closeBtn" style="cursor: pointer;">x</span>
         <section class="buli-container">
+          <div>
           <h1>Tippen</h1>
           <p>Bitte logge dich zuerst ein!</p><br>
           <p>Noch kein Konto? <a
@@ -130,17 +131,16 @@ include("buli-check.php");
             <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag"
               value="<?php echo getmaxspieltag() + 1; ?>">
             <input type="text" name="user" maxlength="64" placeholder="Benutzer">
-            <input type="password" name="pass" id="password-input" placeholder="Passwort">
+            <input type="password" name="pass" id="password-input" placeholder="Passwort" class="clear">
 
             <input type="submit" value="=> Tippen! <=">
 
           </form>
-          <style>
-            #tippenIframe {
-              display: none;
-            }
-          </style>
-          <iframe id="tippenIframe" name="tippenIframe"></iframe>
+          </div>
+          <div id="tippenIframeContainer">
+            <iframe id="tippenIframe" name="tippenIframe"></iframe>
+            <button id="logoutButton">Abmelden</button>
+          </div>
         </section>
       </div>
     </div>

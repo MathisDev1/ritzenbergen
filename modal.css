@@ -67,6 +67,9 @@
   #tippenIframe {
     height: 300px;
   }
+  #tippenIframeContainer{
+    height: 400px;
+  }
 
   .iframeRanglisteDetailansicht {
     height: 300px;
