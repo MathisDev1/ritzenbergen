@@ -44,36 +44,53 @@
 
 /* Paarungsergebnisse */
 
+.buli-results table {
+  border-collapse: collapse;
+  width: 60%;
+  margin: 0 auto;
+}
 
+.buli-results th, .buli-results td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
 
-  .buli-results table {
-    border-collapse: collapse;
-    width: 60%;
-    margin: 0 auto;
-  }
-  
-  .buli-results th, .buli-results td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .buli-results th {
-    background-color: #f2f2f2;
-  }
-  
-  .buli-results a {
-    color: #337ab7;
-    text-decoration: none;
-  }
-  
-  .buli-results a:hover {
-    text-decoration: underline;
-  }
+.buli-results th {
+  background-color: #f2f2f2;
+}
 
-  .buli-results h2 {
-    text-align: center;
+.buli-results a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.buli-results a:hover {
+  text-decoration: underline;
+}
+
+.buli-results h2 {
+  text-align: center;
+}
+
+/* Neue CSS-Klassen für die Logos */
+.buli-results span.team {
+  position: relative; /* Für die absolute Positionierung des Logos */
+}
+
+.buli-results span.team img {
+  position: absolute;
+  top: 50%;
+  left: -40px; /* Passe den Wert nach Bedarf an */
+  transform: translateY(-50%);
+  width: 30px; /* Passe die Größe nach Bedarf an */
+  height: 30px;
+  border-radius: 50%; /* Macht das Bild rund */
+  /* Nur für größere Bildschirme anzeigen */
+  @media (max-width: 768px) { /* Passe den Breakpoint nach Bedarf an */
+      display: none;
   }
+}
 
 
 
