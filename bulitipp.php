@@ -89,7 +89,7 @@ include("buli-check.php");
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-          <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link link text-black display-4" href="galerie.php">Galerie</a>
             </li>
             <li class="nav-item">
@@ -116,27 +116,32 @@ include("buli-check.php");
     <div class="modal modalNichtScrollbar">
       <div class="modal-content">
         <span class="closeBtn" style="cursor: pointer;">x</span>
-        <h1>Tippen</h1>
-        <p>Bitte logge dich zuerst ein!</p><br>
-        <p>Noch kein Konto? <a href="mailto:mathis.kmp@gmail.com?subject=Benutzerantrag%20-%20Ritzenberger%20Bundesliga%20Tippspiel&body=**Persönliche%20Informationen:**%0AVorname%2C%20Name:%0AAdresse:%0ATelefonnummer:%0A%0A**Account%20Informationen:**%0AWunsch-Benutzername:%0AWunsch-Passwort:%0A%0A*Diese%20Mail%20wurde%20anhand%20der%20Vorlage%20auf%20ritzenbergen.de/bulitipp.php%20erstellt.*">Sende Benutzerantrag</a> </p>
-          <section class="buli-container">
-              <form target="tippenIframe" action="tippen.php" id="loginform" method="post" onsubmit="return false;" data-id="tippenIframe">
+        <section class="buli-container">
+          <h1>Tippen</h1>
+          <p>Bitte logge dich zuerst ein!</p><br>
+          <p>Noch kein Konto? <a
+              href="mailto:mathis.kmp@gmail.com?subject=Benutzerantrag%20-%20Ritzenberger%20Bundesliga%20Tippspiel&body=**Persönliche%20Informationen:**%0AVorname%2C%20Name:%0AAdresse:%0ATelefonnummer:%0A%0A**Account%20Informationen:**%0AWunsch-Benutzername:%0AWunsch-Passwort:%0A%0A*Diese%20Mail%20wurde%20anhand%20der%20Vorlage%20auf%20ritzenbergen.de/bulitipp.php%20erstellt.*">Sende
+              Benutzerantrag</a> </p>
 
-                <p id="spieltagText">Spieltag:</p>
-                <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag" value="<?php echo getmaxspieltag()+1; ?>">
-                <input type="text" name="user" maxlength="64" placeholder="Benutzer">
-                <input type="password" name="pass" id="password-input" placeholder="Passwort">
+          <form target="tippenIframe" action="tippen.php" id="loginform" method="post" onsubmit="return false;"
+            data-id="tippenIframe">
 
-                <input type="submit" value="=> Tippen! <=">
+            <p id="spieltagText">Spieltag:</p>
+            <input type="number" name="spieltag" max="34" min="1" placeholder="Spieltag"
+              value="<?php echo getmaxspieltag() + 1; ?>">
+            <input type="text" name="user" maxlength="64" placeholder="Benutzer">
+            <input type="password" name="pass" id="password-input" placeholder="Passwort">
 
-              </form>
+            <input type="submit" value="=> Tippen! <=">
+
+          </form>
           <style>
-              #tippenIframe{
-                display: none;
-              }
-              </style>
-              <iframe id="tippenIframe" name="tippenIframe"></iframe>
-            </section>
+            #tippenIframe {
+              display: none;
+            }
+          </style>
+          <iframe id="tippenIframe" name="tippenIframe"></iframe>
+        </section>
       </div>
     </div>
   </div>
@@ -144,7 +149,7 @@ include("buli-check.php");
 
 
 
- <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
+  <section class="header16 cid-u6k7q0xIhk mbr-fullscreen mbr-parallax-background" id="hero-17-u6k7q0xIhk">
     <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(0, 0, 0);"></div>
     <div class="container-fluid">
       <div class="row">
@@ -222,7 +227,12 @@ include("buli-check.php");
                   <iframe src="<?php echo $url; ?>" frameborder="0"></iframe>
                 </div>
               </div>
-              <span class="openBtn teams"><span class="team"><img src="./get-buli-image.php?team=<?php echo $paarung[0]; ?>" alt=""><p><?php echo $paarung[0]; ?></p></span><span class="vs"></span><span class="team"><p><?php echo $paarung[1]; ?></p><img src="./get-buli-image.php?team=<?php echo $paarung[1]; ?>" alt=""></span></span>
+              <span class="openBtn teams"><span class="team"><img
+                    src="./get-buli-image.php?team=<?php echo $paarung[0]; ?>" alt="">
+                  <p><?php echo $paarung[0]; ?></p>
+                </span><span class="vs"></span><span class="team">
+                  <p><?php echo $paarung[1]; ?></p><img src="./get-buli-image.php?team=<?php echo $paarung[1]; ?>" alt="">
+                </span></span>
 
             </div>
           </td>
@@ -239,11 +249,11 @@ include("buli-check.php");
   </section>
 
 
-<!-- Punktetabelle -->
+  <!-- Punktetabelle -->
   <section class="buli-table" id="buli-table">
-  <br><br>
+    <br><br>
 
-      <h2>Punktetabelle</h2>
+    <h2>Punktetabelle</h2>
     <table>
       <tr>
         <td>Tag</td>
@@ -295,10 +305,10 @@ include("buli-check.php");
   </section>
 
 
-<!-- Rangliste -->
+  <!-- Rangliste -->
 
   <section class="rangliste" id="rangliste-sektion">
-  <br><br>
+    <br><br>
 
     <h2>Rangliste</h2>
     <table>
@@ -326,8 +336,8 @@ include("buli-check.php");
               <div class="modal">
                 <div class="modal-content">
                   <span class="closeBtn" style="cursor: pointer;">x</span>
-                  <iframe
-                   class="iframeRanglisteDetailansicht" src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $key; ?>"><?php echo $key; ?></iframe>
+                  <iframe class="iframeRanglisteDetailansicht"
+                    src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $key; ?>"><?php echo $key; ?></iframe>
 
                 </div>
               </div>
@@ -347,21 +357,21 @@ include("buli-check.php");
 <section class="tipperdetails">
 <?php
 foreach (srowforeach("SELECT username from `buli-user`;", []) as $key => $value) {
- $username = $value[0];
- ?>
- <div class="modal-container">
-   <div class="modal">
-     <div class="modal-content">
-       <span class="closeBtn" style="cursor: pointer;">x</span>
-       <iframe
-         src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $username; ?>"><?php echo $username; ?></iframe>
+$username = $value[0];
+?>
+<div class="modal-container">
+<div class="modal">
+<div class="modal-content">
+  <span class="closeBtn" style="cursor: pointer;">x</span>
+  <iframe
+    src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $username; ?>"><?php echo $username; ?></iframe>
 
-     </div>
-   </div>
-   <span class="openBtn"><?php echo $username; ?></span>
- </div>
+</div>
+</div>
+<span class="openBtn"><?php echo $username; ?></span>
+</div>
 
- <?php
+<?php
 }
 
 ?>

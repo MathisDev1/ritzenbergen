@@ -44,10 +44,15 @@
 
 /* Paarungsergebnisse */
 
+.buli-results{
+  overflow-x: scroll;
+}
+
 .buli-results table {
   border-collapse: collapse;
   width: 60%;
   margin: 0 auto;
+  
 }
 
 .buli-results th, .buli-results td {
@@ -95,6 +100,9 @@
   /* text-align: center; */
   width: 100%;
   max-width: 500px;
+  /* @media (max-width: 768px) { /* Passe den Breakpoint nach Bedarf an
+    width: 100px;
+  } */
 }
 
 .buli-results span.team:first-child{
@@ -116,9 +124,9 @@
 
   border-radius: 50%; /* Macht das Bild rund */
   /* Nur für größere Bildschirme anzeigen */
-  @media (max-width: 768px) { /* Passe den Breakpoint nach Bedarf an */
+  /* @media (max-width: 768px) { /* Passe den Breakpoint nach Bedarf an 
       display: none;
-  }
+  } */
 }
 .buli-results span.team p{
   	width: 175px;
