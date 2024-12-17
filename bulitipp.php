@@ -219,7 +219,7 @@ include("buli-check.php");
                   <iframe src="<?php echo $url; ?>" frameborder="0"></iframe>
                 </div>
               </div>
-              <span class="openBtn"><?php echo $paarung[0]; ?> - <?php echo $paarung[1]; ?></span>
+              <span class="openBtn team"><img src="" alt=""><?php echo $paarung[0]; ?> - <?php echo $paarung[1]; ?><img src="" alt=""></span>
 
             </div>
           </td>
