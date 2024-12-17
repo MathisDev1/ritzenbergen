@@ -238,7 +238,7 @@
           data-align="center"
           data-contain-scroll="trimSnaps"
           data-loop="true"
-          data-autoPlay="true"
+          data-auto-play="true"
           data-auto-play-interval="2"
           data-draggable="true"
         > <!--  auto-play = autoplay aus, 
