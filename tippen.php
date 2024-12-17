@@ -7,6 +7,7 @@
     <title>Tippen</title>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/css/bulitipp2.css">
 </head>
 
 <body>
@@ -90,7 +91,7 @@
 
                 <!-- Benutzer hat noch nicht getippt - Tippen! -->
 
-                <div>
+                <div class="tippenEintragen">
                     <form onsubmit="return false;" action="tippeintragen.php" id="mainform">
                         <?php
                         $paarungen = srowforeach("SELECT heim, gast from `buli-paarungen` where spieltag=?;", [$spieltag]);
