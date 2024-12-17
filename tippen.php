@@ -8,6 +8,12 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/bulitipp2.css">
+    
+    <style>
+                                    img{
+                                        width: 30px;
+                                    }
+                                </style>
 </head>
 
 <body>
@@ -70,12 +76,12 @@
                             $gast=$paarung[1];
                             ?>
                             <tr>
-                                <td><?php echo $heim; ?></td>
-                                <td><?php echo $gast; ?></td>
+                            <td><img src="./get-buli-image.php?team=<?php echo $paarung[0]; ?>" alt=""><?php echo $heim; ?></td>
+                                <td><?php echo $gast; ?><img src="./get-buli-image.php?team=<?php echo $paarung[1]; ?>" alt=""></td>
                             </tr>
                             <tr>
-                                <td><?php echo $heimscore; ?></td>
-                                <td><?php echo $gastscore; ?></td>
+                            
+                                <td><?php echo $heimscore; ?></td><td><?php echo $gastscore; ?></td>
                             </tr>
                             <?php
                             
@@ -102,8 +108,9 @@
                                 $gast = $paarungen[$i][1];
                                 ?>
                                 <span class="paarung">
+                                <img src="./get-buli-image.php?team=<?php echo $heim; ?>" alt="">
                                     <input type="number" min="0" placeholder="<?php echo $heim; ?>" class="score"> : <input
-                                        type="number" placeholder="<?php echo $gast; ?>" min="0" class="score"><br>
+                                        type="number" placeholder="<?php echo $gast; ?>" min="0" class="score"><img src="./get-buli-image.php?team=<?php echo $gast; ?>" alt=""><br>
                                 </span>
                                 <?php
                             }
