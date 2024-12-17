@@ -269,3 +269,46 @@ span.vs{
   padding-bottom: 5px;
   text-align: left;
 }
+
+
+
+
+
+/* TippenEintragen */
+
+.tippenEintragen form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.paarung {
+  margin: 10px 0;
+}
+
+.tippenEintragen input[type="number"] {
+  width: 150px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* Submit-Button */
+.tippenEintragen input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 150px;
+}
+
+
+/* Meldung für nicht vorbereiteten Spieltag */
+.tippenEintragen h1 {
+  color: red;
+  text-align: center;
+}
