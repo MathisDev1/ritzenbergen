@@ -94,3 +94,15 @@ if ($responseData) {
     // Response ist kein JSON
     // echo "<script>window.alert(`JSON-Response ungültig (Z.29)! Bitte einen Admin kontaktieren! BuLi-Tipp Daten konnten nicht aktualisiert werden.`);</script>";
 }
+if(srowforeach("SELECT COUNT(`id`) from `buli-icons`;",[])[0][0]<9){
+    mysqli_execute_query($db_id,"TRUNCATE `buli-icons`;",[]);
+    $responseDataTeams=json_decode(file_get_contents("https://api.openligadb.de/getavailableteams/bl".$bundesliga."/".$year, false),true);
+    
+    foreach($responseDataTeams as $key => $value){
+        $iconurl=$value["teamIconUrl"];
+        $name=$value["shortName"];
+        $image=file_get_contents($iconurl,false);
+        mysqli_execute_query($db_id,"INSERT INTO `buli-icons` (`team`,`img`) VALUES (?,?);",[$name,$image]);
+        
+    }
+}

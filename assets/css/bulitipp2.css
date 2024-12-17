@@ -74,24 +74,69 @@
 }
 
 /* Neue CSS-Klassen für die Logos */
-.buli-results span.team {
-  position: relative; /* Für die absolute Positionierung des Logos */
+.buli-results span.team { 
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+  align-items: center;
+}
+
+.buli-results{
+  display: block;
+}
+.teams{
+  display: flex;
+  font-size: 17px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  float: left;
+  /* text-align: center; */
+  width: 100%;
+  max-width: 500px;
+}
+
+.buli-results span.team:first-child{
+  text-align: right;
+}
+
+.buli-results span.team:last-child{
+  text-align: left;
 }
 
 .buli-results span.team img {
-  position: absolute;
+  
+  /* position: absolute;
   top: 50%;
-  left: -40px; /* Passe den Wert nach Bedarf an */
-  transform: translateY(-50%);
-  width: 30px; /* Passe die Größe nach Bedarf an */
-  height: 30px;
+  left: -40px; /* Passe den Wert nach Bedarf an 
+  transform: translateY(-50%);*/
+  width: 30px; /* Passe die Größe nach Bedarf an*/ 
+  height: 30px; 
+
   border-radius: 50%; /* Macht das Bild rund */
   /* Nur für größere Bildschirme anzeigen */
   @media (max-width: 768px) { /* Passe den Breakpoint nach Bedarf an */
       display: none;
   }
 }
+.buli-results span.team p{
+  	width: 175px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    vertical-align: middle;
+    margin-bottom: 0;
+}
 
+span.vs{
+  width: 20px;
+  /* margin-left: 10%;
+  margin-right: 10%; */
+  height: 3px;
+  background-color: black;
+}
 
 
 /* Punkterangliste */

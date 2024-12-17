@@ -222,7 +222,7 @@ include("buli-check.php");
                   <iframe src="<?php echo $url; ?>" frameborder="0"></iframe>
                 </div>
               </div>
-              <span class="openBtn team"><img src="" alt=""><?php echo $paarung[0]; ?> - <?php echo $paarung[1]; ?><img src="" alt=""></span>
+              <span class="openBtn teams"><span class="team"><img src="./get-buli-image.php?team=<?php echo $paarung[0]; ?>" alt=""><p><?php echo $paarung[0]; ?></p></span><span class="vs"></span><span class="team"><p><?php echo $paarung[1]; ?></p><img src="./get-buli-image.php?team=<?php echo $paarung[1]; ?>" alt=""></span></span>
 
             </div>
           </td>
