@@ -24,6 +24,7 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/additional.css"><link rel="stylesheet" href="assets/mobirise/css/additional.css" type="text/css">
   <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="modal.css">
   
 
   <style>:root{ --background: #FCFCF8; --dominant-color: #DDE5B6; --primary-color: #A98467; --secondary-color: #6C584C; --success-color: #23BA74; --danger-color: #BC2130; --warning-color: #DDA600; --info-color: #0BB0D2; --background-text: #000000; --dominant-text: #000000; --primary-text: #000000; --secondary-text: #FFFFFF; --success-text: #FFFFFF; --danger-text: #FFFFFF; --warning-text: #000000; --info-text: #FFFFFF;}</style>
@@ -59,15 +60,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+        
+        <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="#erntefest">Erntefeste</a>
+          </li>
+          
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="galerie.php" aria-expanded="false">Galerie</a>
+            <a class="nav-link link text-black display-4" href="#osterfeuer">Osterfeuer</a>
+          </li>
+  
+        <li class="nav-item">
+            <a class="nav-link link text-black display-4" href="#fussballturnier" aria-expanded="false">Fußballturniere</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="index.php#call-to-action-9-u6k7q0zosO">Umgebung</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link link text-black display-4" href="index.php#contacts-2-u6k7q0Bejh">Kontakt</a>
+            <a class="nav-link link text-black display-4" href="#doppelkopf" aria-expanded="false">Doppelkopf</a>
           </li>
 
           <li class="nav-item">
@@ -75,9 +81,9 @@
           </li>
 
         </ul>
-        <div class="navbar-buttons mbr-section-btn">
-          <a class="btn btn-primary display-4" href="index.php#about-us-12-u6k7q0yKNv">Über Ritzenbergen</a>
-        </div>
+        <!-- <div class="navbar-buttons mbr-section-btn">
+          <a class="btn btn-primary display-4" href="index.php#about-us-12-u6k7q0yKNv">Galerie</a>
+        </div> -->
       </div>
     </div>
   </nav>
@@ -113,7 +119,7 @@
               <strong>Willkommen in der Galerie</strong>
               </h3>
               <p class="mbr-text mbr-fonts-style display-7">In unserem wertvollen Fotoalbum der Dorfgemeinschaft Amedorf & Ritzenbergen 
-                findest du Chronisch geordnete Bilder verschiedener Veranstaltungen aus den letzten Jahrzehnten. Einfach
+                findest du chronisch geordnete Bilder verschiedener Veranstaltungen aus den letzten Jahrzehnten. Einfach
                  auf ein Bild mit einer Jahreszahl raufklicken.
               </p>
           </div>
@@ -498,67 +504,18 @@
 
 
 
-<style>
-    .modal {
-      margin: auto;
-      justify-content: center;
-      text-align: center;
-      width: 100ch;
-      height: 600px;
-      top: 0;
-      /* Positioniert das Modal oben im Viewport */
-      left: 0;
-      /* Positioniert das Modal links im Viewport */
-      right: 0;
-      /* Erweitert das Modal auf die gesamte Breite */
-      bottom: 0;
-      /* Erweitert das Modal auf die gesamte Höhe */
-      z-index: 3000;
-      /* Bringt das Modal in den Vordergrund */
-    }
-
-    .modal-content {
-      background-color: #ffffff;
-      /* Hintergrundfarbe des Inhalts */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-      /* Schatten */
-      border: none;
-      /* Entferne den Rahmen */
-      margin: 15% auto;
-      height: auto;
-      padding: 20px;
-      border-radius: 10px;
-      width: 80%;
-    }
-
-    .close {
-      color: #4CAF50;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: red;
-      cursor: pointer;
-    }
-
-
-    @media (max-width: 768px) {
-
-      /* Anpassungen für Smartphones */
-      .modal {
-        max-width: 100vw;
-      }
-
-      .modal-content {
-        max-width: 100vw;
-        /* 100% Breite auf Smartphones */
-        text-align: left;
-      }
-    }
-  </style>
+<script>
+  console.log("Test");
+  document.querySelectorAll(".embla__viewport").forEach((el)=>{
+    el.addEventListener("touchstart",()=>{
+      console.log(el);
+      localStorage.setItem("scroll-gallery","");
+      setTimeout(() => {
+        localStorage.setItem("scroll-gallery",1);
+      }, 4000);
+    });
+  });
+</script>
 
 
 

@@ -905,10 +905,10 @@ include("addhit.php");
         <span class="close" onclick="closeUeberModal()">×</span>
         <h1>Über</h1>
         <p>
-          Ritzenbergen ist ein kleines Dorf der Gemeinde Blender und liegt dicht an der Weser.
+          Ritzenbergen ist ein kleines Dorf in der Gemeinde Blender und liegt dicht an der Weser.
           <br>
           <br>
-          Bei dieser Seite handelt es sich um eine Private Homepage der Dorfgemeinschaft Amedorf & Ritzenbergen.
+          Bei dieser Seite handelt es sich um eine private Homepage der Dorfgemeinschaft Amedorf & Ritzenbergen.
           <br><br>
           © Front-End und Web Design: Mathis Kuhlenkamp <br>
           © Back-End und Datenbanken: Tom Kuhlenkamp, Jonas Kuhlenkamp

@@ -89,6 +89,9 @@ include("buli-check.php");
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+          <li class="nav-item">
+              <a class="nav-link link text-black display-4" href="galerie.php">Galerie</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link link text-black display-4" href="#buliresults-section">Ergebnisse</a>
             </li>
