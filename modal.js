@@ -8,8 +8,11 @@ document.querySelectorAll(".modal-container").forEach((element)=>{
         });
     }else{
     element.querySelector(".openBtn").addEventListener("click",(ev)=>{
-        var btn=ev.target;
-        var modal=btn.parentElement;
+        var btn=ev.target
+        var modal=btn;
+        do{
+            modal=modal.parentElement;
+        }while(!modal.classList.contains("modal-container"));
         var content=modal.querySelector(".modal");
         content.style.display="block";
     });
