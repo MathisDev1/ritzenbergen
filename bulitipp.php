@@ -22,6 +22,7 @@ include("buli-check.php");
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/animatecss/animate.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="lazyloading.css">
   <!-- <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css"> -->
@@ -224,7 +225,7 @@ include("buli-check.php");
 
                   // include("buli-punkte.php");
                   ?>
-                  <iframe src="<?php echo $url; ?>" frameborder="0"></iframe>
+                  <iframe class="lazy-loading" data-src="<?php echo $url; ?>" frameborder="0"></iframe>
                 </div>
               </div>
               <span class="openBtn">
@@ -292,8 +293,8 @@ include("buli-check.php");
               <div class="modal">
                 <div class="modal-content">
                 <span class="closeBtn">&times;</span>
-                <iframe class="iframeRanglisteDetailansicht"
-                src="buli-punkte.php?spieltag=<?php echo $i+1; ?>&paarung=null&detail=user&name=<?php echo $value[0]; ?>"><?php echo $value[0]; ?></iframe>
+                <iframe class="iframeRanglisteDetailansicht lazy-loading"
+                data-src="buli-punkte.php?spieltag=<?php echo $i+1; ?>&paarung=null&detail=user&name=<?php echo $value[0]; ?>"><?php echo $value[0]; ?></iframe>
                 </div>
               </div>
               
@@ -351,8 +352,8 @@ include("buli-check.php");
               <div class="modal">
                 <div class="modal-content">
                   <span class="closeBtn" style="cursor: pointer;">x</span>
-                  <iframe class="iframeRanglisteDetailansicht"
-                    src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $key; ?>"><?php echo $key; ?></iframe>
+                  <iframe class="iframeRanglisteDetailansicht lazy-loading"
+                    data-src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&name=<?php echo $key; ?>"><?php echo $key; ?></iframe>
 
                 </div>
               </div>
@@ -536,6 +537,7 @@ src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&
   <script src="assets/ytplayer/index.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
+  <script src="./lazyloading.js"></script>
   <!-- <script src="main.js"></script> -->
   <script>
 

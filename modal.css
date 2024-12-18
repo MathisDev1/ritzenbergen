@@ -17,6 +17,9 @@
     overflow-y: scroll;
   }
 
+  .openBtn{
+    cursor: pointer;
+  }
 
   .modal-content {
     background-color: #ffffff;
