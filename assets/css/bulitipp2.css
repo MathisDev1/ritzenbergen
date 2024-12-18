@@ -48,22 +48,19 @@
   overflow-x: scroll;
 }
 
-.buli-results table {
+table {
   border-collapse: collapse;
   width: 60%;
   margin: 0 auto;
   
 }
 
-.buli-results th, .buli-results td {
+tr, td {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }
 
-.buli-results th {
-  background-color: #f2f2f2;
-}
 
 .buli-results a {
   color: #337ab7;
@@ -149,7 +146,7 @@ span.vs{
 
 /* Punkterangliste */
   
-  .buli-table table {
+  /* .buli-table table {
     border-collapse: collapse;
     width: 60%;
     margin: 0 auto;
@@ -163,7 +160,7 @@ span.vs{
   
   .buli-table th {
     background-color: #f2f2f2;
-  }
+  }*/
   
   .buli-table a {
     color: #337ab7;
@@ -176,7 +173,7 @@ span.vs{
 
   .buli-table h2 {
     text-align: center;
-  }
+  } 
 
 
 
@@ -186,7 +183,7 @@ span.vs{
 
 /* Rangliste */
   
-.rangliste table {
+/* .rangliste table {
   border-collapse: collapse;
   width: 60%;
   margin: 0 auto;
@@ -200,7 +197,7 @@ span.vs{
 
 .rangliste th {
   background-color: #f2f2f2;
-}
+}*/
 
 .rangliste a {
   color: #337ab7;
@@ -213,7 +210,7 @@ span.vs{
 
 .rangliste h2 {
   text-align: center;
-}
+} 
 
 
 
@@ -227,7 +224,7 @@ span.vs{
 
 
 
-.paarungPunkte table {
+/* .paarungPunkte table {
   border-collapse: collapse;
   width: 60%;
   margin: 0 auto;
@@ -254,7 +251,7 @@ span.vs{
 
 .paarungPunkte h2 {
   text-align: center;
-}
+} */
 
 
 
