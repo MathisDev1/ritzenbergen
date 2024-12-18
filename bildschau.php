@@ -260,8 +260,8 @@
         <div class="kommentare"></div>
 
             <form class="formular" action="./bildschau/kommentareintragen.php" method="post">
-            <input class="username-input" type="text" name="username" placeholder="Name"> <br>
-            <input class="kommentar-input" type="text" name="kommentar" placeholder="Kommentar">
+            <input class="username-input" type="text" name="username" placeholder="Name" maxlength="32" required> <br>
+            <input class="kommentar-input" type="text" name="kommentar" placeholder="Kommentar" maxlength="1024" required>
             <input type="hidden" name="bildpfad" class="bilderpath" value="<?php echo $bilderpath . $bilder2[$_GET["bild"]]; ?>">
             <input type="hidden" name="bild" value="<?php echo $_GET["bild"]; ?>" class="bildform"><br>
             <input class="absenden-button" type="submit" value="Absenden">
