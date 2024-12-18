@@ -16,20 +16,45 @@ function removeActiveClass() {
   }
 }
 
-function addClass($event) {
-  $event.stopPropagation();
-  const target = $event.currentTarget;
+function addClass(target) {
   removeActiveClass();
   target.classList.add(ACTIVECLASS);
-  document.querySelector(".bildform").value=target.dataset.title;
+  document.querySelector(".bildform").value = target.dataset.title;
   hiddenkommentarfield(target);
   removeUnactiveClass();
   addUnactiveClass(target);
   changecomments(target);
 }
 
+function previous() {
+  if (!touchtimeout) addClass(document.querySelector(".unactive"));
+}
+
+function next() {
+  if (!touchtimeout) addClass(document.querySelectorAll(".unactive").item(1));
+}
+
+var touchtimeout = false;
+
 IMAGES.forEach((image) => {
   image.addEventListener("click", addClass);
+  image.addEventListener("touchstart", (ev) => {
+    // console.log(ev.changedTouches[0].screenX);
+    ev.target.addEventListener("touchend", (ev2) => {
+      var left =
+        ev2.changedTouches[0].screenX - ev.changedTouches[0].screenX > 0;
+      console.log(left);
+      if (left) {
+        previous();
+      } else {
+        next();
+      }
+      touchtimeout=true;
+      setTimeout(()=>{
+        touchtimeout=false;
+      },200);
+    });
+  });
 });
 
 function addUnactiveClass(target) {
@@ -53,10 +78,10 @@ if (getURLData().bild && getURLData().path) {
   IMAGES[getURLData().bild].classList.add(ACTIVECLASS);
   showImage(IMAGES[getURLData().bild]);
   addUnactiveClass(IMAGES[getURLData().bild]);
-} else if(!getURLData().path){
-  window.location.href="../galerie.php";
+} else if (!getURLData().path) {
+  window.location.href = "../galerie.php";
 } else {
-  window.location.href = "index.php?path="+getURLData().path+"&bild=0";
+  window.location.href = "index.php?path=" + getURLData().path + "&bild=0";
 }
 function hiddenkommentarfield(target) {
   // console.log(target.style.backgroundImage.split('url("')[1].split('")')[0]);

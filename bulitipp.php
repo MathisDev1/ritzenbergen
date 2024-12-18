@@ -528,7 +528,7 @@ src="buli-punkte.php?spieltag=<?php echo $spieltag; ?>&paarung=null&detail=user&
   <script src="assets/ytplayer/index.js"></script>
   <script src="assets/theme/js/script.js"></script>
   <script src="assets/formoid/formoid.min.js"></script>
-  <script src="main.js"></script>
+  <!-- <script src="main.js"></script> -->
   <script>
 
     (function () {
