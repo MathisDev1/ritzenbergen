@@ -288,9 +288,17 @@ include("buli-check.php");
               $punkte = ts($value[0], $i + 1);
             }
             ?>
-
-            <td><?php echo $punkte; ?></td>
-
+            <div class="modal-container" data-id="td-<?php echo $value[0]; ?>-<?php echo $i; ?>" id="openBtn-<?php echo $value[0]; ?>-<?php echo $i; ?>">
+              <div class="modal">
+                <div class="modal-content">
+                <span class="closeBtn">&times;</span>
+                <iframe class="iframeRanglisteDetailansicht"
+                src="buli-punkte.php?spieltag=<?php echo $i+1; ?>&paarung=null&detail=user&name=<?php echo $value[0]; ?>"><?php echo $value[0]; ?></iframe>
+                </div>
+              </div>
+              
+            </div>
+            <td class="openBtn" id="td-<?php echo $value[0]; ?>-<?php echo $i; ?>" data-id="openBtn-<?php echo $value[0]; ?>-<?php echo $i; ?>"><?php echo $punkte; ?></td>
           <?php } ?>
         </tr>
         <?php

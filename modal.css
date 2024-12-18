@@ -33,7 +33,7 @@
     width: 80%;
   }
 
-  .close {
+  .close, .closeBtn {
     color: #4CAF50;
     float: right;
     font-size: 28px;
@@ -41,7 +41,7 @@
   }
 
   .close:hover,
-  .close:focus {
+  .close:focus, .closeBtn:hover, .closeBtn:focus {
     color: red;
     cursor: pointer;
   }
