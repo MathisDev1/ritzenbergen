@@ -17,6 +17,7 @@ function removeActiveClass() {
 }
 
 function addClass(target) {
+  if(target.classList.contains(ACTIVECLASS)) return;
   removeActiveClass();
   target.classList.add(ACTIVECLASS);
   document.querySelector(".bildform").value = target.dataset.title;
@@ -37,7 +38,7 @@ function next() {
 var touchtimeout = false;
 
 IMAGES.forEach((image) => {
-  image.addEventListener("click", addClass);
+  image.addEventListener("click", (ev)=>addClass(ev.target));
   image.addEventListener("touchstart", (ev) => {
     // console.log(ev.changedTouches[0].screenX);
     ev.target.addEventListener("touchend", (ev2) => {

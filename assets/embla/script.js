@@ -23,7 +23,7 @@
         if (bool) {
             if (!carousels[index].intervalId) {
                 carousels[index].intervalId = setInterval(() => {
-                    if (!document.hidden && localStorage.getItem("scroll-gallery")) { 
+                    if (!document.hidden && !JSON.parse(localStorage.getItem("scroll-gallery")).includes(carouselId)) { 
                         const currentIndex = carousels.findIndex((obj) => obj.carouselId === carouselId)
                         if (currentIndex === -1) return
                         if(carousels[currentIndex].embla.scrollProgress() !== 1) {

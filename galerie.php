@@ -505,16 +505,25 @@
 
 
 <script>
-  console.log("Test");
+  localStorage.setItem("scroll-gallery","[]");
   document.querySelectorAll(".embla__viewport").forEach((el)=>{
     el.addEventListener("touchstart",()=>{
-      console.log(el);
-      localStorage.setItem("scroll-gallery","");
+      var ids=JSON.parse(localStorage.getItem("scroll-gallery"));
+      var mbr=el;
+      do{
+        mbr=mbr.parentElement;
+      }while(!mbr.classList.contains("mbr-embla"));
+      ids.push(mbr.id);
+      localStorage.setItem("scroll-gallery",JSON.stringify(ids));
       setTimeout(() => {
-        localStorage.setItem("scroll-gallery",1);
+        var ids=JSON.parse(localStorage.getItem("scroll-gallery"));
+        var i=ids.indexOf(mbr.id);
+        ids.splice(i,1);
+        localStorage.setItem("scroll-gallery",JSON.stringify(ids));
       }, 4000);
     });
   });
+
 </script>
 
 
